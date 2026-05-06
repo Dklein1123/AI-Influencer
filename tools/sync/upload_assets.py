@@ -36,6 +36,24 @@ CONTENT_QUEUE = REPO_ROOT / "personas" / "sierra-frost" / "content-queue"
 BUCKET = "sierra-assets"
 
 
+def _load_env() -> None:
+    env = pathlib.Path.home() / ".AI-Influencer.env"
+    if not env.is_file():
+        return
+    try:
+        from dotenv import load_dotenv
+
+        load_dotenv(env)
+    except ImportError:
+        for line in env.read_text().splitlines():
+            if "=" in line and not line.lstrip().startswith("#"):
+                k, _, v = line.partition("=")
+                os.environ.setdefault(k.strip(), v.strip())
+
+
+_load_env()
+
+
 def _api_key() -> str:
     key = os.environ.get("SYNC_API_KEY")
     if not key:
@@ -47,7 +65,9 @@ def _post(op: str, data: dict[str, Any], *, timeout: float = 60.0) -> dict[str, 
     headers = {"Authorization": f"Bearer {_api_key()}", "Content-Type": "application/json"}
     body = {"op": op, "data": data}
     r = httpx.post(SYNC_FN_URL, headers=headers, json=body, timeout=timeout)
-    r.raise_for_status()
+    if r.status_code >= 400:
+        # Surface the Edge Function's structured error message instead of the bare HTTP status.
+        raise RuntimeError(f"sync op '{op}' returned {r.status_code}: {r.text[:500]}")
     return r.json()
 
 
@@ -82,15 +102,20 @@ def upload_one(local_path: pathlib.Path, *, dry_run: bool = False) -> dict[str, 
             template_id = p
             break
 
-    asset_row = _post("insert_asset", {
+    asset_payload: dict[str, Any] = {
         "influencer_id": SIERRA_FROST_ID,
         "name": name,
         "type": asset_type,
         "url": public_url,
-        "thumbnail_url": public_url if asset_type == "image" else None,
-        "notes": f"Generated asset for template {template_id}" if template_id else None,
         "tags": list(filter(None, [template_id, asset_type, "soul_2", "sierra-frost"])),
-    })
+    }
+    # Only include nullable fields when they have real values — the Edge
+    # Function distinguishes `undefined` (skip) from `null` (invalid).
+    if asset_type == "image":
+        asset_payload["thumbnail_url"] = public_url
+    if template_id:
+        asset_payload["notes"] = f"Generated asset for template {template_id}"
+    asset_row = _post("insert_asset", asset_payload)
 
     return {
         "local": str(local_path),
