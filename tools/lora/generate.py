@@ -143,6 +143,22 @@ def generate(persona_name: str, template_id: str, *, aspect_ratio: str | None = 
         print(f"[{template_id}] saved {dest.relative_to(REPO_ROOT)}", flush=True)
 
     _append_log(persona, template_id, prompt, args, saved)
+
+    # Best-effort sync to the Lovable portal.
+    try:
+        from tools.sync import supabase_client as sync
+
+        if sync.is_enabled() and saved:
+            sync.insert_ai_output(
+                title=f"{template_id} — Replicate Flux LoRA",
+                content=f"prompt: {prompt}\noutput: {saved[0]}\nlora: {os.environ.get('SIERRA_LORA_VERSION','')}",
+                kind="image",
+                source_prompt=template_id,
+                tags=[template_id, "replicate", "flux-lora", f"persona-{persona.NAME}"],
+            )
+    except Exception:
+        pass
+
     return {"saved": [str(p) for p in saved]}
 
 

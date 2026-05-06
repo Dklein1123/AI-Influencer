@@ -217,6 +217,23 @@ def generate(
 
     summary = "ok" if assets else "completed but no assets extracted (inspect log)"
     _append_log(persona, template_id, prompt, app, args, summary, saved, seed)
+
+    # Best-effort sync to the Lovable portal — never fails the generation.
+    try:
+        from tools.sync import supabase_client as sync
+
+        if sync.is_enabled() and assets:
+            url = assets[0][0]  # primary output URL
+            sync.insert_ai_output(
+                title=f"{template_id} — Higgsfield Soul 2",
+                content=f"prompt: {prompt}\nseed: {seed}\noutput: {url}\nsoul_id: {soul or '(none)'}",
+                kind="image",
+                source_prompt=template_id,
+                tags=[template_id, "higgsfield", "soul_2", f"persona-{persona.NAME}"],
+            )
+    except Exception:
+        pass  # sync is best-effort
+
     return {
         "template_id": template_id,
         "saved": [str(p) for p in saved],
