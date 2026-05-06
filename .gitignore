@@ -1,0 +1,41 @@
+# Python
+.venv/
+venv/
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# Secrets — never commit
+.env
+*.env
+*.env.local
+.AI-Influencer.env
+secrets/
+
+# Generated media — too big, regenerate from prompts
+personas/*/content-queue/*.mp4
+personas/*/content-queue/*.png
+personas/*/content-queue/*.jpg
+personas/*/content-queue/*.jpeg
+personas/*/content-queue/*.webp
+personas/*/content-queue/*.gif
+personas/*/reference-images/*.jpg
+personas/*/reference-images/*.jpeg
+personas/*/reference-images/*.png
+personas/*/reference-images/*.webp
+personas/*/archive/
+
+# Operational data — private
+data/*.db
+data/*.csv
+analytics/*.csv
+
+# Editor / OS
+.DS_Store
+Thumbs.db
+*.swp
+*~
+.idea/
+.vscode/
