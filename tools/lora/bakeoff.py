@@ -90,8 +90,22 @@ def run() -> int:
                 "output_format": "png",
                 "output_quality": 95,
             }
-            pred = replicate.predictions.create(version=version, input=args)
+            for attempt in range(5):
+                try:
+                    pred = replicate.predictions.create(version=version, input=args)
+                    break
+                except replicate.exceptions.ReplicateError as e:
+                    if "429" in str(e) or "throttled" in str(e).lower():
+                        wait = 12 + attempt * 4
+                        print(f"  rate-limited, sleeping {wait}s...", flush=True)
+                        time.sleep(wait)
+                        continue
+                    raise
+            else:
+                raise RuntimeError(f"giving up on {slot} s={scale} after 5 throttle retries")
             submitted.append((slot, scale, pred))
+            # Stay polite under the 6/min + burst 1 throttle.
+            time.sleep(11)
 
     print(f"\nSubmitted {len(submitted)} predictions. Polling...")
     saved: dict[tuple[str, float], pathlib.Path] = {}

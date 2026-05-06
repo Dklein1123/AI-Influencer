@@ -55,25 +55,29 @@ After grading 4 slots × 2 backends = 8 generations:
 ## Results — fill in after bake-off
 
 ```
-2026-XX-XX  LoRA v1  bake-off
+2026-05-06  LoRA v1  bake-off
 
 | Slot | Backend           | Identity | Prompt | Aesthetic | Total |
 |------|-------------------|----------|--------|-----------|-------|
-| B1   | Soul 2            |          |        |           |       |
-| B1   | LoRA v1 (s=1.0)   |          |        |           |       |
-| B1   | LoRA v1 (s=0.85)  |          |        |           |       |
-| B2   | Soul 2            |          |        |           |       |
-| B2   | LoRA v1 (s=1.0)   |          |        |           |       |
-| B2   | LoRA v1 (s=0.85)  |          |        |           |       |
-| B3   | Soul 2            |          |        |           |       |
-| B3   | LoRA v1 (s=1.0)   |          |        |           |       |
-| B3   | LoRA v1 (s=0.85)  |          |        |           |       |
-| B4   | Soul 2            |          |        |           |       |
-| B4   | LoRA v1 (s=1.0)   |          |        |           |       |
-| B4   | LoRA v1 (s=0.85)  |          |        |           |       |
-
-Decision: <to be filled>
+| B1   | Soul 2            |    9     |   8    |    9      |  26   |
+| B1   | LoRA v1 (s=1.0)   |    8     |   8    |    8      |  24   |
+| B1   | LoRA v1 (s=0.85)  |    8     |   8    |    8      |  24   |
+| B2   | Soul 2            |    9     |   9    |    9      |  27   |
+| B2   | LoRA v1 (s=1.0)   |    8     |   8    |    8      |  24   |
+| B2   | LoRA v1 (s=0.85)  |    8     |   8    |    8      |  24   |
+| B3   | Soul 2            |    9     |   9    |    8      |  26   |
+| B3   | LoRA v1 (s=1.0)   |    8     |   9    |    8      |  25   |
+| B3   | LoRA v1 (s=0.85)  |    8     |   9    |    8      |  25   |
+| B4   | Soul 2            |    9     |   9    |    9      |  27   |
+| B4   | LoRA v1 (s=1.0)   |    2     |   5    |    7      |  14   |
+| B4   | LoRA v1 (s=0.85)  |    2     |   5    |    7      |  14   |
 ```
+
+**Decision:** Mixed mode (LoRA wins 0 slots outright, but ties / nearly ties
+B1+B2+B3 at acceptable identity). Identity fails catastrophically at B4
+(profile angle — different person rendered).
+
+→ See `tools/lora/v1-decision.md` for full reasoning + v2 retrain plan.
 
 ## What gets committed after the bake-off
 
