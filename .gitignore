@@ -28,6 +28,7 @@ personas/*/content-queue/*.mp3
 # LoRA training intermediates
 tools/lora/training_set/
 tools/lora/training_set.zip
+personas/*/lora-bakeoff/
 personas/*/reference-images/*.jpg
 personas/*/reference-images/*.jpeg
 personas/*/reference-images/*.png
