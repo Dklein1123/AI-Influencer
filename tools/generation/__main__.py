@@ -73,7 +73,8 @@ def main(argv: list[str] | None = None) -> int:
                 )
                 print(f"\n=== {tid} (DRY RUN) ===")
                 print(f"application: {result['application']}")
-                for k, v in result["arguments"].items():
+                params = result["arguments"].get("params", result["arguments"])
+                for k, v in params.items():
                     if isinstance(v, str) and len(v) > 200:
                         v = v[:200] + "..."
                     print(f"  {k}: {v}")
