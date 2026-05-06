@@ -102,7 +102,83 @@ Same model/style/aspect as batch 1.
 - saved: `personas/sierra-frost/content-queue/2026-05-06_P12_v1.png`
 - source: https://d8j0ntlcm91z4.cloudfront.net/user_39gpDpVR13jUsxEVCRIxTlamScD/hf_20260506_060130_b181ca33-b4a3-470e-80a1-df68ceb6976c.png
 
-### Batch 2 takeaways
+### Batch 2 takeaways (continued in batch 3)
+
+---
+
+## 2026-05-06 — batch 3 (LoRA training-set expansion: P14, P15, P17, P19, P20, PROFILE)
+
+Goal: take Sierra's training set from 6 mostly-bedroom shots (insufficient
+LoRA variety) to 12 images covering Pillars 1/2/4, Wardrobes A/B/C/D/E +
+neutral, Settings S1/S2/S4/S5, and 3/4 profile angle. Submitted via the
+MCP connector. Same model/style/aspect as batches 1+2.
+
+### P14 — Pillar 2 / Wardrobe C (cream Pilates set) / Setting S4 (studio)
+
+- job_id: `2d028251-f803-499f-a590-cd31850bd327`
+- seed: `946215`
+- pose: mid-Pilates form on reformer, controlled and graceful
+- result: ok — identity locked, Pilates studio + cream activewear rendered correctly. New wardrobe + setting in the training pool.
+- saved: `personas/sierra-frost/content-queue/2026-05-06_P14_v1.png`
+
+### P15 — Pillar 2 / Wardrobe E (camel cashmere) / Setting S1 (bedroom)
+
+- job_id: `41c7b51d-1438-4a05-b9a3-b415e2f9b172`
+- seed: `92924`
+- pose: getting ready at vanity, lipstick mid-application
+- result: ok — identity locked, camel cashmere wardrobe is a new texture for the training pool.
+- saved: `personas/sierra-frost/content-queue/2026-05-06_P15_v1.png`
+
+### P17 — Pillar 2 / Wardrobe A / Setting S5 (cafe entry)
+
+- job_id: `e604fa4d-1545-4486-9136-10c583ac1707`
+- seed: `969464`
+- pose: entering cafe with leather tote, sunglasses pushed up on head
+- result: ok — identity locked, different cafe angle than P12 (sunglasses, entry framing).
+- saved: `personas/sierra-frost/content-queue/2026-05-06_P17_v1.png`
+
+### P19 — Pillar 2 / Wardrobe C (cream Pilates) / Setting S4 (barre)
+
+- job_id: `704e8625-5e35-4cb6-a5e2-246c91daf134`
+- seed: `967423`
+- pose: stretching at barre, post-class, tied-up hair, dewy skin
+- result: ok — identity locked, second cream-set angle for activewear variety.
+- saved: `personas/sierra-frost/content-queue/2026-05-06_P19_v1.png`
+
+### P20 — Pillar 2 / Wardrobe B (white linen) / Setting S2 (Palm Beach)
+
+- job_id: `af26b9db-3b1f-4514-ae48-cdb370cc8a53`
+- seed: `273642`
+- pose: walking past palms with iced coffee in hand, candid Florida day
+- result: ok — identity locked, second Palm Beach angle (different pose from P7's walking-toward-camera).
+- saved: `personas/sierra-frost/content-queue/2026-05-06_P20_v1.png`
+
+### PROFILE — custom 3/4 profile portrait (no template, hand-prompted)
+
+- job_id: `f39ebf73-61c4-4220-8cd3-fd51eae37030`
+- seed: `342133`
+- pose: serene three-quarter profile portrait, looking thoughtfully off to the side, hair tucked behind ear
+- result: ok — identity locked, 85mm tight close-up. Critical for the
+  LoRA training set since all prior shots were front-3/4 or full-body.
+- saved: `personas/sierra-frost/content-queue/2026-05-06_PROFILE_v1.png`
+
+### Batch 3 takeaways
+
+- **12 strong reference images now available for LoRA training.**
+  Excluding P5 (2-panel storyboard issue), the usable training set is:
+  P1, P3, P7, P8, P12, P14, P15, P17, P19, P20, PROFILE, plus carefully
+  re-cropping P5 manually if needed = 12. Hits the LoRA threshold
+  cleanly.
+- **Identity holds across 4 wardrobes + 3 settings + 3/4 profile angle.**
+  Sierra is now a genuinely portable identity — Soul ID + 12 refs covering
+  enough variation that any image-gen pipeline (Flux LoRA, Replicate,
+  fal, ComfyUI) can take her on.
+- **Variety achieved without identity drift.** No retraining of the Soul ID
+  needed across batches 1, 2, and 3.
+
+### Batch 1+2 original takeaways
+
+
 
 - Identity (Soul ID 87b6278b…) holds across 4 distinct settings,
   wardrobes, and pillars without drift. Soul 2 + this Soul ID is
