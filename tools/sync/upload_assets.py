@@ -77,7 +77,7 @@ def upload_one(local_path: pathlib.Path, *, dry_run: bool = False) -> dict[str, 
     storage_path = f"sierra-frost/{name}"
     mime, _ = mimetypes.guess_type(str(local_path))
     mime = mime or "application/octet-stream"
-    asset_type = "image" if mime.startswith("image/") else ("video" if mime.startswith("video/") else "audio")
+    asset_type = "image" if mime.startswith("image/") else ("video" if mime.startswith("video/") else "other")
 
     if dry_run:
         return {"dry_run": True, "local": str(local_path), "storage_path": storage_path, "mime": mime, "asset_type": asset_type}
