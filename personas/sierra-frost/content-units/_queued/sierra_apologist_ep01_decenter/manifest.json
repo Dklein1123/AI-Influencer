@@ -1,0 +1,84 @@
+{
+  "pulse_date": "2026-05-07",
+  "rank": 1,
+  "trend_item": {
+    "source": "TikTok #datingtok",
+    "label": "@datetoklive \u00b7 122,700 plays \u00b7 \ud83d\udc49 \u201cSingle ? This post is for you.\u201d  \t\u2022\tTag 3 single friends \t\u2022\tComment age + city \t\u2022\tRepost to be seen locally    #fyppppppppppppppppppppppp",
+    "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+    "raw": {
+      "hashtag": "datingtok",
+      "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+      "author": "datetoklive",
+      "caption": "\ud83d\udc49 \u201cSingle ? This post is for you.\u201d\n\n\t\u2022\tTag 3 single friends\n\t\u2022\tComment age + city\n\t\u2022\tRepost to be seen locally\n\n \n#fypppppppppppppppppppppppppppppp #fyp #date #viral #date ",
+      "plays": 122700,
+      "likes": 942,
+      "comments": 902,
+      "shares": 114,
+      "created_at": "2026-03-30T00:25:06.000Z",
+      "music": "Single Ladies (Put a Ring on It)"
+    }
+  },
+  "plan": {
+    "template_id": "P15",
+    "bit_id": "sierra_apologist",
+    "episode": 1,
+    "rationale": "Sierra Apologist EP. 1 \u2014 'Decenter Men, Apologist's Edition' (structural-research-agent TAKE A, Berner Apologist template T6). The 'I'm a [trend] apologist' frame is a REPEATABLE WEEKLY ENGINE \u2014 Sierra can run it on any trend (clean girl, tradwife, soft launch, mob wife, old money). Each ep cycles through: brag-claim, list 'red flags', land on a self-indictment receipt. The time-stamp tag (2:14 \u2192 2:51) is the screenshot driver and works cross-platform without audio. This is the 4th-bit-in-rotation upgrade \u2014 replaces 'Calling My Dad' if that bit underperforms.",
+    "duration_s": 18.0,
+    "visual_note": "P15 (vanity, getting-ready, lipstick mid-application) is the better visual for this bit \u2014 Sierra IS doing the lifestyle ritual (pink robe, half-applied face mask, vanity skincare) while delivering. The visual reinforces the apologist frame: she IS the audience for this lane.",
+    "script_chunks": [
+      {
+        "start": 0.0,
+        "end": 3.0,
+        "text": "I'M A DECENTER-MEN APOLOGIST."
+      },
+      {
+        "start": 3.0,
+        "end": 7.0,
+        "text": "HE'S NOT ON MY VISION BOARD."
+      },
+      {
+        "start": 7.0,
+        "end": 11.0,
+        "text": "HE'S NOT IN MY 5-YEAR PLAN."
+      },
+      {
+        "start": 11.0,
+        "end": 14.0,
+        "text": "I HAVEN'T THOUGHT ABOUT HIM IN HOURS."
+      },
+      {
+        "start": 14.0,
+        "end": 16.0,
+        "text": "HE HASN'T TEXTED SINCE 2:14."
+      },
+      {
+        "start": 16.0,
+        "end": 18.0,
+        "text": "IT'S 2:51."
+      }
+    ],
+    "voiceover_text": "I'm a decenter-men apologist. He's not on my vision board. He's not in my five-year plan. I haven't thought about him in HOURS. He hasn't texted back since two-fourteen. It's two-fifty-one. I am SO decentered.",
+    "caption": "decentering men is going great for me \u23f0 2:14 \u2192 2:51",
+    "hashtags": [
+      "#datingtok",
+      "#decentermen",
+      "#apologist",
+      "#fyp"
+    ],
+    "tag_line": "It's 2:51. I am SO decentered.",
+    "comedic_devices_used": [
+      "Berner 'apologist' reframe \u2014 acknowledge red flag, re-class as feature",
+      "time-stamp specific (2:14 \u2192 2:51) = the receipt = screenshot tag",
+      "soft pink robe + face mask visual = the audience IS the character",
+      "self-indictment button \u2014 she IS the apologist, that's the joke"
+    ],
+    "franchise_value": "Sierra Apologist is a weekly engine \u2014 drop in any trend phrase, run the same 4-beat structure. Future eps: clean girl apologist / tradwife apologist / soft launch apologist / mob wife apologist / old money apologist. Compounds the bit identity over 6-8 weeks.",
+    "trend_anchor": {
+      "source": "TikTok #datingtok rank 1",
+      "creator": "@sukainalouisa",
+      "plays": 1800000,
+      "trend_phrase": "decenter men"
+    },
+    "writer_micro_edits": "If technically possible: cut to phone screen showing 'last seen 2:14 PM' between chunks 3 and 4. Phone-screen overlay = the receipt visual. If not, the time stamp on screen + on-screen-text-as-receipt is enough."
+  }
+}

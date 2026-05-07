@@ -50,7 +50,7 @@
 
 ✅ **Anti-slop rules from viral-reel-generator**: codified into `voice-profile.md §11.5` with the "rhetorical lists OK in character-driven comedy" exception explicitly documented.
 
-🟡 **Nano-banana-pro**: skill-installed but not wired. TODO: `tools/generation/nano_banana.py` mirroring `tools/lora/generate.py` interface, with `--backend nano-banana` exposed in `from_trend.py`.
+✅ **Nano-banana-pro**: wired. `tools/generation/nano_banana.py` mirrors `tools/lora/generate.py` interface. `from_trend.py --backend nano-banana --resolution {1K,2K,4K} [--input-image PATH]`. Composition language ("vertical 9:16 portrait") folded into the prompt since Gemini doesn't expose aspect_ratio. Image-to-image edits supported via `--input-image` (use to seed Sierra identity from a reference shot when LoRA drifts). Requires `GEMINI_API_KEY` in env (get at aistudio.google.com/apikey).
 
 🟡 **TikTok-automation**: skill-installed, not yet activated. Activate when Sierra is publishing daily.
 

@@ -207,9 +207,20 @@ def main() -> int:
     p.add_argument("--seed", type=int, help="Higgsfield seed")
     p.add_argument(
         "--backend",
-        choices=["replicate", "higgsfield"],
+        choices=["replicate", "higgsfield", "nano-banana"],
         default="replicate",
-        help="Image-gen backend. Default: replicate (Sierra LoRA, ~30x cheaper than Higgsfield).",
+        help="Image-gen backend. Default: replicate (Sierra LoRA + Boreal). "
+             "Use nano-banana for hero shots / 4K / image-edits where the LoRA falls short.",
+    )
+    p.add_argument(
+        "--resolution",
+        choices=["1K", "2K", "4K"],
+        default="2K",
+        help="Nano-banana resolution (1K/2K/4K). Ignored for other backends.",
+    )
+    p.add_argument(
+        "--input-image",
+        help="Reference image for nano-banana image-to-image edits.",
     )
     p.add_argument(
         "--extra-lora",
@@ -319,6 +330,14 @@ def main() -> int:
             from tools.generation import higgsfield as gen_mod
             print(f"[from-trend] higgsfield generating {plan['template_id']} …")
             result = gen_mod.generate("sierra_frost", plan["template_id"], seed=args.seed)
+        elif args.backend == "nano-banana":
+            from tools.generation import nano_banana as gen_mod
+            print(f"[from-trend] nano-banana generating {plan['template_id']} ({args.resolution}) …")
+            result = gen_mod.generate(
+                "sierra_frost", plan["template_id"],
+                resolution=args.resolution,
+                input_image=args.input_image,
+            )
         else:
             from tools.lora import generate as gen_mod
             print(f"[from-trend] replicate-lora generating {plan['template_id']} (anti-slop config) …")
