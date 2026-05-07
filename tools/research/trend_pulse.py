@@ -91,6 +91,7 @@ def fetch_tiktok_hashtag(hashtag: str, *, max_items: int = 20) -> list[dict[str,
             "comments": r.get("commentCount"),
             "shares": r.get("shareCount"),
             "created_at": r.get("createTimeISO") or r.get("createTime"),
+            "music": (r.get("musicMeta") or {}).get("musicName"),
         })
     return out
 

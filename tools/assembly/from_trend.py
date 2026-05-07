@@ -205,6 +205,7 @@ def main() -> int:
     p.add_argument("--rank", type=int, default=1, help="1-indexed rank in scored items")
     p.add_argument("--template", help="Force a specific template id (overrides Claude pick)")
     p.add_argument("--seed", type=int, help="Higgsfield seed")
+    p.add_argument("--plan-from-file", help="Skip Claude planner; read plan JSON from this path")
     p.add_argument("--dry-run", action="store_true", help="Plan only — no API spend")
     p.add_argument("--no-image", action="store_true", help="Skip image gen (use existing)")
     p.add_argument("--no-vo", action="store_true", help="Skip VO synth")
@@ -224,7 +225,17 @@ def main() -> int:
     print(f"[from-trend] rank {args.rank}: [{item.get('score')}/10] {item.get('label','')[:90]}")
 
     # Plan.
-    if args.dry_run and not os.environ.get("ANTHROPIC_API_KEY"):
+    if args.plan_from_file:
+        plan_path = pathlib.Path(args.plan_from_file)
+        if not plan_path.is_file():
+            print(f"[from-trend] plan file not found: {plan_path}", file=sys.stderr)
+            return 1
+        plan = json.loads(plan_path.read_text())
+        if args.template:
+            plan["template_id"] = args.template
+        plan.setdefault("rationale", f"plan-from-file: {plan_path}")
+        print(f"[from-trend] plan loaded from {plan_path}")
+    elif args.dry_run and not os.environ.get("ANTHROPIC_API_KEY"):
         print("[from-trend] dry-run + no ANTHROPIC_API_KEY → stub plan")
         plan = _stub_plan(item, args.template or "P3")
     else:
