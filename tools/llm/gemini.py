@@ -53,6 +53,17 @@ _load_env()
 # Override via SIERRA_GEMINI_TEXT_MODEL env or per-call `model=` arg.
 DEFAULT_MODEL = "gemini-2.5-flash"
 
+# Free-tier daily quota per model (per Google project) is small (~20-50/day
+# per model in 2026). Each model has its OWN counter, so when one quotas
+# out the calendar can keep going via the next model. Order matters:
+# fastest+best first, then a known-good fallback chain.
+FALLBACK_CHAIN = [
+    "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-2.5-flash-lite",
+    "gemini-2.5-pro",
+]
+
 
 def _key() -> str:
     k = os.environ.get("GEMINI_API_KEY") or os.environ.get("GOOGLE_API_KEY")
@@ -101,28 +112,41 @@ def generate_text(
         # trailing prose, parsable directly with json.loads.
         cfg_kwargs["response_mime_type"] = "application/json"
 
+    # Model fallback chain — start at the chosen model and walk down on
+    # quota (429) until one works. Within a single model, retry on
+    # transient server errors (503 / 500).
+    chain: list[str] = [chosen] + [m for m in FALLBACK_CHAIN if m != chosen]
     last_err: Exception | None = None
-    for attempt in range(retries):
-        try:
-            response = client.models.generate_content(
-                model=chosen,
-                contents=prompt,
-                config=types.GenerateContentConfig(**cfg_kwargs),
-            )
-            return (response.text or "").strip()
-        except Exception as e:
-            msg = str(e)
-            # Retry on transient server errors (503 / 500 / overloaded);
-            # don't retry on auth (401/403) or quota (429 = real fail).
-            transient = "503" in msg or "500" in msg or "UNAVAILABLE" in msg or "high demand" in msg.lower()
-            if transient and attempt < retries - 1:
-                wait = 2 ** attempt  # 1s, 2s, 4s
-                print(f"[gemini] transient {msg.split(chr(10))[0][:60]} — retry in {wait}s", file=sys.stderr)
-                time.sleep(wait)
-                last_err = e
-                continue
-            raise
-    raise last_err if last_err else RuntimeError("gemini: exhausted retries")
+    for model_idx, current in enumerate(chain):
+        for attempt in range(retries):
+            try:
+                response = client.models.generate_content(
+                    model=current,
+                    contents=prompt,
+                    config=types.GenerateContentConfig(**cfg_kwargs),
+                )
+                if model_idx > 0:
+                    print(f"[gemini] OK on fallback model {current}", file=sys.stderr)
+                return (response.text or "").strip()
+            except Exception as e:
+                msg = str(e)
+                quota_exhausted = "429" in msg or "RESOURCE_EXHAUSTED" in msg or "quota" in msg.lower()
+                transient = "503" in msg or "500" in msg or "UNAVAILABLE" in msg or "high demand" in msg.lower()
+                if quota_exhausted:
+                    # Move to next model in chain immediately — same model
+                    # won't recover before tomorrow.
+                    if model_idx < len(chain) - 1:
+                        print(f"[gemini] {current} hit 429 — falling back to {chain[model_idx+1]}", file=sys.stderr)
+                    last_err = e
+                    break  # exit retry loop, advance model_idx
+                if transient and attempt < retries - 1:
+                    wait = 2 ** attempt  # 1s, 2s, 4s
+                    print(f"[gemini] transient {msg.split(chr(10))[0][:60]} — retry in {wait}s", file=sys.stderr)
+                    time.sleep(wait)
+                    last_err = e
+                    continue
+                raise
+    raise last_err if last_err else RuntimeError("gemini: exhausted all models in fallback chain")
 
 
 # Drop-in alias that matches `tools.research.common.claude_score` shape so

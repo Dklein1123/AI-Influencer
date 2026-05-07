@@ -1,0 +1,77 @@
+{
+  "template_id": "P32",
+  "bit_id": "sierra_reads",
+  "rationale": "T3 Diagnostic: Sierra diagnoses the 'girl who waits for clarity' and identifies herself as one, fitting the trend of men showing seriousness through action. P32 fits the direct, commentary-driven tone.",
+  "duration_s": 19,
+  "script_chunks": [
+    {
+      "start": 0.0,
+      "end": 2.5,
+      "text": "THE GIRLS WHO WAIT FOR CLARITY"
+    },
+    {
+      "start": 2.5,
+      "end": 5.0,
+      "text": "ARE THE GIRLS WHO GET NOTHING."
+    },
+    {
+      "start": 5.0,
+      "end": 8.0,
+      "text": "They are women who refresh Hinge 30 times an hour,"
+    },
+    {
+      "start": 8.0,
+      "end": 11.0,
+      "text": "check their phone for texts from a guy named Tyler,"
+    },
+    {
+      "start": 11.0,
+      "end": 14.0,
+      "text": "who last texted on Tuesday, and reader, I am one of them."
+    },
+    {
+      "start": 14.0,
+      "end": 16.0,
+      "text": "He just sent a meme."
+    },
+    {
+      "start": 16.0,
+      "end": 19.0,
+      "text": "It's a meme. That's it."
+    }
+  ],
+  "voiceover_text": "The girls who wait for clarity are the girls who get nothing. They are women who refresh Hinge 30 times an hour, check their phone for texts from a guy named Tyler, who last texted on Tuesday, and reader, I am one of them. He just sent a meme. It's a meme. That's it.",
+  "caption": "My therapist told me to stop waiting for clarity. So I wait for memes. Is this progress? #datingtok #datingadvice #tyler #hinge #clergywomen",
+  "tag_line": "It's a meme. That's it.",
+  "hashtags": [
+    "#datingtok",
+    "#datingadvice",
+    "#tyler",
+    "#hinge",
+    "#clergywomen"
+  ],
+  "slop_score": 0.0,
+  "calendar_meta": {
+    "week_of": "2026-05-11",
+    "day_idx": 5,
+    "day": "Friday",
+    "post_date": "2026-05-15",
+    "trend_anchor": {
+      "source": "TikTok #datingtok",
+      "label": "@corytalksnow \u00b7 664,100 plays \u00b7 When a man is serious about you, he doesn\u2019t drag his feet. Men move with clarity, consistency, and intention when they know they want a woma",
+      "url": "https://www.tiktok.com/@corytalksnow/video/7582384364886052109",
+      "raw": {
+        "hashtag": "datingtok",
+        "url": "https://www.tiktok.com/@corytalksnow/video/7582384364886052109",
+        "author": "corytalksnow",
+        "caption": "When a man is serious about you, he doesn\u2019t drag his feet. Men move with clarity, consistency, and intention when they know they want a woman.\n#datingadviceforwomen #relationshiptruths #datingtok #moderndating #datingtips ",
+        "plays": 664100,
+        "likes": 53100,
+        "comments": 865,
+        "shares": 3778,
+        "created_at": "2025-12-11T00:04:33.000Z",
+        "music": "original sound"
+      }
+    }
+  }
+}
