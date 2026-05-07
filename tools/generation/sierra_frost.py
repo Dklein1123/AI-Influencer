@@ -138,6 +138,39 @@ SETTINGS = {
         "cup, leather journal beside laptop, soft window light, blurred "
         "warm interior in background, intimate productive atmosphere"
     ),
+    "S6": (  # Car Interior — Driver's Seat (Range Rover / SUV style)
+        "inside the driver's seat of a clean modern SUV interior (Range "
+        "Rover / Tahoe coded, cream leather, no badge visible), parked "
+        "or about to drive, hands resting on steering wheel or in lap, "
+        "soft afternoon daylight through windshield, faint reflection "
+        "on glass, blurred parking lot or driveway visible behind, no "
+        "other people in frame"
+    ),
+    "S7": (  # Bed — Casual / Phone-in-hand
+        "lying or sitting up on a made bed, white linen bedding, "
+        "phone in hand or face-down on duvet, soft afternoon window "
+        "light, hair down loose, casual at-home vibe, no shoes, "
+        "neutral palette of cream and warm beige"
+    ),
+    "S8": (  # Bathroom — Skincare / Getting Ready
+        "at a clean modern bathroom vanity, marble counter, large "
+        "framed mirror with warm bulbs, skincare bottles arranged "
+        "neatly (no legible labels), soft warm overhead light, neutral "
+        "stone palette, towel folded nearby, getting-ready energy"
+    ),
+    "S9": (  # Kitchen — Morning Coffee / Casual Counter
+        "at a bright modern kitchen counter, marble or quartz island, "
+        "ceramic mug of coffee in hand, oat milk carton or french press "
+        "visible in soft focus, morning light through tall window, "
+        "muted greige cabinetry behind, no other people in frame, "
+        "candid morning-routine atmosphere"
+    ),
+    "S10": (  # Outdoor Walking — Phone-Selfie POV
+        "walking on a tree-lined sidewalk or quiet street, holding "
+        "phone in selfie position, slight motion blur on hand, golden "
+        "afternoon light filtering through trees, neutral residential "
+        "background, no traffic visible, candid handheld feel"
+    ),
 }
 
 # ---- Templates P1-P50 (mirrors viral-playbook organization) ----
@@ -199,6 +232,17 @@ TEMPLATES = {
     "P48": {"setting": "S3", "wardrobe": "A", "shot": "cowboy shot mid-thigh up", "motion": "slow dolly pull back", "pose": "steps of marble building exterior, golden afternoon, polished editorial", "pillar": 2, "kind": "hero"},
     "P49": {"setting": "S2", "wardrobe": "E", "shot": "full body", "motion": "smooth 90-degree arc around subject", "pose": "sunset marina, classic red or navy evening dress, hero shot", "pillar": 2, "kind": "hero"},
     "P50": {"setting": "S1", "wardrobe": "D", "shot": "medium close-up", "motion": "static lock-off", "pose": "Sunday morning hero, soft pastel light, dainty cross, thoughtful but warm expression", "pillar": 2, "kind": "hero"},
+    # Block 6 — Natural settings (P51-P57) — added when lipsync went live so
+    # Sierra has talking-head templates beyond bedroom/cafe. These are the
+    # canonical "in car / in bed / getting ready / walking" Sierra-talks-to-
+    # camera setups.
+    "P51": {"setting": "S6", "wardrobe": "A", "shot": "medium close-up centered driver-seat angle", "motion": "static lock-off, shot mounted on dash or passenger seat", "pose": "in driver's seat, looking sideways toward camera mid-thought, hand on steering wheel, slight half-smile, Tesla / Range Rover interior", "pillar": 1, "kind": "tiktok"},
+    "P52": {"setting": "S7", "wardrobe": "C", "shot": "medium close-up", "motion": "static lock-off, propped phone selfie angle", "pose": "lying on bed propped on elbow, phone in opposite hand, hair spread on pillow, deadpan dry expression, no shoes, casual at-home", "pillar": 1, "kind": "tiktok"},
+    "P53": {"setting": "S8", "wardrobe": "neutral", "shot": "medium close-up bathroom mirror angle", "motion": "static lock-off, slight handheld sway", "pose": "applying serum or doing skincare at vanity mirror, hair clipped back, mid-routine pause to look at camera with knowing dry expression", "pillar": 2, "kind": "tiktok"},
+    "P54": {"setting": "S9", "wardrobe": "C", "shot": "medium close-up kitchen counter angle", "motion": "static lock-off", "pose": "leaning on kitchen island holding ceramic mug, mid-sip pause, dry sideways glance, morning-routine vibe, hair loose", "pillar": 2, "kind": "tiktok"},
+    "P55": {"setting": "S10", "wardrobe": "B", "shot": "selfie phone-cam medium close-up", "motion": "loose handheld, slight walking motion in frame", "pose": "walking and holding phone in selfie pose, mid-thought facial expression, hair moving slightly with motion, golden hour", "pillar": 2, "kind": "tiktok"},
+    "P56": {"setting": "S6", "wardrobe": "C", "shot": "medium close-up driver-seat angle", "motion": "static lock-off, parked car", "pose": "parked in driveway / parking lot, phone propped on dash, post-Pilates / post-errand look, talking to camera with dry confessional energy", "pillar": 1, "kind": "tiktok"},
+    "P57": {"setting": "S7", "wardrobe": "neutral", "shot": "medium close-up handheld phone-cam angle", "motion": "static lock-off, propped phone", "pose": "sitting cross-legged in bed at night, hair down, soft warm bedside lamp light, talking to camera with confessional / vulnerable register-shift energy", "pillar": 1, "kind": "tiktok"},
 }
 
 
