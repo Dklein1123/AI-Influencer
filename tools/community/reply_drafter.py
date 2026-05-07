@@ -121,12 +121,20 @@ def voice_excerpt() -> str:
 def draft_replies(post: dict[str, Any], comments: list[dict[str, Any]]) -> list[dict]:
     if not comments:
         return []
-    if not anthropic_key():
-        print("[reply] ANTHROPIC_API_KEY missing — emitting comments without drafts", file=sys.stderr)
+
+    # Free-by-default: Gemini text → Claude fallback if available.
+    from tools.llm.gemini import is_enabled as gemini_ok, generate_text as gemini_text
+    if gemini_ok():
+        provider = "gemini"
+    elif anthropic_key():
+        provider = "claude"
+    else:
+        print("[reply] no LLM available — emitting comments without drafts", file=sys.stderr)
         return [
-            {"id": i + 1, "skip": False, "reply": "", "why": "no Claude key"}
+            {"id": i + 1, "skip": False, "reply": "", "why": "no LLM key (set GEMINI_API_KEY for free)"}
             for i, _ in enumerate(comments)
         ]
+
     block = "\n".join(
         f"{i+1}. @{c.get('uniqueId') or c.get('uid','?')}: {c.get('text','')}"
         for i, c in enumerate(comments)
@@ -138,7 +146,10 @@ def draft_replies(post: dict[str, Any], comments: list[dict[str, Any]]) -> list[
         .replace("{post_theme}", "(detected from caption)")
         .replace("{comments_block}", block)
     )
-    raw = claude_score(prompt, model="claude-sonnet-4-6", max_tokens=2400).strip()
+    if provider == "gemini":
+        raw = gemini_text(prompt, model="gemini-2.5-flash", max_tokens=2400, temperature=0.7, json_mode=True).strip()
+    else:
+        raw = claude_score(prompt, model="claude-sonnet-4-6", max_tokens=2400).strip()
     if raw.startswith("```"):
         raw = raw.split("```", 2)[1]
         if raw.startswith("json"):
@@ -147,7 +158,7 @@ def draft_replies(post: dict[str, Any], comments: list[dict[str, Any]]) -> list[
     try:
         return json.loads(raw)
     except Exception:
-        print("[reply] could not parse Claude JSON, returning empty", file=sys.stderr)
+        print(f"[reply] could not parse {provider} JSON, returning empty", file=sys.stderr)
         print(raw[:500], file=sys.stderr)
         return []
 

@@ -147,10 +147,16 @@ def main() -> int:
     units = load_recent_units(args.days)
     print(f"[nl] {len(trends)} high-scoring trends + {len(units)} units in last {args.days}d")
 
-    from tools.research.common import claude_score, anthropic_key
-    if not anthropic_key():
-        print("[nl] ANTHROPIC_API_KEY missing — cannot draft. Add to ~/.AI-Influencer.env", file=sys.stderr)
-        return 2
+    # Free-by-default: Gemini text → Claude fallback if it's set.
+    from tools.llm.gemini import is_enabled as gemini_ok, generate_text as gemini_text
+    if gemini_ok():
+        provider = "gemini"
+    else:
+        from tools.research.common import claude_score, anthropic_key
+        if not anthropic_key():
+            print("[nl] no LLM available (set GEMINI_API_KEY for free, or ANTHROPIC_API_KEY)", file=sys.stderr)
+            return 2
+        provider = "claude"
 
     prompt = (
         PROMPT
@@ -159,15 +165,21 @@ def main() -> int:
         .replace("{content_summary}", "\n".join(f"- {u}" for u in units) or "(none)")
         .replace("{topic_hint}", args.topic or "(none)")
     )
-    print("[nl] sonnet drafting …")
-    draft = claude_score(prompt, model="claude-sonnet-4-6", max_tokens=2200).strip()
+    def _llm(p: str, *, max_tokens: int) -> str:
+        if provider == "gemini":
+            return gemini_text(p, model="gemini-2.5-flash", max_tokens=max_tokens, temperature=0.85).strip()
+        from tools.research.common import claude_score
+        return claude_score(p, model="claude-sonnet-4-6", max_tokens=max_tokens).strip()
+
+    print(f"[nl] {provider} drafting …")
+    draft = _llm(prompt, max_tokens=2200)
 
     lint_report = ""
     if not args.no_lint:
         rules = extract_voice_section(voice_profile, "## 11.") or "(rules section not found)"
         lint_prompt = LINT_PROMPT.replace("{rules}", rules).replace("{draft}", draft)
         try:
-            lint_report = claude_score(lint_prompt, model="claude-haiku-4-5-20251001", max_tokens=800).strip()
+            lint_report = _llm(lint_prompt, max_tokens=800)
         except Exception as e:
             lint_report = f"(lint skipped: {e})"
 
