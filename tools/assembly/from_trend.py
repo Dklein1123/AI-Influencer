@@ -315,6 +315,9 @@ def main() -> int:
                    help="Flux guidance_scale (default 2.5; lower = more realistic, less prompt-adherent)")
     p.add_argument("--lora-scale", type=float, default=0.9,
                    help="Sierra LoRA strength (default 0.9; >1.0 over-fits)")
+    p.add_argument("--no-lipsync", action="store_true",
+                   help="Skip OmniHuman lipsync (default ON — turns Sierra still + Brielle audio into a talking-head video). "
+                        "When skipped, the assembler ken-burns'es the static image instead.")
     p.add_argument("--no-spoof", action="store_true",
                    help="Skip EXIF spoofer (default ON — strips C2PA + AI sigs, stamps iPhone metadata)")
     p.add_argument("--spoof-device", default="iphone-15-pro",
@@ -523,6 +526,22 @@ def main() -> int:
             print(f"[from-trend] elevenlabs synth {len(vo_chunks)} chunk(s) …")
             vs.synthesize_chunks(vo_chunks, voice_id=voice_id, output_path=vo_path)
             print(f"[from-trend] vo → {vo_path.relative_to(REPO_ROOT)}")
+
+    # Lipsync — turns the still + audio into a talking-head video. The
+    # pipeline.assemble() step then uses this video as the visual instead
+    # of ken-burns'ing a static image. Default ON when both image and VO
+    # exist. Skip with --no-lipsync.
+    talking_path: pathlib.Path | None = None
+    if not args.no_lipsync and image_path is not None and vo_path is not None and vo_path.is_file():
+        try:
+            from tools.generation.lipsync import lipsync_image
+            talking_path = unit_dir / "talking.mp4"
+            print(f"[from-trend] lipsync omnihuman → {talking_path.relative_to(REPO_ROOT)}")
+            lipsync_image(image_path, vo_path, output=talking_path, strip_audio=True)
+            # Use the talking video as the visual from here on.
+            image_path = talking_path
+        except Exception as e:
+            print(f"[from-trend] lipsync skipped ({e}); falling back to ken-burns still", file=sys.stderr)
 
     # Assemble.
     if not args.no_render:
