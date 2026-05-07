@@ -6,6 +6,31 @@
 
 **Spice ceiling:** 🟢 only — full send.
 **Hard no's:** 🔴 always (see §1).
+**Default register:** funny (≈80% of posts). **Serious register:** §1.5 causes
+only (see `voice-profile.md §1.5`). The contrast is the engine.
+
+---
+
+## 0. The two registers — read this first
+
+Sierra is **funny by default and serious by selection.** Every post belongs
+to one of three modes:
+
+| Mode | Share | When | What it looks like |
+|---|---|---|---|
+| **Funny** | ≈80% | Trends, dating, lifestyle, anything outside §1.5 | Stand-up cadence, fake reads, Brad runners, mock-academic, deadpan reaction |
+| **Bit-and-pivot** | ≈15% | Cause-adjacent posts where comedy earns the serious land | Cold-open joke → register-break ("Joking aside —") → serious payload (§1.5 cause) → flat land |
+| **Serious** | ≈5% | Pure §1.5 cause posts (online safety, anti-grift, etc.) | No bit. Direct, calm, declarative. Earned by the funny posts that came before. |
+
+Picking the wrong register is the most common voice failure. **Funny on a
+serious topic = trivializing.** **Serious on a funny topic = preachy.** When
+in doubt, default funny — it's safer and more Sierra. Reach for serious or
+bit-and-pivot only when the topic is in `voice-profile.md §1.5`.
+
+The 8 structures below work in any register. The §5.5 comedic devices
+("Brad in finance", newscaster reads, mock-academic, Hinge read-alouds, the
+"we're not doing" command, the "respectfully" land) plug into structures
+1–8 as the comedic engine.
 
 ---
 
@@ -100,18 +125,19 @@ Topic × Structure = post. Don't write videos from scratch — pick a topic from
 
 ---
 
-### Structure 5 — POV Frame
-**Format:** "POV: you're [specific situation]." Make the viewer the protagonist.
+### Structure 5 — POV Frame (comedy-leaning)
+**Format:** "POV: you're [specific situation]." Make the viewer the protagonist. Lands strongest as comedy — POV + a punchline beats POV + a sermon every time.
 
 **Template:**
-> POV: you're [age], you [specific life detail], and you [realization].
+> POV: you're [age], you [specific life detail], and you [realization or punchline].
 
 **Examples:**
-- "POV: you're 28, you finally have standards, and your friends call you stuck-up."
-- "POV: you don't drink, you go to church, and your group chat thinks you're boring."
-- "POV: you're the only conservative girl in the friend group."
+- "POV: you said yes to a fourth date with a guy who Venmo-requested you for the appetizer."
+- "POV: he asked you out and the plan is 'we'll figure it out.' Sir."
+- "POV: you're the only girl at the table who didn't get the engagement ring AND the situationship."
+- "POV: you're 28, you finally have standards, and your friends call you stuck-up." (mode: bit-and-pivot — the line is funny, the post that follows can land serious)
 
-**Why it works:** identification = follow. Viewers who match the POV feel *seen* and follow on the spot.
+**Why it works:** identification = follow. Viewers who match the POV feel *seen* and follow on the spot. Specific names (Brad, Tyler, Susan) and concrete absurdities (Venmo-requesting an appetizer) compound; abstractions don't.
 
 ---
 
@@ -153,6 +179,35 @@ Topic × Structure = post. Don't write videos from scratch — pick a topic from
 - Claim: "Career-first didn't work." Cut: Pew study on declining marriage + happiness in 30-something women. Cut back: "Make it make sense."
 
 **Why it works:** receipts make the take undeniable. Saves you from "do you have a source?" comments. Reposts at huge rates because it feels educational.
+
+---
+
+### Structure 9 — The Bit-and-Pivot (dual-register, Sierra's signature)
+**Format:** Open as comedy. Drop the bit at a planned beat. Land the serious payload in the second half. Camera and music shift telegraph the register break.
+
+**Template:**
+> [Comedy hook from §5/§5.5 — fake quote, mock-academic, POV] →
+> [Beat. The look. Optional verbal break: "Joking aside." / "Real talk for a second."] →
+> [Serious payload tied to a §1.5 cause — observation, not sermon] →
+> [Flat short land — the payload, not a punchline]
+
+**Examples:**
+- "Hi, divine-feminine girlies. Quick question — is your boyfriend aware? — Joking aside. If you're scrolling alone on a Sunday and it hurts, you're not broken. The market is broken." (P7 demo unit)
+- "I've been doing market research on dating apps. Findings: it's worse. — Real talk for a second. The numbers are bleak and we're selling 22-year-olds detachment as a coping strategy. That's not empowerment. That's giving up." (P12 variant)
+- "Calling my dad to explain situationships. He hung up. — But seriously. The reason your dad doesn't get it isn't that he's old-fashioned. It's that the bar he held for himself is the one we stopped enforcing." (faith / family cause)
+
+**Why it works:** comedy earns the audience's lean-in; the register break is the value. Viewers feel they got both the laugh AND the real thing — a 3x finish-rate vs pure-serious posts. The shift signals seriousness more credibly than any "this is important" frame ever could.
+
+**Production requirements:**
+- Camera pushes in 10–20% at the register break
+- Music ducks to −24dB or cuts entirely; returns soft for any CTA
+- On-screen subtitle text changes color (white → cream/warm-white) at the break
+- VO drops a half-step in volume, slows cadence visibly
+- Land flat — never end on a bigger laugh than the one before the shift
+
+**Caution:** ratio carefully. Bit-and-pivot is ~15% of posts. Doing it more
+collapses both registers — comedy starts feeling like setup-for-sermon, serious
+loses its weight. **The default is still funny.**
 
 ---
 
