@@ -264,8 +264,15 @@ def main() -> int:
     print(f"[from-trend] template = {plan['template_id']} · {plan.get('rationale','')}")
 
     # Output dir.
-    slug = slugify(item.get("label") or item.get("source") or "trend")
-    unit_dir = UNITS_DIR / f"from-trend-{pulse_date}-{slug}"
+    if args.plan_from_file:
+        # When the operator hand-writes a plan, anchor outputs to the plan
+        # file's parent dir. Avoids the bug where rerunning from_trend after
+        # the trend pulse shifts (rank-1 changes) creates a new mismatched
+        # output dir while the plan still references the original trend.
+        unit_dir = pathlib.Path(args.plan_from_file).resolve().parent
+    else:
+        slug = slugify(item.get("label") or item.get("source") or "trend")
+        unit_dir = UNITS_DIR / f"from-trend-{pulse_date}-{slug}"
     unit_dir.mkdir(parents=True, exist_ok=True)
 
     manifest = {

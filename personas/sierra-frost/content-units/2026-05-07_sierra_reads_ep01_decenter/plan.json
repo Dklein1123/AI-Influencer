@@ -1,0 +1,25 @@
+{
+  "template_id": "P37",
+  "bit_id": "sierra_reads",
+  "rationale": "Sierra Reads EP. 1 — fake-read of feminine-energy-tok 'decenter men' advice, deadpan payoff. P37 (chin in hand, deadpan straight-to-camera, 'go on' energy) is the perfect visual for the read-aloud format. Funny mode, no register pivot. Targets the exact lane the @sukainalouisa 1.8M-play post lives in — Sierra is the audience for this content too, but with the comic timing.",
+  "duration_s": 18.0,
+  "script_chunks": [
+    {"start": 0.0,  "end": 2.5,  "text": "TODAY'S DATING ADVICE:"},
+    {"start": 2.5,  "end": 6.0,  "text": "\"DECENTER MEN.\""},
+    {"start": 6.0,  "end": 8.5,  "text": "COOL."},
+    {"start": 8.5,  "end": 12.0, "text": "I'VE BEEN SINGLE"},
+    {"start": 12.0, "end": 14.0, "text": "18 MONTHS."},
+    {"start": 14.0, "end": 16.0, "text": "HE'S DECENTERED."},
+    {"start": 16.0, "end": 18.0, "text": "NOW WHAT."}
+  ],
+  "voiceover_text": "Today's dating advice from feminine-energy-tok: decenter men. Cool. I've been single eighteen months. He has been thoroughly decentered. Now what.",
+  "caption": "Today in 'dating advice that solves nothing': decentering. He's been gone for 18 months. Looking for less help, please.",
+  "hashtags": ["#datingtok", "#decentermen", "#datingadvice", "#satire"],
+  "tag_line": "Decentered. Now what.",
+  "trend_anchor": {
+    "source": "TikTok #datingtok rank 1",
+    "creator": "@sukainalouisa",
+    "plays": 1800000,
+    "url": "https://www.tiktok.com/@sukainalouisa"
+  }
+}
