@@ -1,0 +1,21 @@
+[Script Info]
+ScriptType: v4.00+
+PlayResX: 1080
+PlayResY: 1920
+ScaledBorderAndShadow: yes
+
+[V4+ Styles]
+Format: Name, Fontname, Fontsize, PrimaryColour, OutlineColour, BackColour, Bold, Italic, Underline, StrikeOut, ScaleX, ScaleY, Spacing, Angle, BorderStyle, Outline, Shadow, Alignment, MarginL, MarginR, MarginV, Encoding
+Style: Sierra,Roboto Black,96,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0,0,1,8,3,2,80,80,576,1
+
+[Events]
+Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
+
+Dialogue: 0,0:00:00.00,0:00:02.50,Sierra,,0,0,0,,I'M A DECENTERING APOLOGIST.
+Dialogue: 0,0:00:02.50,0:00:05.00,Sierra,,0,0,0,,THEY SAY IT'S MANIPULATIVE.
+Dialogue: 0,0:00:05.00,0:00:07.00,Sierra,,0,0,0,,OR SELFISH.
+Dialogue: 0,0:00:07.00,0:00:09.00,Sierra,,0,0,0,,MAYBE A BIT COLD.
+Dialogue: 0,0:00:09.00,0:00:11.50,Sierra,,0,0,0,,I CALL IT HOLY DISCERNMENT.
+Dialogue: 0,0:00:11.50,0:00:14.00,Sierra,,0,0,0,,YES\, HE TEXTED 16 TIMES.
+Dialogue: 0,0:00:14.00,0:00:16.00,Sierra,,0,0,0,,HE THINKS I'M AT BRUNCH.
+Dialogue: 0,0:00:16.00,0:00:18.00,Sierra,,0,0,0,,I WAS AT ADORATION.
