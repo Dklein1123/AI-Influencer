@@ -323,3 +323,17 @@ re-learn them:
 - prompt: 25 year old woman, blonde mid-length hair with soft beachy waves and a few flyaway strands at the hairline, light blue-green eyes with slight asymmetry between left and right, lightly-tanned skin with visible pores on the nose and cheeks, peach fuzz catching the light, faint under-eye circles, mild T-zone shine, slight nostril asymmetry, small natural lip line, dainty gold jewelry, fit Pilates body but not overly defined, unposed expression unless otherwise specified, looking slightly off-camera, candid not posed, wearing modest knee-length dress in soft cream or dusty pink, fitted but not tight, three-quarter sleeves, simple dainty cross necklace, neutral nude heels, soft natural makeup, hair half-up, in a bright Scandinavian-style bedroom, white linen bedding, oak nightstand, floor-to-ceiling window with sheer curtains, eucalyptus plant in clay pot, soft morning light streaming through window, neutral palette of cream beige and warm wood, shot type: medium close-up, camera motion: static lock-off, action: Sunday morning hero, soft pastel light, dainty cross, thoughtful but warm expression, amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, slightly underexposed, mixed indoor lighting (warm tungsten with cool window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, washed-out neutral white balance, mild jpeg compression, faint sensor noise, posted to a friend's instagram story, no professional retouching, not a model shoot, no studio lighting
 - seed: None
 - saved: /home/user/AI-Influencer/personas/sierra-frost/content-queue/2026-05-07_P50_pollinations.png
+## 2026-05-07T18:53:31 — P56 (LoRA)
+
+- backend: replicate-flux-lora
+- model: `dev`
+- aspect: `9:16`
+- guidance: `None`
+- lora_scale: `0.9`
+- saved:
+  - `personas/sierra-frost/content-queue/2026-05-07_P56_lora_v1.png`
+- prompt:
+  ```
+  SIERRA_FROST_V1, 25 year old woman, blonde mid-length hair with soft beachy waves and a few flyaway strands at the hairline, light blue-green eyes with slight asymmetry between left and right, lightly-tanned skin with visible pores on the nose and cheeks, peach fuzz catching the light, faint under-eye circles, mild T-zone shine, slight nostril asymmetry, small natural lip line, dainty gold jewelry, fit Pilates body but not overly defined, unposed expression unless otherwise specified, looking slightly off-camera, candid not posed, wearing matching neutral set: cream sports bra and high-waisted bike shorts, Hoka or On running sneakers, hair pulled into low ponytail, dewy fresh face, small gold hoops, inside the driver's seat of a clean modern SUV interior (Range Rover / Tahoe coded, cream leather, no badge visible), parked or about to drive, hands resting on steering wheel or in lap, soft afternoon daylight through windshield, faint reflection on glass, blurred parking lot or driveway visible behind, no other people in frame, shot type: medium close-up driver-seat angle, camera motion: static lock-off, parked car, action: parked in driveway / parking lot, phone propped on dash, post-Pilates / post-errand look, talking to camera with dry confessional energy, amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, slightly underexposed, mixed indoor lighting (warm tungsten with cool window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, washed-out neutral white balance, mild jpeg compression, faint sensor noise, posted to a friend's instagram story, no professional retouching, not a model shoot, no studio lighting
+  ```
+
