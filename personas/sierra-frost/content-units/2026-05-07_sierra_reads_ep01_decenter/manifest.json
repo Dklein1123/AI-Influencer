@@ -21,59 +21,70 @@
   "plan": {
     "template_id": "P37",
     "bit_id": "sierra_reads",
-    "rationale": "Sierra Reads EP. 1 \u2014 fake-read of feminine-energy-tok 'decenter men' advice, deadpan payoff. P37 (chin in hand, deadpan straight-to-camera, 'go on' energy) is the perfect visual for the read-aloud format. Funny mode, no register pivot. Targets the exact lane the @sukainalouisa 1.8M-play post lives in \u2014 Sierra is the audience for this content too, but with the comic timing.",
+    "rationale": "Sierra Reads EP. 1 \u2014 'The Inventory.' Sierra performs being someone who claims she's decentered him while every line of denial reveals she has, in fact, been doing exactly the thing she's denying. The 'sixteen times this morning' is the giveaway. 'I am thriving' is the dry button on someone who is clearly not. This is character-comedy not joke-comedy: the audience laughs because they ARE her, not because they got a punchline. Catherine Cohen / Esther Povitsky lane. P37 chin-in-hand deadpan is the perfect contradicting visual \u2014 she LOOKS composed while her words betray her.",
     "duration_s": 18.0,
     "script_chunks": [
       {
         "start": 0.0,
         "end": 2.5,
-        "text": "TODAY'S DATING ADVICE:"
+        "text": "YES, I HAVE DECENTERED HIM."
       },
       {
         "start": 2.5,
-        "end": 6.0,
-        "text": "\"DECENTER MEN.\""
+        "end": 5.0,
+        "text": "HERE IS THE INVENTORY."
       },
       {
-        "start": 6.0,
-        "end": 8.5,
-        "text": "COOL."
+        "start": 5.0,
+        "end": 8.0,
+        "text": "I HAVE NOT TEXTED HIM."
       },
       {
-        "start": 8.5,
-        "end": 12.0,
-        "text": "I'VE BEEN SINGLE"
+        "start": 8.0,
+        "end": 11.0,
+        "text": "I HAVE NOT DRIVEN BY HIS APARTMENT."
       },
       {
-        "start": 12.0,
-        "end": 14.0,
-        "text": "18 MONTHS."
+        "start": 11.0,
+        "end": 14.5,
+        "text": "I HAVE NOT VIEWED HIS INSTAGRAM STORY"
       },
       {
-        "start": 14.0,
+        "start": 14.5,
         "end": 16.0,
-        "text": "HE'S DECENTERED."
+        "text": "16 TIMES THIS MORNING."
       },
       {
         "start": 16.0,
         "end": 18.0,
-        "text": "NOW WHAT."
+        "text": "I AM THRIVING."
       }
     ],
-    "voiceover_text": "Today's dating advice from feminine-energy-tok: decenter men. Cool. I've been single eighteen months. He has been thoroughly decentered. Now what.",
-    "caption": "Today in 'dating advice that solves nothing': decentering. He's been gone for 18 months. Looking for less help, please.",
+    "voiceover_text": "Yes. I have decentered him. Here is the inventory. I have not texted him. I have not driven by his apartment. I have not viewed his Instagram story sixteen times this morning. I am thriving.",
+    "caption": "Yes I have decentered him. Here is the inventory: I have not texted him. I have not driven by his apartment. I have not viewed his Instagram story sixteen times this morning. I am thriving.",
     "hashtags": [
       "#datingtok",
       "#decentermen",
       "#datingadvice",
-      "#satire"
+      "#thriving"
     ],
-    "tag_line": "Decentered. Now what.",
+    "tag_line": "I am thriving.",
+    "comedic_devices_used": [
+      "character-driven denial \u2014 every line is a lie that reveals the truth",
+      "specific number reveal ('16 times this morning') \u2014 the receipt",
+      "fake-inventory framing (\u00a75.5 mock-academic cousin)",
+      "the 'I am thriving' dry button on a person who clearly is not",
+      "audience identification \u2014 they ARE her, that's the laugh"
+    ],
     "trend_anchor": {
       "source": "TikTok #datingtok rank 1",
       "creator": "@sukainalouisa",
       "plays": 1800000,
-      "url": "https://www.tiktok.com/@sukainalouisa"
-    }
+      "url": "https://www.tiktok.com/@sukainalouisa",
+      "trend_phrase": "decenter men"
+    },
+    "v0_failed": "Earlier draft ('Cool. I've been single 18 months. He's decentered. Now what.') \u2014 generic deadpan-shrug, no character. Lazy.",
+    "v1_failed": "Sponsor-read parody ('use code his loss for 15% off Decentered.\u2122') \u2014 clever structure, but still concept-comedy not character-comedy. No truth in it. AI-feeling.",
+    "v2_thesis": "Stop writing jokes. Write a character. The bit is Sierra in denial. Every denial confirms what she denies. The inventory IS the bit. Catherine Cohen-coded."
   }
 }
