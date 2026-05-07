@@ -20,7 +20,8 @@
   },
   "plan": {
     "template_id": "P32",
-    "rationale": "P32 (bed, mid-coffee dry sideways glance) lets Sierra do the newscaster fake-read into the punchline. Comedy hook H3 (Breaking news from trad-tok). The trend's earnestness is the setup \u2014 her deadpan reaction is the joke. Funny mode, no serious-register pivot needed for this one.",
+    "bit_id": "brad_finance",
+    "rationale": "P32 (bed, mid-coffee dry sideways glance) + Brad From Finance newscaster bit. Comedy hook H3 (Breaking news from trad-tok). Trend's earnestness is the setup; her deadpan reaction is the joke. Funny mode, no serious-register pivot.",
     "duration_s": 16.0,
     "script_chunks": [
       {

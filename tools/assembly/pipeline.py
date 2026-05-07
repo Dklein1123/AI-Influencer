@@ -178,6 +178,48 @@ def _video_filter(visual_is_image: bool, duration: float, film_look: bool = True
     return f"{chain},format=yuv420p"
 
 
+def prepend_title_card(reel: pathlib.Path, title_card: pathlib.Path, output: pathlib.Path) -> pathlib.Path:
+    """Concat a 1.5s title-card mp4 in front of the reel and re-encode.
+
+    The two clips are normalized to the same codec/fps/sample-rate before
+    concat so playback never glitches. Returns the output path.
+
+    Used by from_trend when plan.bit_id matches a card in
+    `tools/assembly/title_cards/<bit_id>.mp4`.
+    """
+    reel = pathlib.Path(reel)
+    title_card = pathlib.Path(title_card)
+    output = pathlib.Path(output)
+    if not reel.is_file():
+        raise FileNotFoundError(f"reel not found: {reel}")
+    if not title_card.is_file():
+        raise FileNotFoundError(f"title card not found: {title_card}")
+    output.parent.mkdir(parents=True, exist_ok=True)
+
+    fc = (
+        # normalize both inputs to identical params, then concat
+        f"[0:v]scale={OUT_W}:{OUT_H}:force_original_aspect_ratio=increase,"
+        f"crop={OUT_W}:{OUT_H},setsar=1,fps={OUT_FPS},format=yuv420p[v0];"
+        f"[1:v]scale={OUT_W}:{OUT_H}:force_original_aspect_ratio=increase,"
+        f"crop={OUT_W}:{OUT_H},setsar=1,fps={OUT_FPS},format=yuv420p[v1];"
+        f"[0:a]aresample=48000,aformat=channel_layouts=stereo[a0];"
+        f"[1:a]aresample=48000,aformat=channel_layouts=stereo[a1];"
+        f"[v0][a0][v1][a1]concat=n=2:v=1:a=1[vout][aout]"
+    )
+    cmd = [
+        "ffmpeg", "-y", "-loglevel", "error",
+        "-i", str(title_card), "-i", str(reel),
+        "-filter_complex", fc,
+        "-map", "[vout]", "-map", "[aout]",
+        "-c:v", "libx264", "-pix_fmt", "yuv420p", "-preset", "medium", "-crf", "20",
+        "-c:a", "aac", "-b:a", "192k", "-ar", "48000",
+        "-movflags", "+faststart",
+        str(output),
+    ]
+    subprocess.run(cmd, check=True)
+    return output
+
+
 def _audio_graph(
     has_vo: bool,
     has_music: bool,

@@ -347,6 +347,21 @@ def main() -> int:
         )
         print(f"[from-trend] rendered {out_video.relative_to(REPO_ROOT)}")
 
+        # If plan declares a bit_id (sierra_reads / calling_my_dad /
+        # brad_finance), prepend the branded title card. Per voice-profile
+        # §5.6: the title card is the follower-first signal; without it,
+        # bits don't compound.
+        bit_id = plan.get("bit_id")
+        if bit_id:
+            card_path = REPO_ROOT / "tools" / "assembly" / "title_cards" / f"{bit_id}.mp4"
+            if card_path.is_file():
+                tagged = unit_dir / "final_with_card.mp4"
+                print(f"[from-trend] prepending title card '{bit_id}' → {tagged.relative_to(REPO_ROOT)}")
+                asm.prepend_title_card(out_video, card_path, tagged)
+            else:
+                print(f"[from-trend] WARNING: bit_id='{bit_id}' but card not found at {card_path}", file=sys.stderr)
+                print("[from-trend]   run: python -m tools.assembly.title_cards", file=sys.stderr)
+
         if not args.no_sync:
             try:
                 from tools.sync import supabase_client as sync
