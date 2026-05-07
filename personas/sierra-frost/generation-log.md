@@ -275,3 +275,45 @@ re-learn them:
   SIERRA_FROST_V1, 25 year old woman, blonde mid-length hair with soft beachy waves and a few flyaway strands at the hairline, light blue-green eyes with slight asymmetry between left and right, lightly-tanned skin with visible pores on the nose and cheeks, peach fuzz catching the light, faint under-eye circles, mild T-zone shine, slight nostril asymmetry, small natural lip line, dainty gold jewelry, fit Pilates body but not overly defined, unposed expression unless otherwise specified, looking slightly off-camera, candid not posed, wearing fitted navy midi dress with cream cropped blazer, nude pointed-toe heels, dainty gold necklace, small camel structured handbag, hair styled in soft waves, at a small marble cafe table near a window, MacBook open with a clean writing app on screen (no legible text), latte in ceramic cup, leather journal beside laptop, soft window light, blurred warm interior in background, intimate productive atmosphere, shot type: tight close-up, camera motion: static lock-off, action: chin in hand at table, deadpan straight-to-camera, go-on energy, amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, slightly underexposed, mixed indoor lighting (warm tungsten with cool window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, washed-out neutral white balance, mild jpeg compression, faint sensor noise, posted to a friend's instagram story, no professional retouching, not a model shoot, no studio lighting
   ```
 
+## 2026-05-07T14:32:23 — P12 (LoRA)
+
+- backend: replicate-flux-lora
+- model: `dev`
+- aspect: `9:16`
+- guidance: `None`
+- lora_scale: `0.9`
+- saved:
+  - `personas/sierra-frost/content-queue/2026-05-07_P12_lora_v1.png`
+- prompt:
+  ```
+  SIERRA_FROST_V1, 25 year old woman, blonde mid-length hair with soft beachy waves and a few flyaway strands at the hairline, light blue-green eyes with slight asymmetry between left and right, lightly-tanned skin with visible pores on the nose and cheeks, peach fuzz catching the light, faint under-eye circles, mild T-zone shine, slight nostril asymmetry, small natural lip line, dainty gold jewelry, fit Pilates body but not overly defined, unposed expression unless otherwise specified, looking slightly off-camera, candid not posed, wearing fitted navy midi dress with cream cropped blazer, nude pointed-toe heels, dainty gold necklace, small camel structured handbag, hair styled in soft waves, at a small marble cafe table near a window, MacBook open with a clean writing app on screen (no legible text), latte in ceramic cup, leather journal beside laptop, soft window light, blurred warm interior in background, intimate productive atmosphere, shot type: medium close-up, camera motion: slow dolly push toward subject's face, action: looking up from laptop directly to camera, faint smile, amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, slightly underexposed, mixed indoor lighting (warm tungsten with cool window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, washed-out neutral white balance, mild jpeg compression, faint sensor noise, posted to a friend's instagram story, no professional retouching, not a model shoot, no studio lighting
+  ```
+
+## 2026-05-07T14:34:16 — P25 (LoRA)
+
+- backend: replicate-flux-lora
+- model: `dev`
+- aspect: `9:16`
+- guidance: `None`
+- lora_scale: `0.9`
+- saved:
+  - `personas/sierra-frost/content-queue/2026-05-07_P25_lora_v1.png`
+- prompt:
+  ```
+  SIERRA_FROST_V1, 25 year old woman, blonde mid-length hair with soft beachy waves and a few flyaway strands at the hairline, light blue-green eyes with slight asymmetry between left and right, lightly-tanned skin with visible pores on the nose and cheeks, peach fuzz catching the light, faint under-eye circles, mild T-zone shine, slight nostril asymmetry, small natural lip line, dainty gold jewelry, fit Pilates body but not overly defined, unposed expression unless otherwise specified, looking slightly off-camera, candid not posed, wearing fitted navy midi dress with cream cropped blazer, nude pointed-toe heels, dainty gold necklace, small camel structured handbag, hair styled in soft waves, in a bright Scandinavian-style bedroom, white linen bedding, oak nightstand, floor-to-ceiling window with sheer curtains, eucalyptus plant in clay pot, soft morning light streaming through window, neutral palette of cream beige and warm wood, shot type: cowboy shot mid-thigh up, camera motion: smooth 90-degree arc around subject, action: mirror outfit check, full polish, confident, fit-check energy, amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, slightly underexposed, mixed indoor lighting (warm tungsten with cool window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, washed-out neutral white balance, mild jpeg compression, faint sensor noise, posted to a friend's instagram story, no professional retouching, not a model shoot, no studio lighting
+  ```
+
+## 2026-05-07T14:35:32 — P22 (LoRA)
+
+- backend: replicate-flux-lora
+- model: `dev`
+- aspect: `9:16`
+- guidance: `None`
+- lora_scale: `0.9`
+- saved:
+  - `personas/sierra-frost/content-queue/2026-05-07_P22_lora_v1.png`
+- prompt:
+  ```
+  SIERRA_FROST_V1, 25 year old woman, blonde mid-length hair with soft beachy waves and a few flyaway strands at the hairline, light blue-green eyes with slight asymmetry between left and right, lightly-tanned skin with visible pores on the nose and cheeks, peach fuzz catching the light, faint under-eye circles, mild T-zone shine, slight nostril asymmetry, small natural lip line, dainty gold jewelry, fit Pilates body but not overly defined, unposed expression unless otherwise specified, looking slightly off-camera, candid not posed, wearing fitted navy midi dress with cream cropped blazer, nude pointed-toe heels, dainty gold necklace, small camel structured handbag, hair styled in soft waves, at a small marble cafe table near a window, MacBook open with a clean writing app on screen (no legible text), latte in ceramic cup, leather journal beside laptop, soft window light, blurred warm interior in background, intimate productive atmosphere, shot type: medium shot, camera motion: slow dolly push toward subject's face, action: writing in journal at sidewalk cafe table, golden hour, palm shadow, amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, slightly underexposed, mixed indoor lighting (warm tungsten with cool window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, washed-out neutral white balance, mild jpeg compression, faint sensor noise, posted to a friend's instagram story, no professional retouching, not a model shoot, no studio lighting
+  ```
+

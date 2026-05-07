@@ -333,6 +333,10 @@ def render_quote_card(unit_dir: pathlib.Path, plan: dict[str, Any]) -> pathlib.P
 
     Used for X / IG single-post / Pinterest. Returns the path or None
     if visual.png is missing.
+
+    Uses drawtext's `textfile=` parameter to avoid the ffmpeg-quoting
+    nightmare with colons (e.g. '2:51'), apostrophes, and special chars
+    in tag_lines.
     """
     visual = unit_dir / "visual.png"
     if not visual.is_file():
@@ -340,18 +344,22 @@ def render_quote_card(unit_dir: pathlib.Path, plan: dict[str, Any]) -> pathlib.P
     tag = plan.get("tag_line", "")
     if not tag:
         return None
-    out = unit_dir / "repurpose" / "quote_card.png"
-    out.parent.mkdir(parents=True, exist_ok=True)
+    out_dir = unit_dir / "repurpose"
+    out_dir.mkdir(parents=True, exist_ok=True)
+    out = out_dir / "quote_card.png"
 
-    # Use ffmpeg to overlay tag_line on a 1080x1920 fit of visual.png.
+    # Write the tag_line to a temp text file — drawtext reads it via
+    # `textfile=`, sidestepping ffmpeg filter-string escaping entirely.
+    tag_file = out_dir / ".quote_card_text.txt"
+    tag_file.write_text(tag)
+
     font = "/usr/share/fonts/truetype/roboto/unhinted/RobotoTTF/Roboto-Black.ttf"
     fc = (
         f"[0:v]scale=1080:1920:force_original_aspect_ratio=increase,"
         f"crop=1080:1920,setsar=1,format=rgb24,"
-        f"drawbox=x=0:y=0:w=iw:h=ih:color=black@0.35:t=fill,"
-        f"drawtext=fontfile={font}:text='{tag.replace(chr(39), chr(92)+chr(39))}':"
-        f"fontcolor=white:fontsize=72:x=(w-text_w)/2:y=h-text_h-180:"
-        f"box=1:boxcolor=black@0.55:boxborderw=20"
+        f"drawbox=x=0:y=h-180:w=iw:h=180:color=black@0.7:t=fill,"
+        f"drawtext=fontfile={font}:textfile={tag_file}:"
+        f"fontcolor=white:fontsize=64:x=(w-text_w)/2:y=h-text_h-58"
         f"[v]"
     )
     cmd = [
@@ -368,6 +376,12 @@ def render_quote_card(unit_dir: pathlib.Path, plan: dict[str, Any]) -> pathlib.P
     except subprocess.CalledProcessError as e:
         print(f"[repurpose] quote-card render failed: {e}", file=sys.stderr)
         return None
+    finally:
+        # Clean up temp text file (don't let it pollute the repurpose dir).
+        try:
+            tag_file.unlink()
+        except FileNotFoundError:
+            pass
 
 
 # ---- Orchestration ---------------------------------------------------------

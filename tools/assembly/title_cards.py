@@ -59,6 +59,14 @@ BITS = {
         "tag":     "BREAKING",
         "sting_hz": 620,         # mock-news cue
     },
+    "sierra_apologist": {
+        "plate":   "0xD9C2A6",   # warm sandstone (between Sierra Reads cream + Dad amber)
+        "text":    "0x2B1F12",   # deep umber
+        "accent":  "0xA8513C",   # rust accent
+        "lines":   ("SIERRA APOLOGIST", "DEFENDS THE INDEFENSIBLE"),
+        "tag":     "EP. {ep}",
+        "sting_hz": 540,         # mid-warm tone — between Sierra Reads bell + Dad buzz
+    },
 }
 
 
