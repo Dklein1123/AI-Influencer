@@ -1,0 +1,34 @@
+{
+  "template_id": "P25",
+  "bit_id": "sierra_apologist",
+  "episode": 1,
+  "rationale": "Sierra Apologist EP. 1 — 'Decenter Men, Apologist's Edition' (Berner T6 frame). Repeatable weekly engine: 'I'm a [trend] apologist' brag-claim, list 'red flags', land on self-indictment receipt. Time-stamp tag (2:14 → 2:51) is the screenshot driver. P25 (bedroom mirror outfit check, Wardrobe A cream blazer, cowboy shot mid-thigh up, smooth 90° arc) is the visual — Sierra checking herself out in the mirror reads as 'I'm thriving / hot girl summer' framing, perfectly contrasts the time-stamp punchline. Was P15 originally; switched to P25 for visual variety + NSFW-filter safety (P15 Wardrobe E slip-dress in tight close-up triggered Replicate's filter).",
+  "duration_s": 18.0,
+  "visual_note": "P15 (vanity, getting-ready, lipstick mid-application) is the better visual for this bit — Sierra IS doing the lifestyle ritual (pink robe, half-applied face mask, vanity skincare) while delivering. The visual reinforces the apologist frame: she IS the audience for this lane.",
+  "script_chunks": [
+    {"start": 0.0,  "end": 3.0,  "text": "I'M A DECENTER-MEN APOLOGIST."},
+    {"start": 3.0,  "end": 7.0,  "text": "HE'S NOT ON MY VISION BOARD."},
+    {"start": 7.0,  "end": 11.0, "text": "HE'S NOT IN MY 5-YEAR PLAN."},
+    {"start": 11.0, "end": 14.0, "text": "I HAVEN'T THOUGHT ABOUT HIM IN HOURS."},
+    {"start": 14.0, "end": 16.0, "text": "HE HASN'T TEXTED SINCE 2:14."},
+    {"start": 16.0, "end": 18.0, "text": "IT'S 2:51."}
+  ],
+  "voiceover_text": "I'm a decenter-men apologist. He's not on my vision board. He's not in my five-year plan. I haven't thought about him in HOURS. He hasn't texted back since two-fourteen. It's two-fifty-one. I am SO decentered.",
+  "caption": "decentering men is going great for me ⏰ 2:14 → 2:51",
+  "hashtags": ["#datingtok", "#decentermen", "#apologist", "#fyp"],
+  "tag_line": "It's 2:51. I am SO decentered.",
+  "comedic_devices_used": [
+    "Berner 'apologist' reframe — acknowledge red flag, re-class as feature",
+    "time-stamp specific (2:14 → 2:51) = the receipt = screenshot tag",
+    "soft pink robe + face mask visual = the audience IS the character",
+    "self-indictment button — she IS the apologist, that's the joke"
+  ],
+  "franchise_value": "Sierra Apologist is a weekly engine — drop in any trend phrase, run the same 4-beat structure. Future eps: clean girl apologist / tradwife apologist / soft launch apologist / mob wife apologist / old money apologist. Compounds the bit identity over 6-8 weeks.",
+  "trend_anchor": {
+    "source": "TikTok #datingtok rank 1",
+    "creator": "@sukainalouisa",
+    "plays": 1800000,
+    "trend_phrase": "decenter men"
+  },
+  "writer_micro_edits": "If technically possible: cut to phone screen showing 'last seen 2:14 PM' between chunks 3 and 4. Phone-screen overlay = the receipt visual. If not, the time stamp on screen + on-screen-text-as-receipt is enough."
+}

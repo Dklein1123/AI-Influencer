@@ -1,0 +1,91 @@
+{
+  "pulse_date": "2026-05-07",
+  "rank": 1,
+  "trend_item": {
+    "source": "TikTok #datingtok",
+    "label": "@datetoklive \u00b7 122,700 plays \u00b7 \ud83d\udc49 \u201cSingle ? This post is for you.\u201d  \t\u2022\tTag 3 single friends \t\u2022\tComment age + city \t\u2022\tRepost to be seen locally    #fyppppppppppppppppppppppp",
+    "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+    "raw": {
+      "hashtag": "datingtok",
+      "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+      "author": "datetoklive",
+      "caption": "\ud83d\udc49 \u201cSingle ? This post is for you.\u201d\n\n\t\u2022\tTag 3 single friends\n\t\u2022\tComment age + city\n\t\u2022\tRepost to be seen locally\n\n \n#fypppppppppppppppppppppppppppppp #fyp #date #viral #date ",
+      "plays": 122700,
+      "likes": 942,
+      "comments": 902,
+      "shares": 114,
+      "created_at": "2026-03-30T00:25:06.000Z",
+      "music": "Single Ladies (Put a Ring on It)"
+    }
+  },
+  "plan": {
+    "template_id": "P56",
+    "bit_id": "sierra_apologist",
+    "rationale": "Sierra Apologist EP. 2 \u2014 Berner T6 frame on 'decentering' (@domovang 766k plays). Sierra reframes ghosting as 'holy discernment' \u2014 Catholic-coded specific. P56 visual: SIERRA TALKING TO CAMERA FROM HER PARKED CAR (Wardrobe C post-Pilates). Confessional dashboard angle = perfect mismatch between the 'thriving' framing and the actual content (she's literally hiding in her car ghosting him). The visual is the joke before the script lands.",
+    "duration_s": 18,
+    "script_chunks": [
+      {
+        "start": 0.0,
+        "end": 2.5,
+        "text": "I'M A DECENTERING APOLOGIST."
+      },
+      {
+        "start": 2.5,
+        "end": 5.0,
+        "text": "THEY SAY IT'S MANIPULATIVE."
+      },
+      {
+        "start": 5.0,
+        "end": 7.0,
+        "text": "OR SELFISH."
+      },
+      {
+        "start": 7.0,
+        "end": 9.0,
+        "text": "MAYBE A BIT COLD."
+      },
+      {
+        "start": 9.0,
+        "end": 11.5,
+        "text": "I CALL IT HOLY DISCERNMENT."
+      },
+      {
+        "start": 11.5,
+        "end": 14.0,
+        "text": "YES, HE TEXTED 16 TIMES."
+      },
+      {
+        "start": 14.0,
+        "end": 16.0,
+        "text": "HE THINKS I'M AT BRUNCH."
+      },
+      {
+        "start": 16.0,
+        "end": 18.0,
+        "text": "I WAS AT ADORATION."
+      }
+    ],
+    "voiceover_text": "I'm a decentering apologist. They say it's manipulative. Or selfish. Maybe a bit cold. I call it holy discernment. Yes, he did text 16 times. He thinks I'm at brunch. I was at adoration. Try that once.",
+    "caption": "They call it 'playing games.' I call it ensuring he's ready for the full Sierra Frost experience. Some things are worth the wait.",
+    "tag_line": "Try that once.",
+    "hashtags": [
+      "#discernment",
+      "#datingtok",
+      "#decentermen",
+      "#thriving"
+    ],
+    "slop_score": 0.0,
+    "calendar_meta": {
+      "week_of": "2026-05-11",
+      "day_idx": 2,
+      "day": "Tuesday",
+      "post_date": "2026-05-12",
+      "trend_anchor": {
+        "source": "TikTok #datingtok",
+        "trend_phrase": "decenter men",
+        "creator": "@domovang",
+        "plays": 766100
+      }
+    }
+  }
+}

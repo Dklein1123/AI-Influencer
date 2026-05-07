@@ -1,0 +1,58 @@
+{
+  "pulse_date": "2026-05-07",
+  "rank": 1,
+  "trend_item": {
+    "source": "TikTok #femininity",
+    "label": "@iamashleylima \u00b7 307,100 plays \u00b7 He doesn\u2019t fall in love with your hustle \u2014 he melts for your softness. \ud83d\udc97 Vulnerability is power, not weakness. Learn how to reconnect with y",
+    "url": "https://www.tiktok.com/@iamashleylima/video/7573848842362309943",
+    "raw": {
+      "hashtag": "femininity",
+      "url": "https://www.tiktok.com/@iamashleylima/video/7573848842362309943",
+      "author": "iamashleylima",
+      "caption": "He doesn\u2019t fall in love with your hustle \u2014 he melts for your softness. \ud83d\udc97\nVulnerability is power, not weakness.\nLearn how to reconnect with your feminine energy \u2014 link in bio \ud83d\udc51\n\n#feminineenergy #relationshiptok #softfeminine #femininewoman #christianmarriage  ",
+      "plays": 307100,
+      "likes": 21600,
+      "comments": 495,
+      "shares": 7178,
+      "created_at": "2025-11-18T00:02:12.000Z"
+    }
+  },
+  "plan": {
+    "template_id": "P3",
+    "rationale": "stub plan (dry-run, no Claude key)",
+    "duration_s": 16,
+    "script_chunks": [
+      {
+        "start": 0.0,
+        "end": 2.5,
+        "text": "REAL TAKE:"
+      },
+      {
+        "start": 2.5,
+        "end": 6.5,
+        "text": "(Sierra response to trend)"
+      },
+      {
+        "start": 6.5,
+        "end": 10.5,
+        "text": "(supporting line)"
+      },
+      {
+        "start": 10.5,
+        "end": 14.0,
+        "text": "(payoff line)"
+      },
+      {
+        "start": 14.0,
+        "end": 16.0,
+        "text": "FOLLOW FOR MORE"
+      }
+    ],
+    "voiceover_text": "Real take. Sierra response to: @iamashleylima \u00b7 307,100 plays \u00b7 He doesn\u2019t fall in love with your hustle \u2014 he m. Supporting line. Payoff. Follow for more.",
+    "caption": "[stub] Sierra take on: @iamashleylima \u00b7 307,100 plays \u00b7 He doesn\u2019t fall in love with your hustle \u2014 he m",
+    "hashtags": [
+      "#stub",
+      "#dryrun"
+    ]
+  }
+}

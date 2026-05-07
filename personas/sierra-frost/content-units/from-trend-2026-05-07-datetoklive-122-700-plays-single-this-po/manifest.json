@@ -1,0 +1,78 @@
+{
+  "pulse_date": "2026-05-07",
+  "rank": 1,
+  "trend_item": {
+    "source": "TikTok #datingtok",
+    "label": "@datetoklive \u00b7 122,700 plays \u00b7 \ud83d\udc49 \u201cSingle ? This post is for you.\u201d  \t\u2022\tTag 3 single friends \t\u2022\tComment age + city \t\u2022\tRepost to be seen locally    #fyppppppppppppppppppppppp",
+    "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+    "raw": {
+      "hashtag": "datingtok",
+      "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+      "author": "datetoklive",
+      "caption": "\ud83d\udc49 \u201cSingle ? This post is for you.\u201d\n\n\t\u2022\tTag 3 single friends\n\t\u2022\tComment age + city\n\t\u2022\tRepost to be seen locally\n\n \n#fypppppppppppppppppppppppppppppp #fyp #date #viral #date ",
+      "plays": 122700,
+      "likes": 942,
+      "comments": 902,
+      "shares": 114,
+      "created_at": "2026-03-30T00:25:06.000Z",
+      "music": "Single Ladies (Put a Ring on It)"
+    }
+  },
+  "plan": {
+    "template_id": "P32",
+    "bit_id": "sierra_reads",
+    "rationale": "T3 Barone Diagnostic: Sierra defines who *does* need the trend's call to action, then asserts she is *not* one of them; P32 fits her dry, observational commentary.",
+    "duration_s": 18,
+    "script_chunks": [
+      {
+        "start": 0.0,
+        "end": 2.5,
+        "text": "THIS 'SINGLE' POST?"
+      },
+      {
+        "start": 2.5,
+        "end": 4.5,
+        "text": "TAG THREE FRIENDS?"
+      },
+      {
+        "start": 4.5,
+        "end": 7.0,
+        "text": "STILL ON HINGE?"
+      },
+      {
+        "start": 7.0,
+        "end": 9.0,
+        "text": "AFTER TWENTY-FOUR."
+      },
+      {
+        "start": 9.0,
+        "end": 12.0,
+        "text": "STANLEY, A PERSONALITY?"
+      },
+      {
+        "start": 12.0,
+        "end": 14.5,
+        "text": "NO EYES AT EREWHON."
+      },
+      {
+        "start": 14.5,
+        "end": 16.5,
+        "text": "READER, I AM NOT."
+      },
+      {
+        "start": 16.5,
+        "end": 18.0,
+        "text": "SOME OF US JUST KNOW."
+      }
+    ],
+    "voiceover_text": "This 'Single? This post is for you' trend. The girls who need to tag three single friends are women who still use Hinge after twenty-four. Who think a Stanley sage tumbler is a personality. Who haven't learned to make eye contact at Erewhon. And reader, I am not one of them. Some of us just know better.",
+    "caption": "Some trends are just not for us, ladies. If you know, you know. High-effort femininity isn't about tagging friends, it's about knowing your worth.",
+    "tag_line": "Some of us just know better.",
+    "hashtags": [
+      "#datingtok",
+      "#datingadvice",
+      "#highvaluewoman",
+      "#fyp"
+    ]
+  }
+}

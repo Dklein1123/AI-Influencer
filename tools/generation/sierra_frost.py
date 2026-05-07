@@ -10,34 +10,58 @@ DISPLAY_NAME = "Sierra Frost"
 SOUL_ID_ENV_VAR = "SIERRA_SOUL_ID"
 
 # Universal blocks paste into every prompt.
+#
+# DESIGN NOTE (2026-05-07 anti-slop refactor):
+# Flux Dev is guidance-distilled toward "professional / pretty." Default
+# prompts produce AI-slop: airbrushed skin, perfect symmetry, beauty light.
+# We actively prompt DOWN toward "snapshot" not "photo." Specific anti-slop
+# moves embedded below: filename-hack ("IMG_2222.HEIC"), explicit asymmetry
+# + skin-texture language, indoor/mixed-light over golden-hour, "amateur
+# snapshot photo" trigger from the Spectrum0001 Civitai community LoRA, and
+# critically — NO photographer/lens/aperture jargon (those produce
+# editorial polish). See docs/research/realism-stack.md for the full
+# rationale and source list.
 
 BASE_BLOCK = (
-    "24-year-old woman, blonde mid-length hair with soft beachy waves, "
-    "light blue-green eyes, glowy lightly-tanned skin, full lips with "
-    "glossy nude makeup, polished natural makeup with soft contour and "
-    "warm neutral eyeshadow, dainty gold jewelry, hourglass figure, fit "
-    "Pilates body, warm friendly expression unless otherwise specified"
+    "25 year old woman, blonde mid-length hair with soft beachy waves and "
+    "a few flyaway strands at the hairline, light blue-green eyes with "
+    "slight asymmetry between left and right, lightly-tanned skin with "
+    "visible pores on the nose and cheeks, peach fuzz catching the light, "
+    "faint under-eye circles, mild T-zone shine, slight nostril asymmetry, "
+    "small natural lip line, dainty gold jewelry, fit Pilates body but not "
+    "overly defined, unposed expression unless otherwise specified, "
+    "looking slightly off-camera, candid not posed"
 )
 
+# Flux Dev largely ignores negative prompts at distilled CFG=1 (which is
+# what we use). The functional way to "subtract" is via positive-prompt
+# language ("amateur, not editorial"). This negative is here for backends
+# that DO use it (Higgsfield Soul 2) and for documentation; Replicate
+# Flux runs without applying it unless we wire DynamicThresholding + true
+# CFG, which costs 2x for marginal gain.
 NEGATIVE_PROMPT = (
-    "deformed hands, extra fingers, distorted face, asymmetric eyes, "
-    "plastic skin, overly smoothed skin, uncanny valley, harsh studio "
-    "lighting, neon colors, heavy contour, drag-style makeup, dark "
-    "lipstick, gothic aesthetic, alt fashion, streetwear logos, Y2K "
-    "aesthetic, club wear, lingerie, bikini, nudity, named celebrities, "
-    "named politicians, recognizable government interiors, identifiable "
-    "real people, MAGA hat with legible text, political signage with "
-    "legible text, election year graphics, partisan iconography, weapons, "
-    "drugs, alcohol bottles in foreground, watermarks, text overlays, "
-    "low resolution, blurry, oversaturated"
+    "airbrushed, plastic skin, smooth skin, glossy, wax figure, "
+    "beauty filter, instagram filter, perfect symmetry, perfectly symmetric "
+    "eyes, retouched, professional studio lighting, softbox lighting, "
+    "ring light, ad campaign, magazine cover, 3d render, cgi, illustration, "
+    "drawn, painted, AI-generated look, deformed hands, extra fingers, "
+    "neon colors, drag-style makeup, dark lipstick, gothic, alt fashion, "
+    "streetwear logos, Y2K aesthetic, club wear, lingerie, bikini, nudity, "
+    "named celebrities, named politicians, recognizable government interiors, "
+    "MAGA hat with legible text, partisan iconography, weapons, drugs, "
+    "alcohol bottles in foreground, watermarks, text overlays, low resolution, "
+    "blurry, oversaturated"
 )
 
+# STYLE_SUFFIX is now the SNAPSHOT scaffold, not editorial scaffold.
+# Every line here is calibrated to break Flux's beauty-mode default.
 STYLE_SUFFIX = (
-    "shot on Sony A7IV, 50mm prime lens, shallow depth of field f/2.0, "
-    "soft natural lighting, golden hour or warm window light, neutral "
-    "color palette, candid editorial composition, cinematic but warm, "
-    "polished but not stiff, high detail, ultra realistic photographic "
-    "quality"
+    "amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, "
+    "slightly underexposed, mixed indoor lighting (warm tungsten with cool "
+    "window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, "
+    "washed-out neutral white balance, mild jpeg compression, faint sensor "
+    "noise, posted to a friend's instagram story, no professional retouching, "
+    "not a model shoot, no studio lighting"
 )
 
 # Aspect ratio per output type.
@@ -114,6 +138,39 @@ SETTINGS = {
         "cup, leather journal beside laptop, soft window light, blurred "
         "warm interior in background, intimate productive atmosphere"
     ),
+    "S6": (  # Car Interior — Driver's Seat (Range Rover / SUV style)
+        "inside the driver's seat of a clean modern SUV interior (Range "
+        "Rover / Tahoe coded, cream leather, no badge visible), parked "
+        "or about to drive, hands resting on steering wheel or in lap, "
+        "soft afternoon daylight through windshield, faint reflection "
+        "on glass, blurred parking lot or driveway visible behind, no "
+        "other people in frame"
+    ),
+    "S7": (  # Bed — Casual / Phone-in-hand
+        "lying or sitting up on a made bed, white linen bedding, "
+        "phone in hand or face-down on duvet, soft afternoon window "
+        "light, hair down loose, casual at-home vibe, no shoes, "
+        "neutral palette of cream and warm beige"
+    ),
+    "S8": (  # Bathroom — Skincare / Getting Ready
+        "at a clean modern bathroom vanity, marble counter, large "
+        "framed mirror with warm bulbs, skincare bottles arranged "
+        "neatly (no legible labels), soft warm overhead light, neutral "
+        "stone palette, towel folded nearby, getting-ready energy"
+    ),
+    "S9": (  # Kitchen — Morning Coffee / Casual Counter
+        "at a bright modern kitchen counter, marble or quartz island, "
+        "ceramic mug of coffee in hand, oat milk carton or french press "
+        "visible in soft focus, morning light through tall window, "
+        "muted greige cabinetry behind, no other people in frame, "
+        "candid morning-routine atmosphere"
+    ),
+    "S10": (  # Outdoor Walking — Phone-Selfie POV
+        "walking on a tree-lined sidewalk or quiet street, holding "
+        "phone in selfie position, slight motion blur on hand, golden "
+        "afternoon light filtering through trees, neutral residential "
+        "background, no traffic visible, candid handheld feel"
+    ),
 }
 
 # ---- Templates P1-P50 (mirrors viral-playbook organization) ----
@@ -175,6 +232,17 @@ TEMPLATES = {
     "P48": {"setting": "S3", "wardrobe": "A", "shot": "cowboy shot mid-thigh up", "motion": "slow dolly pull back", "pose": "steps of marble building exterior, golden afternoon, polished editorial", "pillar": 2, "kind": "hero"},
     "P49": {"setting": "S2", "wardrobe": "E", "shot": "full body", "motion": "smooth 90-degree arc around subject", "pose": "sunset marina, classic red or navy evening dress, hero shot", "pillar": 2, "kind": "hero"},
     "P50": {"setting": "S1", "wardrobe": "D", "shot": "medium close-up", "motion": "static lock-off", "pose": "Sunday morning hero, soft pastel light, dainty cross, thoughtful but warm expression", "pillar": 2, "kind": "hero"},
+    # Block 6 — Natural settings (P51-P57) — added when lipsync went live so
+    # Sierra has talking-head templates beyond bedroom/cafe. These are the
+    # canonical "in car / in bed / getting ready / walking" Sierra-talks-to-
+    # camera setups.
+    "P51": {"setting": "S6", "wardrobe": "A", "shot": "medium close-up centered driver-seat angle", "motion": "static lock-off, shot mounted on dash or passenger seat", "pose": "in driver's seat, looking sideways toward camera mid-thought, hand on steering wheel, slight half-smile, Tesla / Range Rover interior", "pillar": 1, "kind": "tiktok"},
+    "P52": {"setting": "S7", "wardrobe": "C", "shot": "medium close-up", "motion": "static lock-off, propped phone selfie angle", "pose": "lying on bed propped on elbow, phone in opposite hand, hair spread on pillow, deadpan dry expression, no shoes, casual at-home", "pillar": 1, "kind": "tiktok"},
+    "P53": {"setting": "S8", "wardrobe": "neutral", "shot": "medium close-up bathroom mirror angle", "motion": "static lock-off, slight handheld sway", "pose": "applying serum or doing skincare at vanity mirror, hair clipped back, mid-routine pause to look at camera with knowing dry expression", "pillar": 2, "kind": "tiktok"},
+    "P54": {"setting": "S9", "wardrobe": "C", "shot": "medium close-up kitchen counter angle", "motion": "static lock-off", "pose": "leaning on kitchen island holding ceramic mug, mid-sip pause, dry sideways glance, morning-routine vibe, hair loose", "pillar": 2, "kind": "tiktok"},
+    "P55": {"setting": "S10", "wardrobe": "B", "shot": "selfie phone-cam medium close-up", "motion": "loose handheld, slight walking motion in frame", "pose": "walking and holding phone in selfie pose, mid-thought facial expression, hair moving slightly with motion, golden hour", "pillar": 2, "kind": "tiktok"},
+    "P56": {"setting": "S6", "wardrobe": "C", "shot": "medium close-up driver-seat angle", "motion": "static lock-off, parked car", "pose": "parked in driveway / parking lot, phone propped on dash, post-Pilates / post-errand look, talking to camera with dry confessional energy", "pillar": 1, "kind": "tiktok"},
+    "P57": {"setting": "S7", "wardrobe": "neutral", "shot": "medium close-up handheld phone-cam angle", "motion": "static lock-off, propped phone", "pose": "sitting cross-legged in bed at night, hair down, soft warm bedside lamp light, talking to camera with confessional / vulnerable register-shift energy", "pillar": 1, "kind": "tiktok"},
 }
 
 

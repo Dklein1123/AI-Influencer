@@ -29,6 +29,18 @@ import higgsfield_client as hf  # noqa: E402  — import after env load
 
 REPO_ROOT = pathlib.Path(__file__).resolve().parents[2]
 
+# Soul 2's API only accepts these literal width_and_height strings, not free-form
+# aspect ratios. Map persona aspects (e.g. "9:16") to the closest supported size.
+# 4:5 has no exact Soul 2 size — we use 3:4 (1536x2048) as the closest portrait.
+ASPECT_TO_WH = {
+    "9:16": "1152x2048",
+    "16:9": "2048x1152",
+    "1:1": "1536x1536",
+    "3:4": "1536x2048",
+    "4:3": "2048x1536",
+    "4:5": "1536x2048",
+}
+
 
 def _load_persona(name: str) -> ModuleType:
     """Import a persona module by name (e.g. 'sierra-frost' or 'sierra_frost')."""
@@ -86,9 +98,14 @@ def _extract_assets(result: Any) -> list[tuple[str, str]]:
 
     def visit(node: Any) -> None:
         if isinstance(node, dict):
-            url = node.get("url") or node.get("image_url") or node.get("video_url")
+            url = (
+                node.get("rawUrl")
+                or node.get("url")
+                or node.get("image_url")
+                or node.get("video_url")
+            )
             if isinstance(url, str) and url.startswith("http"):
-                ext = "mp4" if any(k in url for k in (".mp4", "video")) else "jpg"
+                ext = "png" if ".png" in url else ("mp4" if any(k in url for k in (".mp4", "video")) else "jpg")
                 found.append((url, ext))
             for v in node.values():
                 visit(v)
@@ -152,20 +169,25 @@ def generate(
         prompt = f"{prompt}, {extra_prompt}"
 
     aspect = aspect_ratio or persona.aspect_for(template_id)
+    if aspect not in ASPECT_TO_WH:
+        raise ValueError(
+            f"unsupported aspect '{aspect}' for {template_id}; "
+            f"Soul 2 accepts {sorted(ASPECT_TO_WH)}"
+        )
+    width_and_height = ASPECT_TO_WH[aspect]
     soul = _soul_id(persona)
 
     app = application or "/v1/text2image/soul"
-    args: dict = {
+    inner: dict = {
+        "model": "soul_2",
         "prompt": prompt,
-        "negative_prompt": persona.NEGATIVE_PROMPT,
-        "aspect_ratio": aspect,
-        "safety_tolerance": 2,
+        "width_and_height": width_and_height,
     }
     if seed is not None:
-        args["seed"] = seed
+        inner["seed"] = seed
     if soul:
-        args["custom_reference_id"] = soul
-        args["custom_reference_strength"] = 1.0
+        inner["soul_id"] = soul
+    args = {"params": inner}
 
     if dry_run:
         return {
@@ -175,7 +197,7 @@ def generate(
         }
 
     client = _client()
-    print(f"[{template_id}] submitting to {app} (aspect={aspect}, soul={'yes' if soul else 'no'})", flush=True)
+    print(f"[{template_id}] submitting to {app} (size={width_and_height}, soul={'yes' if soul else 'no'})", flush=True)
     result = client.subscribe(
         app,
         args,
@@ -195,6 +217,23 @@ def generate(
 
     summary = "ok" if assets else "completed but no assets extracted (inspect log)"
     _append_log(persona, template_id, prompt, app, args, summary, saved, seed)
+
+    # Best-effort sync to the Lovable portal — never fails the generation.
+    try:
+        from tools.sync import supabase_client as sync
+
+        if sync.is_enabled() and assets:
+            url = assets[0][0]  # primary output URL
+            sync.insert_ai_output(
+                title=f"{template_id} — Higgsfield Soul 2",
+                content=f"prompt: {prompt}\nseed: {seed}\noutput: {url}\nsoul_id: {soul or '(none)'}",
+                kind="image",
+                source_prompt=template_id,
+                tags=[template_id, "higgsfield", "soul_2", f"persona-{persona.NAME}"],
+            )
+    except Exception:
+        pass  # sync is best-effort
+
     return {
         "template_id": template_id,
         "saved": [str(p) for p in saved],

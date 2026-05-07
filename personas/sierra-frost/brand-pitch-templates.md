@@ -8,6 +8,15 @@
 disclosed to every brand before any contract is signed. This is non-
 negotiable; the legal cover is worth more than any single deal.
 
+**Voice positioning for brand teams:** Sierra is **comedy-first conservative
+lifestyle** — stand-up cadence on dating, lifestyle, and cultural
+commentary, with serious-register posts on cause-aligned topics
+(loneliness epidemic, anti-grift, online safety; full list in
+`voice-profile.md §1.5`). Brand-deal mental model: think Brett Cooper's
+takes with Tay Conti's timing. Audience comes for the bits, stays for the
+takes. That contrast IS the brand-safety story — every funny post earns
+the next serious one, and vice versa.
+
 ---
 
 ## 1. The disclosure conversation (read first)
@@ -143,17 +152,18 @@ DMs over email; large brands need email.
 *Use for: smaller brands with active social presence, lifestyle products*
 
 ```
-Hi [Brand Name] team — Sierra here, content creator focused on conservative
-lifestyle (faith, fitness, dating, traditional values). My audience is
-exactly who buys [your product] — ~8K followers across TikTok and IG, women
-22–45, mostly US, very strong purchase intent.
+Hi [Brand Name] team — Sierra here, comedy-leaning conservative-lifestyle
+creator. Dry takes on dating, faith, fitness, and the trad lane I happen
+to live in. ~8K combined TikTok + IG, women 22–45, US, very strong
+purchase intent. Engagement leans high (audience shares the bits).
 
 Quick transparency note: Sierra Frost is a digital persona (AI-assisted
-with full disclosure in bio). Real content strategy, real audience, total
-brand-control during campaigns.
+with full disclosure in bio). Real strategy, real audience, total brand-
+control during campaigns.
 
-I'd love to put together a content drop for [specific product]. Mind if I
-send a quick proposal with rates and ideas?
+[Your product] feels like it'd land in a "things I actually use" post or
+a Sunday newsletter feature. Mind if I send a quick proposal with rates
+and ideas?
 ```
 
 ### DM Template B — Pillar-specific (Faith)
@@ -175,15 +185,39 @@ Would your team be open to a content collaboration? I can send a deck.
 *Use for: supplements, wellness, dating-app alternatives, women's health*
 
 ```
-Hey [Brand] — Sierra Frost here, content creator with a feminine-conservative
-audience that's *exactly* the one [product category] is trying to reach.
-~8K combined TikTok + IG, women 22–35, very high engagement on
-dating/wellness content.
+Hey [Brand] — Sierra Frost here. I do comedic-conservative dating and
+wellness commentary — think dry observation on the modern dating market,
+mock-academic field reports, the occasional roast of "Brad in finance."
+Audience is exactly your demo: ~8K combined TikTok + IG, women 22–35,
+very high engagement on dating/wellness content.
 
 Note: Sierra is a digital persona (disclosed in bio, AI-assisted face).
-Audience is fully informed. Brand-side: zero off-brand-behavior risk.
+Audience is fully informed. Brand-side: zero off-brand-behavior risk;
+the comedy lane is also the brand-safety story — punching at trends,
+never at people.
 
 Open to chatting about a campaign? Happy to send rates + ideas.
+```
+
+### DM Template F — Comedy-aligned brands
+*Use for: non-alc / mocktails, dating apps positioning against Bumble/Hinge,
+faith-coded humor brands, lifestyle brands with comedy-leaning marketing*
+
+```
+Hi [Brand] — Sierra here. My lane is comedy-first conservative lifestyle
+(dating + commentary), so when I saw [specific recent campaign / product
+angle], I thought it'd actually fit my audience without forcing it.
+
+Most "creator content" with my demo lands as either earnest sermon or
+copy-paste UGC. Mine doesn't — it lands as a bit. Audience saves and
+shares (≥40% save rate on the comedy posts) which means your product
+gets surfaced organically post-campaign.
+
+Disclosure: digital persona, AI-assisted, full bio transparency. Real
+strategy, real audience, predictable on-brand-during-contract behavior.
+
+Want me to send a 1-pager with rates + 3 specific bit ideas tied to
+[your product]?
 ```
 
 ### DM Template D — The follow-up (after 4 days, no response)

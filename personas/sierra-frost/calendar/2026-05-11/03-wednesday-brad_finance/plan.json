@@ -1,0 +1,33 @@
+{
+  "template_id": "P32",
+  "bit_id": "brad_finance",
+  "rationale": "Brad From Finance EP. 2 — Berner T6 apologist frame applied to Brad. Defends Brad's 'concise' texting as devotion ('a single K is love'). The 'making OUR millions' is the screen-shot punchline (she's already mentally married to Brad). P32 bed-mid-coffee for the dry sideways-glance reaction visual.",
+  "duration_s": 17,
+  "script_chunks": [
+    {"start": 0.0, "end": 2.5, "text": "I'M A BRAD-IN-FINANCE APOLOGIST."},
+    {"start": 2.5, "end": 5.0, "text": "THEY SAY MEN MOVE WITH CLARITY."},
+    {"start": 5.0, "end": 7.0, "text": "BRAD'S RUNNING A HEDGE FUND."},
+    {"start": 7.0, "end": 9.5, "text": "EIGHTEEN-HOUR DAYS."},
+    {"start": 9.5, "end": 11.5, "text": "THREE TIME ZONES."},
+    {"start": 11.5, "end": 13.5, "text": "HIS TEXTS ARE… CONCISE."},
+    {"start": 13.5, "end": 15.5, "text": "A SINGLE 'K' IS LOVE."},
+    {"start": 15.5, "end": 17.0, "text": "HE'S MAKING OUR MILLIONS."}
+  ],
+  "voiceover_text": "I'm a Brad-in-finance apologist. They say men move with clarity. Brad's running a hedge fund. Eighteen-hour days. Three time zones. His texts are... concise. A single 'K' is love. He's not dragging his feet. He's making our millions.",
+  "caption": "Brad's not ignoring you, he's allocating. The K means yes. The silence means strategy. My peace is not negotiable.",
+  "tag_line": "My peace is not negotiable.",
+  "hashtags": ["#bradfromfinance", "#datingtok", "#discernment", "#fyp"],
+  "slop_score": 0.0,
+  "calendar_meta": {
+    "week_of": "2026-05-11",
+    "day_idx": 3,
+    "day": "Wednesday",
+    "post_date": "2026-05-13",
+    "trend_anchor": {
+      "source": "TikTok #datingtok",
+      "creator": "@corytalksnow",
+      "plays": 664100,
+      "trend_phrase": "men move with clarity"
+    }
+  }
+}

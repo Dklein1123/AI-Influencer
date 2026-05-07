@@ -1,0 +1,81 @@
+{
+  "template_id": "P32",
+  "bit_id": "sierra_reads",
+  "rationale": "T3 Barone Diagnostic: The trend is about 'decent men' which implies a diagnosis of what makes a man 'decent' or not, and Sierra identifies with this categorization.",
+  "duration_s": 18,
+  "script_chunks": [
+    {
+      "start": 0.0,
+      "end": 2.0,
+      "text": "DECENT MEN ARE WOMEN WHO"
+    },
+    {
+      "start": 2.0,
+      "end": 4.5,
+      "text": "OWN THEIR OWN LE CREUSET."
+    },
+    {
+      "start": 4.5,
+      "end": 7.0,
+      "text": "CAN EXPLAIN THE"
+    },
+    {
+      "start": 7.0,
+      "end": 9.5,
+      "text": "FINANCIAL STATE OF"
+    },
+    {
+      "start": 9.5,
+      "end": 11.5,
+      "text": "THEIR 401K."
+    },
+    {
+      "start": 11.5,
+      "end": 14.0,
+      "text": "AND READER, I AM"
+    },
+    {
+      "start": 14.0,
+      "end": 16.0,
+      "text": "ONE OF THEM."
+    },
+    {
+      "start": 16.0,
+      "end": 18.0,
+      "text": "I AM SO DECENTERED."
+    }
+  ],
+  "voiceover_text": "Decent men are women who own their own Le Creuset. Can explain the financial state of their 401k. And reader, I am one of them. I am so decentered.",
+  "caption": "Sorry, not sorry. If your love language is tax brackets, I get it. #datingtok #decentermen #datingadvice #fyp",
+  "tag_line": "I am SO decentered.",
+  "hashtags": [
+    "#datingtok",
+    "#decentermen",
+    "#datingadvice",
+    "#fyp"
+  ],
+  "slop_score": 0.0,
+  "calendar_meta": {
+    "week_of": "2026-05-11",
+    "day_idx": 1,
+    "day": "Monday",
+    "post_date": "2026-05-11",
+    "trend_anchor": {
+      "source": "TikTok #datingtok",
+      "label": "@sukainalouisa \u00b7 1,800,000 plays \u00b7 #creatorsearchinsights #datingtips #datingtiktok #decentermen #datingadviceforwomen #relationshiptok #datinglife #datingcoach #feminineenerg",
+      "url": "https://www.tiktok.com/@sukainalouisa/video/7519191247584562454",
+      "raw": {
+        "hashtag": "datingtok",
+        "url": "https://www.tiktok.com/@sukainalouisa/video/7519191247584562454",
+        "author": "sukainalouisa",
+        "caption": "#creatorsearchinsights #datingtips #datingtiktok #decentermen #datingadviceforwomen #relationshiptok #datinglife #datingcoach #feminineenergy #feminineenergycoach #darkfeminine #textingtips ",
+        "plays": 1800000,
+        "likes": 126100,
+        "comments": 1020,
+        "shares": 7068,
+        "created_at": "2025-06-23T17:02:24.000Z",
+        "music": "original sound"
+      }
+    }
+  }
+}

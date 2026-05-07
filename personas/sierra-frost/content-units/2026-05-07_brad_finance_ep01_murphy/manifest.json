@@ -1,0 +1,82 @@
+{
+  "pulse_date": "2026-05-07",
+  "rank": 1,
+  "trend_item": {
+    "source": "TikTok #datingtok",
+    "label": "@datetoklive \u00b7 122,700 plays \u00b7 \ud83d\udc49 \u201cSingle ? This post is for you.\u201d  \t\u2022\tTag 3 single friends \t\u2022\tComment age + city \t\u2022\tRepost to be seen locally    #fyppppppppppppppppppppppp",
+    "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+    "raw": {
+      "hashtag": "datingtok",
+      "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+      "author": "datetoklive",
+      "caption": "\ud83d\udc49 \u201cSingle ? This post is for you.\u201d\n\n\t\u2022\tTag 3 single friends\n\t\u2022\tComment age + city\n\t\u2022\tRepost to be seen locally\n\n \n#fypppppppppppppppppppppppppppppp #fyp #date #viral #date ",
+      "plays": 122700,
+      "likes": 942,
+      "comments": 902,
+      "shares": 114,
+      "created_at": "2026-03-30T00:25:06.000Z",
+      "music": "Single Ladies (Put a Ring on It)"
+    }
+  },
+  "plan": {
+    "template_id": "P12",
+    "bit_id": "brad_finance",
+    "episode": 1,
+    "rationale": "Brad From Finance EP. 1 \u2014 'Murphy the Goldendoodle' (writer-agent Draft 4). Negation-that-confirms: Sierra delivers 'Brad From Finance is decentered. I do not think about Brad.' while every detail confirms she has a full dossier on his life. P12 (cafe medium close-up, Wardrobe A cream cropped blazer + navy underneath, looking up from MacBook with faint smile) is the visual \u2014 looks like a creator about to deliver a 'report.' Newscaster-coded. Was P32 originally; switched to P12 to avoid the bedroom+athleisure NSFW filter and because cafe/desk fits the Brad newscaster bit better thematically.",
+    "duration_s": 17.0,
+    "script_chunks": [
+      {
+        "start": 0.0,
+        "end": 2.5,
+        "text": "BRAD FROM FINANCE IS DECENTERED."
+      },
+      {
+        "start": 2.5,
+        "end": 5.0,
+        "text": "I DO NOT THINK ABOUT BRAD."
+      },
+      {
+        "start": 5.0,
+        "end": 7.5,
+        "text": "I DO NOT KNOW BRAD GOT A DOG."
+      },
+      {
+        "start": 7.5,
+        "end": 10.0,
+        "text": "A GOLDENDOODLE. NAMED MURPHY."
+      },
+      {
+        "start": 10.0,
+        "end": 12.5,
+        "text": "I DO NOT KNOW MURPHY'S BIRTHDAY."
+      },
+      {
+        "start": 12.5,
+        "end": 15.0,
+        "text": "MARCH 14TH. A PISCES."
+      },
+      {
+        "start": 15.0,
+        "end": 17.0,
+        "text": "BRAD WHO?"
+      }
+    ],
+    "voiceover_text": "Brad From Finance is decentered. I do not think about Brad. I do not know Brad got a dog \u2014 a goldendoodle, named Murphy. I do not know Murphy's birthday is March 14th. A Pisces. Brad who?",
+    "caption": "Murphy if you're seeing this happy belated \ud83d\udc15",
+    "hashtags": [
+      "#datingtok",
+      "#bradfromfinance",
+      "#datingadvice",
+      "#fyp"
+    ],
+    "tag_line": "Brad who?",
+    "comedic_devices_used": [
+      "Brad-from-finance recurring-character (\u00a75.5)",
+      "negation-that-confirms \u2014 every denial is a receipt",
+      "escalating specificity (dog \u2192 breed \u2192 name \u2192 birthday \u2192 astrological sign)",
+      "the 'Brad who?' deadpan button"
+    ],
+    "render_when": "Wednesday \u2014 3rd post in the bit-rotation week",
+    "writer_micro_edit": "If technically possible, add a one-frame cut to Sierra holding her phone face-down on the cafe table when she says 'Brad who?' \u2014 gives the voiceover a physical lie to point at."
+  }
+}

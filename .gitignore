@@ -21,6 +21,14 @@ personas/*/content-queue/*.jpg
 personas/*/content-queue/*.jpeg
 personas/*/content-queue/*.webp
 personas/*/content-queue/*.gif
+personas/*/content-queue/*.ass
+personas/*/content-queue/*.wav
+personas/*/content-queue/*.mp3
+
+# LoRA training intermediates
+tools/lora/training_set/
+tools/lora/training_set.zip
+personas/*/lora-bakeoff/
 personas/*/reference-images/*.jpg
 personas/*/reference-images/*.jpeg
 personas/*/reference-images/*.png
