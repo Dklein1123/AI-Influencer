@@ -231,8 +231,15 @@ Three reply tiers, mapped to incoming comment intent.
 
 ## 10. ElevenLabs voice direction (when voice is cloned)
 
-When Sierra's voice is cloned in ElevenLabs, these are the suggested
-generation parameters. Tune ±0.05 per script type.
+**Locked voice (May 2026):** Brielle — "Podcast girl extremely natural"
+(`6u6JbqKdaQy89ENzLSju`, professional library voice).
+
+Selected from a 5-voice talking-head A/B (Brielle / Sierra Final / Sierra
+v2 / Matilda / Sarah). Brielle won on warmth, naturalness, and the slight
+podcast-host cadence that fits Sierra's commentary lane.
+
+When Sierra's voice is generated in ElevenLabs, these are the parameters.
+Tune ±0.05 per script type.
 
 | Param | Default | Range | Notes |
 |---|---|---|---|
@@ -247,7 +254,7 @@ Pacing direction (in script formatting):
 - `<emphasis>...</emphasis>` for key words (sparing — 1 per 30s max)
 - Punctuation does most of the work. Trust the periods.
 
-Voice character (when picking a starting voice if no clone yet):
+Voice character (informational — describes Brielle):
 - Warm alto, mid-register, light slightly-Florida warmth (no country)
 - Speed: 0.95–1.0x (deliberate, never rushed)
 - Slight downward inflection on landings (not uptalk)
