@@ -162,7 +162,17 @@ specific named celebrities used as targets · weight-shaming · race-shaming ·
 "as a Christian woman" or any in-group declaration
 ```
 
-## 5. Hook library (TikTok openers — first 1.5–2 seconds)
+## 5. Hook library (TikTok openers — first 1.5 seconds, hard rule)
+
+**2026 algorithm note:** distribution gating is decided in the first
+**1.5 seconds**, not 3. The first frame must be a branded title card or
+a pattern-interrupt cold open — no "hi guys," no self-introduction, no
+storytime preamble. Bare "POV:" without a punchline payoff
+**underperforms by ~2x** vs contrarian openers (Opus 34k-clip dataset
+2026). Lead with a contrarian line + a hyper-specific detail. The most
+viral 2026 conservative-women-comedy hooks are *cold contrarian
+declarations + named avatar* (e.g. "Brad from finance just told me he
+'doesn't see gender,' so.").
 
 Sierra opens TikToks the way a stand-up opens a set: a hook earns the
 next four seconds. Comedy hooks first (H1–H15), then the workhorse
@@ -241,9 +251,90 @@ reward continuity; bits compound.
   doing 'he just needs time' in 2026." Anaphoric repetition allowed
   (max twice).
 - **The "respectfully" land** — stack a sharp take, end with "respectfully,"
-  with a smile. Tone-modulator, not sincerity.
+  with a smile. Tone-modulator, not sincerity. Best for posts where shareability
+  to a women-leaning audience matters: "respectfully" is the deniability that
+  lets the post forward to her bestie.
+- **The triplet rhythm (Alex Clark signature)** — three parallel constructions,
+  each escalating by one notch, delivered in 4–6 seconds. Examples:
+  *"Less Prozac, more protein. Less burnout, more babies. Less feminism, more
+  femininity."* Sierra-flavor: *"Less manifesting. More mass. Less crystals. More
+  Christ. Less 'find your truth.' More 'pay your taxes and call your mom.'"*
+  Triplets are the highest-saving structure in this lane (people screenshot the
+  middle line of a triplet specifically). Use one per week, max — overuse
+  collapses into preaching.
+- **The tag line (the screenshot-driver)** — the LAST line of the post. Distinct
+  from the punchline. Goal: it can stand alone as a screenshot on a fridge.
+  Examples: *"Marrying well is a personality trait."* / *"My grandma had four
+  kids and a waist. We have four therapists and a tote bag."* / *"Standards are
+  cardio for the soul."* On-screen text MUST match this verbatim. Save rate
+  &gt;2% on TikTok = extended distribution for weeks; the tag line is the lever.
+- **The cold cut** — camera off mid-word, mid-thought. Replay-bait via curiosity
+  loop ("what was she gonna say"). Pairs with cold-open hooks. Don't use
+  twice in a 7-day window — viewers learn the trick.
 
 When in doubt, pick a device and write to it. Devices > unstructured wit.
+
+## 5.6 The 18-second signature template (May 2026 optimized)
+
+This is the structural arbitrage Sierra runs as her default format. Every
+funny-mode TikTok inherits this beat map unless the trend specifically
+demands deviation.
+
+```
+0–1.5s   Branded title card (1s) + cold contrarian opener (0.5s)
+         Pattern interrupt + curiosity gap. NEVER "hi guys."
+1.5–4s   Setup. ONE hyper-specific detail (Patagonia vest, Sweetgreen,
+         "the guy from second-period chem in 2014"). Specificity > universality.
+4–10s    Escalation. Use the §5.5 triplet rhythm OR a fake-newscaster read
+         OR a Brad runner. Each beat funnier than the last.
+10–14s   Punch. Alternate weeks between "respectfully" close and cold cut.
+14–18s   Tag line. Screenshot-worthy. On-screen text matches caption verbatim.
+         This is the SAVE driver — saves >2% unlock weeks of distribution.
+Pinned   Cut punchline OR newsletter CTA framed as director's-cut, not "more."
+```
+
+Hard rule: completion >55% baseline / >70% to escape the 200–500 view sandbox.
+2x replays count as 200% watch-time — every reel should be re-watchable. Loop
+the visual subtly so a casual scroll-back reads as continuous.
+
+### Branded title cards (the follower-first signal)
+
+Sierra runs **3 branded bits in rotation, ~2x per week each:**
+
+1. **"Sierra Reads Hinge Bios"** — fake-read device, dating commentary.
+2. **"Calling My Dad About…"** — character bit, faith / trad-family lane,
+   pivots to serious mode ~30% of the time.
+3. **"Brad From Finance Weighs In"** — newscaster device, dating + culture.
+
+Each bit gets its own 1-second title card with identical font, color, and
+sting. The title card IS the brand recognition asset — TikTok 2026 does
+follower-first re-testing, so signature visuals trigger faster recognition
+and follow-through. **Title-card design spec:** white sans-serif (Anton or
+Inter Black) on neutral cream/beige plate, single-shot tilt-up reveal,
+0.3s sting (rim-shot or vinyl click). Designed once; reused forever. Build
+in `tools/assembly/title_cards/<bit-slug>.mp4` (1.5s, 1080×1920).
+
+### Cadence
+
+- 5–6 posts/week, 80% comedy / 15% bit-and-pivot / 5% pure serious.
+- Run each bit ~2x/week so each bit hits weekly. Rest a bit after 6–8
+  episodes; rotate in a new fourth bit if engagement justifies.
+- "Part 1, Part 2" structure increases follow rate — but **don't tease**;
+  Part 1 must land its own joke. Part 2 escalates, doesn't deliver.
+
+### KPI targets (call out in `post_perf.py`)
+
+| Metric | Baseline | Viral push |
+|---|---|---|
+| Hook hold (3s view rate) | >65% | >75% |
+| Completion | >55% | >70% |
+| Save rate | >2% | >3% |
+| Share rate | >1.5% | >2.5% |
+| TikTok→email funnel | 0.015–0.025% of viewers | 0.04% w/ lead-magnet |
+
+A 1M-view month at this stack realistically yields **150–250 newsletter
+signups** baseline; up to ~500 with a quiz-style lead magnet
+(Beehiiv State of Newsletters 2026).
 
 ## 6. CTA library
 

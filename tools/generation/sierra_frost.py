@@ -10,34 +10,58 @@ DISPLAY_NAME = "Sierra Frost"
 SOUL_ID_ENV_VAR = "SIERRA_SOUL_ID"
 
 # Universal blocks paste into every prompt.
+#
+# DESIGN NOTE (2026-05-07 anti-slop refactor):
+# Flux Dev is guidance-distilled toward "professional / pretty." Default
+# prompts produce AI-slop: airbrushed skin, perfect symmetry, beauty light.
+# We actively prompt DOWN toward "snapshot" not "photo." Specific anti-slop
+# moves embedded below: filename-hack ("IMG_2222.HEIC"), explicit asymmetry
+# + skin-texture language, indoor/mixed-light over golden-hour, "amateur
+# snapshot photo" trigger from the Spectrum0001 Civitai community LoRA, and
+# critically — NO photographer/lens/aperture jargon (those produce
+# editorial polish). See docs/research/realism-stack.md for the full
+# rationale and source list.
 
 BASE_BLOCK = (
-    "24-year-old woman, blonde mid-length hair with soft beachy waves, "
-    "light blue-green eyes, glowy lightly-tanned skin, full lips with "
-    "glossy nude makeup, polished natural makeup with soft contour and "
-    "warm neutral eyeshadow, dainty gold jewelry, hourglass figure, fit "
-    "Pilates body, warm friendly expression unless otherwise specified"
+    "25 year old woman, blonde mid-length hair with soft beachy waves and "
+    "a few flyaway strands at the hairline, light blue-green eyes with "
+    "slight asymmetry between left and right, lightly-tanned skin with "
+    "visible pores on the nose and cheeks, peach fuzz catching the light, "
+    "faint under-eye circles, mild T-zone shine, slight nostril asymmetry, "
+    "small natural lip line, dainty gold jewelry, fit Pilates body but not "
+    "overly defined, unposed expression unless otherwise specified, "
+    "looking slightly off-camera, candid not posed"
 )
 
+# Flux Dev largely ignores negative prompts at distilled CFG=1 (which is
+# what we use). The functional way to "subtract" is via positive-prompt
+# language ("amateur, not editorial"). This negative is here for backends
+# that DO use it (Higgsfield Soul 2) and for documentation; Replicate
+# Flux runs without applying it unless we wire DynamicThresholding + true
+# CFG, which costs 2x for marginal gain.
 NEGATIVE_PROMPT = (
-    "deformed hands, extra fingers, distorted face, asymmetric eyes, "
-    "plastic skin, overly smoothed skin, uncanny valley, harsh studio "
-    "lighting, neon colors, heavy contour, drag-style makeup, dark "
-    "lipstick, gothic aesthetic, alt fashion, streetwear logos, Y2K "
-    "aesthetic, club wear, lingerie, bikini, nudity, named celebrities, "
-    "named politicians, recognizable government interiors, identifiable "
-    "real people, MAGA hat with legible text, political signage with "
-    "legible text, election year graphics, partisan iconography, weapons, "
-    "drugs, alcohol bottles in foreground, watermarks, text overlays, "
-    "low resolution, blurry, oversaturated"
+    "airbrushed, plastic skin, smooth skin, glossy, wax figure, "
+    "beauty filter, instagram filter, perfect symmetry, perfectly symmetric "
+    "eyes, retouched, professional studio lighting, softbox lighting, "
+    "ring light, ad campaign, magazine cover, 3d render, cgi, illustration, "
+    "drawn, painted, AI-generated look, deformed hands, extra fingers, "
+    "neon colors, drag-style makeup, dark lipstick, gothic, alt fashion, "
+    "streetwear logos, Y2K aesthetic, club wear, lingerie, bikini, nudity, "
+    "named celebrities, named politicians, recognizable government interiors, "
+    "MAGA hat with legible text, partisan iconography, weapons, drugs, "
+    "alcohol bottles in foreground, watermarks, text overlays, low resolution, "
+    "blurry, oversaturated"
 )
 
+# STYLE_SUFFIX is now the SNAPSHOT scaffold, not editorial scaffold.
+# Every line here is calibrated to break Flux's beauty-mode default.
 STYLE_SUFFIX = (
-    "shot on Sony A7IV, 50mm prime lens, shallow depth of field f/2.0, "
-    "soft natural lighting, golden hour or warm window light, neutral "
-    "color palette, candid editorial composition, cinematic but warm, "
-    "polished but not stiff, high detail, ultra realistic photographic "
-    "quality"
+    "amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, "
+    "slightly underexposed, mixed indoor lighting (warm tungsten with cool "
+    "window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, "
+    "washed-out neutral white balance, mild jpeg compression, faint sensor "
+    "noise, posted to a friend's instagram story, no professional retouching, "
+    "not a model shoot, no studio lighting"
 )
 
 # Aspect ratio per output type.

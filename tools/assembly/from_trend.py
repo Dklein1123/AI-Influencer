@@ -211,6 +211,17 @@ def main() -> int:
         default="replicate",
         help="Image-gen backend. Default: replicate (Sierra LoRA, ~30x cheaper than Higgsfield).",
     )
+    p.add_argument(
+        "--extra-lora",
+        help="Realism LoRA to stack on top of Sierra (HF repo or Replicate model). "
+             "Defaults to env SIERRA_EXTRA_LORA. Examples: 'kudzueye/Boreal'.",
+    )
+    p.add_argument("--extra-lora-scale", type=float, default=0.65,
+                   help="Scale for the extra realism LoRA (default 0.65; community 0.5–0.8)")
+    p.add_argument("--guidance", type=float, default=2.5,
+                   help="Flux guidance_scale (default 2.5; lower = more realistic, less prompt-adherent)")
+    p.add_argument("--lora-scale", type=float, default=0.9,
+                   help="Sierra LoRA strength (default 0.9; >1.0 over-fits)")
     p.add_argument("--plan-from-file", help="Skip Claude planner; read plan JSON from this path")
     p.add_argument("--dry-run", action="store_true", help="Plan only — no API spend")
     p.add_argument("--no-image", action="store_true", help="Skip image gen (use existing)")
@@ -281,8 +292,14 @@ def main() -> int:
             result = gen_mod.generate("sierra_frost", plan["template_id"], seed=args.seed)
         else:
             from tools.lora import generate as gen_mod
-            print(f"[from-trend] replicate-lora generating {plan['template_id']} …")
-            result = gen_mod.generate("sierra_frost", plan["template_id"])
+            print(f"[from-trend] replicate-lora generating {plan['template_id']} (anti-slop config) …")
+            result = gen_mod.generate(
+                "sierra_frost", plan["template_id"],
+                lora_scale=args.lora_scale,
+                guidance=args.guidance,
+                extra_lora=args.extra_lora,
+                extra_lora_scale=args.extra_lora_scale,
+            )
         saved = [pathlib.Path(p) for p in result.get("saved", [])]
         if not saved:
             print("[from-trend] image gen produced no assets; aborting", file=sys.stderr)

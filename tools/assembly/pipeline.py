@@ -138,11 +138,19 @@ def build_ass(
     return "\n".join(lines) + "\n"
 
 
-def _video_filter(visual_is_image: bool, duration: float) -> str:
+def _video_filter(visual_is_image: bool, duration: float, film_look: bool = True) -> str:
     """Build the video filter chain.
 
     For images: scale, pad to 1080x1920 9:16, slow ken-burns zoom for life.
     For videos: scale + pad only — let the original motion carry the piece.
+
+    `film_look=True` (default) appends:
+      - subtle film grain via `noise` (alls=10:allf=t+u, temporal+uniform)
+      - a Portra-ish curves preset (shifts toward warm-amber)
+      - a soft vignette (PI/5)
+    These are the "indistinguishable closer" — they break the perfect-pixel
+    AI-clean look that gives away Flux output even after good prompting.
+    Source: realism-research brief 2026-05-07.
     """
     fit = (
         f"scale={OUT_W}:{OUT_H}:force_original_aspect_ratio=increase,"
@@ -156,8 +164,18 @@ def _video_filter(visual_is_image: bool, duration: float) -> str:
             f":x='iw/2-(iw/zoom/2)':y='ih/2-(ih/zoom/2)'"
             f":s={OUT_W}x{OUT_H}:fps={OUT_FPS}"
         )
-        return f"{kb},{fit},format=yuv420p"
-    return f"{fit},fps={OUT_FPS},format=yuv420p"
+        chain = f"{kb},{fit}"
+    else:
+        chain = f"{fit},fps={OUT_FPS}"
+
+    if film_look:
+        # Stack:
+        #   curves vintage  → mild Portra/Cinestill cast (warm amber + lift)
+        #   vignette PI/5   → barely-perceptible darken at edges
+        #   noise alls=10:allf=t+u  → subtle moving grain (5–6% perceived)
+        # Order matters: color shift before grain, vignette last.
+        chain += ",curves=preset=vintage,vignette=PI/5,noise=alls=10:allf=t+u"
+    return f"{chain},format=yuv420p"
 
 
 def _audio_graph(
@@ -237,6 +255,7 @@ def assemble(
     duration: float | None = None,
     font_path: pathlib.Path | None = None,
     font_size: int = 96,
+    film_look: bool = True,
     dry_run: bool = False,
 ) -> dict:
     """Run the assembly. Returns a dict summary; raises CalledProcessError on ffmpeg failure."""
@@ -300,7 +319,7 @@ def assemble(
         add_input(["-i", str(music)], "mus")
 
     # Build video filter chain. Use [0:v] for the visual stream.
-    vf = _video_filter(visual_is_image, duration)
+    vf = _video_filter(visual_is_image, duration, film_look=film_look)
     video_chain = f"[{input_idx_map['vid']}:v]{vf}[V0]"
 
     # Subtitle filter (operates on labelled video stream).

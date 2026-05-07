@@ -92,7 +92,34 @@ def _append_log(persona: ModuleType, template_id: str, prompt: str, args: dict, 
         f.write(f"- prompt:\n  ```\n  {prompt}\n  ```\n\n")
 
 
-def generate(persona_name: str, template_id: str, *, aspect_ratio: str | None = None, lora_scale: float = 1.0, guidance: float = 3.5, dry_run: bool = False) -> dict:
+def generate(
+    persona_name: str,
+    template_id: str,
+    *,
+    aspect_ratio: str | None = None,
+    lora_scale: float = 0.9,        # was 1.0 — over-fit to beauty-light at 1.0
+    guidance: float = 2.5,          # was 3.5 — single biggest anti-slop knob
+    extra_lora: str | None = None,  # stack a realism LoRA on top of Sierra
+    extra_lora_scale: float = 0.65, # community consensus 0.5–0.8
+    steps: int = 28,                # full-step beats Lightning for realism
+    dry_run: bool = False,
+) -> dict:
+    """Generate one Sierra image via the trained Flux LoRA on Replicate.
+
+    Defaults are tuned for the anti-AI-slop pipeline (May 2026):
+      - guidance=2.5 (3.5 = AI-pretty; 2.5 = real; <2.0 = prompt collapse)
+      - lora_scale=0.9 (1.0 over-conditions; 0.85–0.95 holds identity)
+      - steps=28 (full-step; Lightning collapses skin texture)
+
+    To stack a second realism LoRA (Boreal-FD, Amateur Snapshot, iPhone
+    Photo), pass `extra_lora` as either:
+      - HuggingFace repo:   'kudzueye/Boreal'
+      - Replicate model:    'lucataco/flux-amateur-photo:VERSION'
+      - HF file URL:        'https://huggingface.co/.../adapter_model.safetensors'
+    Replicate's flux-dev-lora trainer output accepts all three.
+
+    Returns: {"saved": [pathlib.Path, ...]} on success.
+    """
     persona = _load_persona(persona_name)
     base_prompt = persona.build_prompt(template_id)
     trigger = os.environ.get("SIERRA_LORA_TRIGGER", DEFAULT_TRIGGER)
@@ -103,16 +130,27 @@ def generate(persona_name: str, template_id: str, *, aspect_ratio: str | None = 
         # Replicate Flux maps 4:5 → 4:5 if we use "custom" w/h; for now snap to 3:4.
         aspect = "3:4"
 
+    # IMPORTANT: Replicate's flux-dev-lora schema names the field
+    # `guidance_scale`, not `guidance`. Earlier versions of this file sent
+    # `guidance` and Replicate silently ignored it (defaulting to 3 = AI-
+    # pretty). That's the bug fixed in this commit.
     args = {
         "prompt": prompt,
         "aspect_ratio": aspect,
-        "guidance": guidance,
+        "guidance_scale": guidance,
         "lora_scale": lora_scale,
-        "num_inference_steps": 28,
+        "num_inference_steps": steps,
         "num_outputs": 1,
         "output_format": "png",
         "output_quality": 95,
     }
+
+    # Default to env var if no caller override — lets the operator set
+    # SIERRA_EXTRA_LORA in the env once and stack it across every gen.
+    extra = extra_lora or os.environ.get("SIERRA_EXTRA_LORA")
+    if extra:
+        args["extra_lora"] = extra
+        args["extra_lora_scale"] = extra_lora_scale
 
     if dry_run:
         return {"dry_run": True, "prompt": prompt, "args": args}
@@ -127,7 +165,12 @@ def generate(persona_name: str, template_id: str, *, aspect_ratio: str | None = 
     import replicate
     import requests
 
-    print(f"[{template_id}] submitting to {version} (aspect={aspect}, lora_scale={lora_scale})", flush=True)
+    extra_log = f" extra={extra}@{extra_lora_scale}" if extra else ""
+    print(
+        f"[{template_id}] submitting to {version} "
+        f"(aspect={aspect}, guidance={guidance}, lora_scale={lora_scale}{extra_log})",
+        flush=True,
+    )
     output = replicate.run(version, input=args)
     urls = list(output) if hasattr(output, "__iter__") and not isinstance(output, str) else [output]
 

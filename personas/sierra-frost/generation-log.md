@@ -233,3 +233,17 @@ re-learn them:
   SIERRA_FROST_V1, 24-year-old woman, blonde mid-length hair with soft beachy waves, light blue-green eyes, glowy lightly-tanned skin, full lips with glossy nude makeup, polished natural makeup with soft contour and warm neutral eyeshadow, dainty gold jewelry, hourglass figure, fit Pilates body, warm friendly expression unless otherwise specified, wearing matching neutral set: cream sports bra and high-waisted bike shorts, Hoka or On running sneakers, hair pulled into low ponytail, dewy fresh face, small gold hoops, in a bright Scandinavian-style bedroom, white linen bedding, oak nightstand, floor-to-ceiling window with sheer curtains, eucalyptus plant in clay pot, soft morning light streaming through window, neutral palette of cream beige and warm wood, shot type: medium close-up, camera motion: slow dolly push toward subject's face, action: sitting on bed mid-coffee sip, pause, dry sideways glance to camera, shot on Sony A7IV, 50mm prime lens, shallow depth of field f/2.0, soft natural lighting, golden hour or warm window light, neutral color palette, candid editorial composition, cinematic but warm, polished but not stiff, high detail, ultra realistic photographic quality
   ```
 
+## 2026-05-07T03:11:45 — P32 (LoRA)
+
+- backend: replicate-flux-lora
+- model: `dev`
+- aspect: `9:16`
+- guidance: `None`
+- lora_scale: `0.9`
+- saved:
+  - `personas/sierra-frost/content-queue/2026-05-07_P32_lora_v1.png`
+- prompt:
+  ```
+  SIERRA_FROST_V1, 25 year old woman, blonde mid-length hair with soft beachy waves and a few flyaway strands at the hairline, light blue-green eyes with slight asymmetry between left and right, lightly-tanned skin with visible pores on the nose and cheeks, peach fuzz catching the light, faint under-eye circles, mild T-zone shine, slight nostril asymmetry, small natural lip line, dainty gold jewelry, fit Pilates body but not overly defined, unposed expression unless otherwise specified, looking slightly off-camera, candid not posed, wearing matching neutral set: cream sports bra and high-waisted bike shorts, Hoka or On running sneakers, hair pulled into low ponytail, dewy fresh face, small gold hoops, in a bright Scandinavian-style bedroom, white linen bedding, oak nightstand, floor-to-ceiling window with sheer curtains, eucalyptus plant in clay pot, soft morning light streaming through window, neutral palette of cream beige and warm wood, shot type: medium close-up, camera motion: slow dolly push toward subject's face, action: sitting on bed mid-coffee sip, pause, dry sideways glance to camera, amateur snapshot photo, taken on iPhone 15 Pro, casual candid framing, slightly underexposed, mixed indoor lighting (warm tungsten with cool window daylight), motion-soft not bokeh-soft, IMG_2231.HEIC, washed-out neutral white balance, mild jpeg compression, faint sensor noise, posted to a friend's instagram story, no professional retouching, not a model shoot, no studio lighting
+  ```
+

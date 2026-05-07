@@ -11,7 +11,42 @@ only (see `voice-profile.md §1.5`). The contrast is the engine.
 
 ---
 
-## 0. The two registers — read this first
+## 0a. The 2026 TikTok algorithm reality (read FIRST)
+
+Distribution is decided in the **first 1.5 seconds**, then re-tested at
+two more gates. Every Sierra post is engineered around this:
+
+| Gate | Views | What it tests | What unlocks the next gate |
+|---|---|---|---|
+| Gate 1 | 200–500 | Hook hold (3s view rate) + initial like ratio | >65% 3s-hold |
+| Gate 2 | 1K–50K | Completion + saves + shares | >55% completion AND >2% save rate |
+| Gate 3 | 100K+ | Follow rate + repeat-view rate | strong creator fingerprint |
+
+**Saves > shares > likes.** A save rate >2% triggers the "high-value
+reference content" bucket — extended distribution for **weeks** after
+posting. The tag line (last beat of the post) is the save lever.
+
+**2x replay = 200% watch-time.** Re-watchable ≤15s loops are
+mathematically the highest-leverage format. Loop visuals subtly so
+scroll-back reads as continuous.
+
+**Dead patterns (never use):** "hi guys" intros, bare POV without
+payoff (~2x underperformance vs contrarian openers per Opus 34k-clip
+2026 dataset), "tell me you're X without telling me" (collapsed late
+2024), storytime intros that take >2.5s to land.
+
+**Ascending May 2026:** Jubilee/Surrounded debate stitches with
+talking-head reaction overlay (the bit-and-pivot vehicle), emotional-
+pivot audio under serious moments, "and [name]… that's all" duality
+cuts, "horror movie title" listicles, the **quiet-flex aesthetic**
+(warm light, neutral palette, intentional posture — Sierra's default).
+
+For full engineering rationale + KPI math see
+[`docs/research/viral-genius.md`](../../docs/research/viral-genius.md).
+
+---
+
+## 0b. The two registers — read this first
 
 Sierra is **funny by default and serious by selection.** Every post belongs
 to one of three modes:
