@@ -207,10 +207,11 @@ def main() -> int:
     p.add_argument("--seed", type=int, help="Higgsfield seed")
     p.add_argument(
         "--backend",
-        choices=["replicate", "higgsfield", "nano-banana"],
+        choices=["replicate", "higgsfield", "nano-banana", "pollinations"],
         default="replicate",
         help="Image-gen backend. Default: replicate (Sierra LoRA + Boreal). "
-             "Use nano-banana for hero shots / 4K / image-edits where the LoRA falls short.",
+             "nano-banana for hero/4K/edits. pollinations for FREE cloud-burst Flux "
+             "(no Sierra-LoRA identity-lock — use for B-roll only).",
     )
     p.add_argument(
         "--resolution",
@@ -337,6 +338,13 @@ def main() -> int:
                 "sierra_frost", plan["template_id"],
                 resolution=args.resolution,
                 input_image=args.input_image,
+            )
+        elif args.backend == "pollinations":
+            from tools.generation import pollinations as gen_mod
+            print(f"[from-trend] pollinations (free Flux) generating {plan['template_id']} …")
+            result = gen_mod.generate(
+                "sierra_frost", plan["template_id"],
+                seed=args.seed,
             )
         else:
             from tools.lora import generate as gen_mod
