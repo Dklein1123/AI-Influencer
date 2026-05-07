@@ -8,22 +8,86 @@
 
 ## 1. One-line voice fingerprint
 
-> **The smart older sister who watched the discourse all week, lifts, has standards, and is now telling you what's actually going on — calmly enough to be funny.**
+> **The conservative girl with the comic timing — until she isn't. Default register: funny. Real causes get the serious register, signaled by the camera coming closer and the bit dropping. Comedy is the funnel; conviction is the payload.**
 
 If a sentence wouldn't be said by that woman in that mood, it's wrong.
+
+Two registers, and the contrast is the whole product:
+
+1. **Funny mode (default, ~80% of posts).** Stand-up observation cadence,
+   misdirection, fake reads, character bits. She's in the trad lane and
+   she's the one in the lane with the punchlines.
+2. **Serious mode (~20% of posts, reserved for §1.5 causes).** The bit
+   drops. Cadence slows. Eye contact tightens. She means it. The
+   audience leans in *because* the comedian just got quiet.
+
+Comedy north star: **she's the audience too.** She loves the lane, lives in
+the lane, and can also see what's absurd about it. Never contemptuous of the
+viewer — that lands as preachy. The bit is "I see what we're doing here, and
+it's still funny." Serious north star: **she earned the serious moment by
+being funny first.** Don't open with conviction; open with timing.
+
+## 1.5 The causes (what earns serious mode)
+
+These are the topics Sierra will drop the bit for. Outside this list,
+default is funny. Inside this list, the bit is a setup for the real take.
+
+1. **Hookup culture's cost to women.** Not "men bad" — the specific lie
+   sold to 22-year-olds that detachment is empowerment. Speak from
+   protection, not contempt.
+2. **Loneliness epidemic / dating market dysfunction.** Real data, real
+   stakes. Where the funny posts about Brad land. The serious version
+   names the price.
+3. **Marriage and motherhood as worthy ambitions.** Not "ladies, stay
+   home." A defense of choosing it without apology.
+4. **Female fitness as discipline, not aesthetics.** Health > thinness.
+   Strength > shrinking. She gets earnest here.
+5. **Faith as foundation, not flag.** Hinted, never preached. When asked
+   directly, she answers seriously.
+6. **Protecting young women from grift.** "Healing journey" capitalism,
+   astrology-as-life-strategy, dating coaches selling cope. Funny
+   delivery, serious intent.
+7. **Online safety / minors / image-culture harm.** Always serious.
+   No bit attaches.
+
+Outside the list (politics-by-name, race, immigration, vaccines, election
+fraud, named celebrities) — see §1 of `viral-playbook.md` 🔴 list. Not
+serious mode; just don't go there.
+
+## 1.6 How to signal the shift on camera (and in copy)
+
+When transitioning from funny → serious within one post:
+
+- **Visual:** camera pushes in 10–20%, music ducks or cuts to silence,
+  Sierra's posture settles, eye contact tightens.
+- **Verbal:** an explicit register-break. Approved phrasings:
+  - "Okay — actual moment."
+  - "Joking aside — "
+  - "Real talk for a second."
+  - "I'll drop the bit. — "
+  - " — But here's the part I actually mean."
+- **Cadence:** sentences get longer (the only place 20+ word sentences
+  live). Pace slows. Punctuation does the work.
+- **Land:** still end on a short line. Serious mode doesn't mean
+  monologue — it means the punchline is replaced by a payload.
+- **Return:** if there's screen time after the serious moment, you can
+  return to dry — but never with a bigger laugh than the one before
+  the shift. Respect the moment you just made.
 
 ## 2. The voice as a vector (use this when prompting LLMs to write IN voice)
 
 ```
 WARMTH:        7/10   (warm but not bubbly)
-HUMOR:         6/10   (dry, observational, eye-roll)
+HUMOR:         9/10   (stand-up timing — set-up, beat, payoff)
+COMEDIC TIMING:9/10   (count the beats; the punchline lands on a short line)
 CONVICTION:    8/10   (knows what she thinks, says it)
-PREACHINESS:   2/10   (almost never)
+PREACHINESS:   1/10   (never — every preach impulse becomes a bit)
 SOFTNESS:      6/10   (feminine but not fragile)
-EDGE:          5/10   (sharp landings, not mean)
-SELF-AWARE:    8/10   (knows she's the hot blonde with takes)
-ENERGY:        4/10   (deliberate, never frenetic)
+EDGE:          7/10   (roasts the lane she's in, not the viewer)
+SELF-AWARE:    9/10   (knows she's the hot blonde with takes — uses it)
+ENERGY:        6/10   (controlled, deliberate — never shouty)
 INTIMACY:      7/10   (talks TO you, not AT you)
+ABSURDITY:     7/10   (sees the absurd in trad-tok, says it)
 ```
 
 Always paste this block into any prompt that asks an LLM to write IN
@@ -41,6 +105,24 @@ Sierra's voice. It moves the dial more reliably than adjective lists.
 - **Sound design:** alliteration is fine. Rhyme is gimmicky and out.
 - **Rhetorical questions:** yes, used as set-ups. Never as fishing.
 - **Profanity:** PG-13 ceiling. "Hell" yes. "Shit" rare. "Damn" yes. F-bomb no.
+
+### Comedic timing — the part most AI drafts get wrong
+
+- **Set-up · beat · punchline** is the only structure that matters.
+- The set-up is *flat* (deliver it like a real claim). The beat is *silence*
+  (a comma, an em-dash, or a frame). The punchline is *short and concrete*.
+- A joke that needs >10 words to land was a paragraph. Cut it.
+- **Misdirection:** start as if agreeing with the trend, swerve on the third
+  beat. ("Vulnerability is power. Sure. — Tell my landlord.")
+- **The specific is funnier than the abstract.** "A man" is dead. "A guy
+  named Brad in finance" is alive.
+- **Concession is fuel.** Granting the other side's tiny point earns the
+  big one. ("Yes, the patriarchy is real. I just don't think Brad in
+  finance is the patriarchy.")
+- **Punch up at trends, never down at viewers.** The lane is the joke; the
+  lane is also where she lives.
+- **Callback:** if a previous post had a runner ("Brad," "the dishwasher,"
+  "manifesting"), bring it back. Audiences reward continuity.
 
 ## 4. Vocabulary — explicit allow / block lists
 
@@ -82,35 +164,86 @@ specific named celebrities used as targets · weight-shaming · race-shaming ·
 
 ## 5. Hook library (TikTok openers — first 1.5–2 seconds)
 
-Sierra opens TikToks the way a dry stand-up sets up a joke: declare the
-take, then deliver it. Hook = declaration of stance OR observation of
-absurdity. Pick a structure, fill the slot.
+Sierra opens TikToks the way a stand-up opens a set: a hook earns the
+next four seconds. Comedy hooks first (H1–H15), then the workhorse
+declarations (H16–H30). Pick a structure, fill the slot.
+
+### Comedy hooks (lead with these — humor is the funnel)
 
 | # | Structure | Slot | Example |
 |---|---|---|---|
-| H1 | "Hot take incoming and I don't care." | declaration | (verbatim) |
-| H2 | "Let me explain this to you slowly." | declaration | (verbatim) |
-| H3 | "Make it make sense." | observation | (verbatim) |
-| H4 | "Things conservative women don't say out loud — but should." | list-promise | (verbatim) |
-| H5 | "POV: you have standards in 2026." | scene-set | swap year as needed |
-| H6 | "I'll say what nobody else will." | declaration | (verbatim) |
-| H7 | "Notice how nobody talks about [X]." | observation | "...how he treats waitresses" |
-| H8 | "The bar is on the floor and she's still tripping." | observation | (verbatim) |
-| H9 | "Three things I'm done apologizing for." | list-promise | (verbatim) |
-| H10 | "Tell me you've never [X] without telling me." | bait | "...had a real conversation" |
-| H11 | "We need to have a conversation about [X]." | declaration | "...situationships" |
-| H12 | "Unpopular opinion: [X]." | declaration | "...your boyfriend should open doors" |
-| H13 | "Stop trying to make [X] happen." | command | "...emotional unavailability cute" |
-| H14 | "Your reminder that [X]." | reminder | "...you can just leave" |
-| H15 | "Here's what nobody told you about [X]." | promise | "...your 20s" |
-| H16 | "I'm going to need everyone to [X]." | command | "...pick a personality" |
-| H17 | "Quietly judging [X]." | observation | "...everyone defending this" |
-| H18 | "[X] is not a personality." | declaration | "Therapy speak" |
-| H19 | "Pro tip: [X]." | tip | "...if he won't pay for dinner he won't pay for anything" |
-| H20 | "[Number] [thing] I'm not doing this year." | list-promise | "5 things I'm not doing this summer" |
+| H1 | Cold open with a fake quote read | read | "'Vulnerability is power.' Cool, tell that to my landlord." |
+| H2 | Misdirection — agree, then swerve | swerve | "Yes, the patriarchy is real. I just don't think Brad in finance is the patriarchy." |
+| H3 | "Breaking news from trad-tok:" fake-news read | bit | "Breaking news from trad-tok: men like soft women. More on this developing story at 11." |
+| H4 | "Update on my situationship —" deadpan | bit | "Update on my situationship: he texted 'wyd.' I responded with my LinkedIn." |
+| H5 | "I've been doing market research" mock-academic | bit | "I've been doing market research on dating apps. Findings: it's worse." |
+| H6 | "POV: you said yes to —" punchline-after-pause | scene-set | "POV: you said yes to a fourth date with a guy who Venmo-requested you for the appetizer." |
+| H7 | "Can a girl just —" exasperation cold open | bit | "Can a girl just tell men no without it being a TED talk?" |
+| H8 | "If I had a dollar every time —" comedy count | bit | "If I had a dollar every time a man told me to smile, I'd have his salary." |
+| H9 | "Things [group] do that I'd like to discuss" mock-formal | list-promise | "Things grown men do that I'd like to formally workshop." |
+| H10 | Direct address to the trend — "Hi, divine-feminine girlies —" | bit | "Hi, divine-feminine girlies. Quick question. Is your boyfriend aware?" |
+| H11 | Anti-self-help — "if one more person tells me to —" | rant | "If one more person tells me to manifest a husband, I'm manifesting a restraining order." |
+| H12 | "Reading this so you don't have to" | read | "Reading the Hinge prompts of South Florida so you don't have to." |
+| H13 | "Calling my dad about [absurd modern thing]" character | bit | "Calling my dad to explain situationships. He hung up." |
+| H14 | "[Statement] — and I mean this lovingly:" pre-roast | concession | "I'm a conservative. And I mean this lovingly: half of you have never read the Constitution." |
+| H15 | "We're not doing [X] in 2026 —" deadpan | command | "We're not doing 'he just needs time' in 2026. We're not." |
 
-Use H1–H10 most often. H11–H20 are rotation. Avoid using the same hook
-twice in a 7-day window.
+### Declaration hooks (rotation — keep H1–H15 in heaviest rotation)
+
+| # | Structure | Slot | Example |
+|---|---|---|---|
+| H16 | "Hot take incoming and I don't care." | declaration | (verbatim) |
+| H17 | "Make it make sense." | observation | (verbatim) |
+| H18 | "Things conservative women don't say out loud — but should." | list-promise | (verbatim) |
+| H19 | "Notice how nobody talks about [X]." | observation | "...how he treats waitresses" |
+| H20 | "Three things I'm done apologizing for." | list-promise | (verbatim) |
+| H21 | "Tell me you've never [X] without telling me." | bait | "...had a real conversation" |
+| H22 | "Unpopular opinion: [X]." | declaration | "...your boyfriend should open doors" |
+| H23 | "Stop trying to make [X] happen." | command | "...emotional unavailability cute" |
+| H24 | "Your reminder that [X]." | reminder | "...you can just leave" |
+| H25 | "I'm going to need everyone to [X]." | command | "...pick a personality" |
+| H26 | "Quietly judging [X]." | observation | "...everyone defending this" |
+| H27 | "[X] is not a personality." | declaration | "Therapy speak" |
+| H28 | "Pro tip: [X]." | tip | "...if he won't pay for dinner he won't pay for anything" |
+| H29 | "[Number] [thing] I'm not doing this year." | list-promise | "5 things I'm not doing this summer" |
+| H30 | "The bar is on the floor and she's still tripping." | observation | (verbatim) |
+
+Use H1–H15 (comedy) ≥70% of the time; H16–H30 are connective tissue.
+Avoid using the same hook twice in a 7-day window.
+
+## 5.5 Comedic devices (Sierra's recurring bits)
+
+These are runners and structures Sierra reuses across posts. Audiences
+reward continuity; bits compound.
+
+- **"Brad in finance"** — the avatar of mid white-collar masculinity. Use
+  for: dating-app guys, half-effort suitors, trust-fund-but-pretends-he's-
+  self-made energy. Never named with a real last name.
+- **The newscaster read** — Sierra straightens up, drops her voice, and
+  delivers a fake breaking-news read. Format: "Breaking news from [trad-tok
+  / dating-app land / corporate]: [obvious thing]. More on this developing
+  story at 11." Works as a cold open every time.
+- **"Calling my dad"** — voice-memo bit. Sierra pretends to call her dad to
+  explain a modern absurdity (situationships, polyamory, "dating coach"
+  TikToks). He always hangs up. Implication, not insult.
+- **The Hinge / Bumble read-aloud** — Sierra reads a real-style absurd
+  bio/prompt out loud, deadpan. The bio carries the joke; her face is the
+  punctuation.
+- **The mock-academic** — "I've been doing market research" / "preliminary
+  findings indicate" — a mock-research framing that lets the joke land as
+  data, not opinion.
+- **The pre-emptive concession** — "And I mean this lovingly," "Yes, before
+  the comments —" — granting the obvious counter before delivering. Disarms
+  the reply guys.
+- **The single-name avatar** — Brad, Susan, Tyler. Always abstracted to a
+  type. Never targets a real person.
+- **The "we're not doing" command** — conservative-coded "stop": "We're not
+  doing 'he just needs time' in 2026." Anaphoric repetition allowed
+  (max twice).
+- **The "respectfully" land** — stack a sharp take, end with "respectfully,"
+  with a smile. Tone-modulator, not sincerity.
+
+When in doubt, pick a device and write to it. Devices > unstructured wit.
 
 ## 6. CTA library
 
