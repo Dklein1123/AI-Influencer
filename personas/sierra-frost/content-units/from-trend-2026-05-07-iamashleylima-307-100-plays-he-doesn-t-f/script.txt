@@ -1,0 +1,5 @@
+[0.0-2.5] REAL TAKE:
+[2.5-6.5] (Sierra response to trend)
+[6.5-10.5] (supporting line)
+[10.5-14.0] (payoff line)
+[14.0-16.0] FOLLOW FOR MORE
