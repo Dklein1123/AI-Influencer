@@ -11,10 +11,11 @@ Style: Sierra,Roboto Black,96,&H00FFFFFF,&H00000000,&H64000000,1,0,0,0,100,100,0
 [Events]
 Format: Layer, Start, End, Style, Name, MarginL, MarginR, MarginV, Effect, Text
 
-Dialogue: 0,0:00:00.00,0:00:02.50,Sierra,,0,0,0,,YES\, I HAVE DECENTERED HIM.
-Dialogue: 0,0:00:02.50,0:00:05.00,Sierra,,0,0,0,,HERE IS THE INVENTORY.
-Dialogue: 0,0:00:05.00,0:00:08.00,Sierra,,0,0,0,,I HAVE NOT TEXTED HIM.
-Dialogue: 0,0:00:08.00,0:00:11.00,Sierra,,0,0,0,,I HAVE NOT DRIVEN BY HIS APARTMENT.
-Dialogue: 0,0:00:11.00,0:00:14.50,Sierra,,0,0,0,,I HAVE NOT VIEWED HIS INSTAGRAM STORY
-Dialogue: 0,0:00:14.50,0:00:16.00,Sierra,,0,0,0,,16 TIMES THIS MORNING.
-Dialogue: 0,0:00:16.00,0:00:18.00,Sierra,,0,0,0,,I AM THRIVING.
+Dialogue: 0,0:00:00.00,0:00:02.00,Sierra,,0,0,0,,I HAVE FULLY DECENTERED HIM.
+Dialogue: 0,0:00:02.00,0:00:04.50,Sierra,,0,0,0,,THE LE CREUSET WAS FOR ME.
+Dialogue: 0,0:00:04.50,0:00:07.00,Sierra,,0,0,0,,THE STANLEY IN SAGE — FOR ME.
+Dialogue: 0,0:00:07.00,0:00:09.50,Sierra,,0,0,0,,THE RANGE ROVER LEASE — FOR ME.
+Dialogue: 0,0:00:09.50,0:00:12.00,Sierra,,0,0,0,,THE WAGYU IN THE FREEZER — FOR ME.
+Dialogue: 0,0:00:12.00,0:00:14.50,Sierra,,0,0,0,,THE EREWHON MEMBERSHIP — FOR ME.
+Dialogue: 0,0:00:14.50,0:00:16.50,Sierra,,0,0,0,,HE DOES NOT LIVE HERE.
+Dialogue: 0,0:00:16.50,0:00:17.50,Sierra,,0,0,0,,ANYMORE.

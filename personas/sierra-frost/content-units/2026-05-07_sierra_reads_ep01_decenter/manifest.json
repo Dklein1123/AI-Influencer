@@ -21,60 +21,65 @@
   "plan": {
     "template_id": "P37",
     "bit_id": "sierra_reads",
-    "rationale": "Sierra Reads EP. 1 \u2014 'The Inventory.' Sierra performs being someone who claims she's decentered him while every line of denial reveals she has, in fact, been doing exactly the thing she's denying. The 'sixteen times this morning' is the giveaway. 'I am thriving' is the dry button on someone who is clearly not. This is character-comedy not joke-comedy: the audience laughs because they ARE her, not because they got a punchline. Catherine Cohen / Esther Povitsky lane. P37 chin-in-hand deadpan is the perfect contradicting visual \u2014 she LOOKS composed while her words betray her.",
-    "duration_s": 18.0,
+    "rationale": "Sierra Reads EP. 1 \u2014 'The Inventory.' v3 (writer-agent draft). Sierra calmly enumerates how 'decentered' he is by listing every aspirational item in her apartment, each one secretly bought because of him. The list (Le Creuset, Stanley in sage, Range Rover lease, Wagyu in the freezer, Erewhon membership) is a tight trad-lane brand-cluster the audience instantly recognizes \u2014 they see themselves in the items. 'He does not live here. Anymore.' is the rug-pull that retroactively recontextualizes every item as bought-for-him. Catherine Cohen inventory shape, fully committed character. The visual (P37 cafe chin-in-hand cream blazer) reads composed; the words betray her. That's the whole bit.",
+    "duration_s": 17.5,
     "script_chunks": [
       {
         "start": 0.0,
-        "end": 2.5,
-        "text": "YES, I HAVE DECENTERED HIM."
+        "end": 2.0,
+        "text": "I HAVE FULLY DECENTERED HIM."
       },
       {
-        "start": 2.5,
-        "end": 5.0,
-        "text": "HERE IS THE INVENTORY."
+        "start": 2.0,
+        "end": 4.5,
+        "text": "THE LE CREUSET WAS FOR ME."
       },
       {
-        "start": 5.0,
-        "end": 8.0,
-        "text": "I HAVE NOT TEXTED HIM."
+        "start": 4.5,
+        "end": 7.0,
+        "text": "THE STANLEY IN SAGE \u2014 FOR ME."
       },
       {
-        "start": 8.0,
-        "end": 11.0,
-        "text": "I HAVE NOT DRIVEN BY HIS APARTMENT."
+        "start": 7.0,
+        "end": 9.5,
+        "text": "THE RANGE ROVER LEASE \u2014 FOR ME."
       },
       {
-        "start": 11.0,
+        "start": 9.5,
+        "end": 12.0,
+        "text": "THE WAGYU IN THE FREEZER \u2014 FOR ME."
+      },
+      {
+        "start": 12.0,
         "end": 14.5,
-        "text": "I HAVE NOT VIEWED HIS INSTAGRAM STORY"
+        "text": "THE EREWHON MEMBERSHIP \u2014 FOR ME."
       },
       {
         "start": 14.5,
-        "end": 16.0,
-        "text": "16 TIMES THIS MORNING."
+        "end": 16.5,
+        "text": "HE DOES NOT LIVE HERE."
       },
       {
-        "start": 16.0,
-        "end": 18.0,
-        "text": "I AM THRIVING."
+        "start": 16.5,
+        "end": 17.5,
+        "text": "ANYMORE."
       }
     ],
-    "voiceover_text": "Yes. I have decentered him. Here is the inventory. I have not texted him. I have not driven by his apartment. I have not viewed his Instagram story sixteen times this morning. I am thriving.",
-    "caption": "Yes I have decentered him. Here is the inventory: I have not texted him. I have not driven by his apartment. I have not viewed his Instagram story sixteen times this morning. I am thriving.",
+    "voiceover_text": "I have fully decentered him. The Le Creuset? For me. The Stanley in sage? For me. The Range Rover lease? For me. The Wagyu in the freezer? For me. The Erewhon membership? For me. He does not live here. Anymore.",
+    "caption": "decentering him so hard I bought a $90k SUV to drive myself to therapy. \u2122 The Le Creuset was for me.",
     "hashtags": [
       "#datingtok",
       "#decentermen",
       "#datingadvice",
       "#thriving"
     ],
-    "tag_line": "I am thriving.",
+    "tag_line": "He does not live here. Anymore.",
     "comedic_devices_used": [
-      "character-driven denial \u2014 every line is a lie that reveals the truth",
-      "specific number reveal ('16 times this morning') \u2014 the receipt",
-      "fake-inventory framing (\u00a75.5 mock-academic cousin)",
-      "the 'I am thriving' dry button on a person who clearly is not",
-      "audience identification \u2014 they ARE her, that's the laugh"
+      "Catherine-Cohen inventory shape \u2014 flat declarative list, dry conviction",
+      "trad-lane brand cluster (Le Creuset / Stanley sage / Range Rover / Wagyu / Erewhon) \u2014 instant audience recognition",
+      "rug-pull button: 'Anymore.' retroactively recontextualizes every line",
+      "character-in-denial \u2014 she's not joking ABOUT the lie, she's IN the lie",
+      "specific receipts > abstractions \u2014 each brand is screenshot-able"
     ],
     "trend_anchor": {
       "source": "TikTok #datingtok rank 1",
@@ -83,8 +88,12 @@
       "url": "https://www.tiktok.com/@sukainalouisa",
       "trend_phrase": "decenter men"
     },
-    "v0_failed": "Earlier draft ('Cool. I've been single 18 months. He's decentered. Now what.') \u2014 generic deadpan-shrug, no character. Lazy.",
-    "v1_failed": "Sponsor-read parody ('use code his loss for 15% off Decentered.\u2122') \u2014 clever structure, but still concept-comedy not character-comedy. No truth in it. AI-feeling.",
-    "v2_thesis": "Stop writing jokes. Write a character. The bit is Sierra in denial. Every denial confirms what she denies. The inventory IS the bit. Catherine Cohen-coded."
+    "iteration_history": {
+      "v0": "'Cool. I've been single 18 months. He's decentered. Now what.' \u2014 generic deadpan-shrug, no specifics. Lazy.",
+      "v1": "Sponsor-read parody (use code 'his loss' for 15% off Decentered.\u2122). Clever structure, AI-feeling, no character.",
+      "v2": "The Inventory v1 \u2014 generic version (Instagram story 16 times this morning). Better mechanic, but no brand cluster, no rug-pull at the end.",
+      "v3_current": "Inventory v3 from senior comedy-writer agent. Brand-cluster (Le Creuset / Stanley / Range Rover / Wagyu / Erewhon) + 'Anymore.' rug-pull. Catherine-Cohen-coded."
+    },
+    "editor_note_for_renderer": "Brielle should read the brand names with fake-confident dryness \u2014 slight 'of course' lift on each, like she's listing her own receipts. The word 'Anymore' should be a separate beat, almost reluctant, like she let it slip."
   }
 }

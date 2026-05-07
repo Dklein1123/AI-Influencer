@@ -1,0 +1,28 @@
+{
+  "template_id": "P32",
+  "bit_id": "brad_finance",
+  "episode": 1,
+  "rationale": "Brad From Finance EP. 1 — 'Murphy the Goldendoodle' (writer-agent Draft 4). Negation-that-confirms — Sierra delivers 'Brad From Finance is decentered. I do not think about Brad.' while every detail confirms she has a full dossier on Brad's life. The escalation (dog → breed → name → birthday → astrological sign) builds the absurdity. 'Brad who?' is the cleanest possible button. Establishes Brad as recurring character with franchise value across the bit-rotation.",
+  "duration_s": 17.0,
+  "script_chunks": [
+    {"start": 0.0,  "end": 2.5,  "text": "BRAD FROM FINANCE IS DECENTERED."},
+    {"start": 2.5,  "end": 5.0,  "text": "I DO NOT THINK ABOUT BRAD."},
+    {"start": 5.0,  "end": 7.5,  "text": "I DO NOT KNOW BRAD GOT A DOG."},
+    {"start": 7.5,  "end": 10.0, "text": "A GOLDENDOODLE. NAMED MURPHY."},
+    {"start": 10.0, "end": 12.5, "text": "I DO NOT KNOW MURPHY'S BIRTHDAY."},
+    {"start": 12.5, "end": 15.0, "text": "MARCH 14TH. A PISCES."},
+    {"start": 15.0, "end": 17.0, "text": "BRAD WHO?"}
+  ],
+  "voiceover_text": "Brad From Finance is decentered. I do not think about Brad. I do not know Brad got a dog — a goldendoodle, named Murphy. I do not know Murphy's birthday is March 14th. A Pisces. Brad who?",
+  "caption": "Murphy if you're seeing this happy belated 🐕",
+  "hashtags": ["#datingtok", "#bradfromfinance", "#datingadvice", "#fyp"],
+  "tag_line": "Brad who?",
+  "comedic_devices_used": [
+    "Brad-from-finance recurring-character (§5.5)",
+    "negation-that-confirms — every denial is a receipt",
+    "escalating specificity (dog → breed → name → birthday → astrological sign)",
+    "the 'Brad who?' deadpan button"
+  ],
+  "render_when": "Wednesday — 3rd post in the bit-rotation week",
+  "writer_micro_edit": "If technically possible, add a one-frame cut to Sierra holding her phone face-down on the cafe table when she says 'Brad who?' — gives the voiceover a physical lie to point at."
+}
