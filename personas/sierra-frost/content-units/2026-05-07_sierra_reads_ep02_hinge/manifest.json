@@ -1,0 +1,87 @@
+{
+  "pulse_date": "2026-05-07",
+  "rank": 1,
+  "trend_item": {
+    "source": "TikTok #datingtok",
+    "label": "@datetoklive \u00b7 122,700 plays \u00b7 \ud83d\udc49 \u201cSingle ? This post is for you.\u201d  \t\u2022\tTag 3 single friends \t\u2022\tComment age + city \t\u2022\tRepost to be seen locally    #fyppppppppppppppppppppppp",
+    "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+    "raw": {
+      "hashtag": "datingtok",
+      "url": "https://www.tiktok.com/@datetoklive/video/7622838028695801109",
+      "author": "datetoklive",
+      "caption": "\ud83d\udc49 \u201cSingle ? This post is for you.\u201d\n\n\t\u2022\tTag 3 single friends\n\t\u2022\tComment age + city\n\t\u2022\tRepost to be seen locally\n\n \n#fypppppppppppppppppppppppppppppp #fyp #date #viral #date ",
+      "plays": 122700,
+      "likes": 942,
+      "comments": 902,
+      "shares": 114,
+      "created_at": "2026-03-30T00:25:06.000Z",
+      "music": "Single Ladies (Put a Ring on It)"
+    }
+  },
+  "plan": {
+    "template_id": "P37",
+    "bit_id": "sierra_reads",
+    "episode": 2,
+    "rationale": "Sierra Reads EP. 2 \u2014 'Hinge Anaphora' (writer-agent Draft 8). Triple-denial-then-confession-then-button. The triple denial of increasingly absurd Hinge stalking moves builds the absurdity, the confession admits it all, and the 'Today. Yet.' double-button is the dryest possible landing. Universal premise \u2014 every woman has either done this or watched her best friend do it.",
+    "duration_s": 17.5,
+    "script_chunks": [
+      {
+        "start": 0.0,
+        "end": 2.5,
+        "text": "I HAVE NOT CHECKED HIS HINGE."
+      },
+      {
+        "start": 2.5,
+        "end": 5.0,
+        "text": "I HAVE NOT MADE A FAKE HINGE."
+      },
+      {
+        "start": 5.0,
+        "end": 7.5,
+        "text": "I HAVE NOT PAID FOR HINGE PLUS"
+      },
+      {
+        "start": 7.5,
+        "end": 10.0,
+        "text": "TO FILTER BY HIS HEIGHT."
+      },
+      {
+        "start": 10.0,
+        "end": 12.5,
+        "text": "I HAVE DONE ALL OF THAT."
+      },
+      {
+        "start": 12.5,
+        "end": 15.0,
+        "text": "BUT I HAVE NOT THOUGHT"
+      },
+      {
+        "start": 15.0,
+        "end": 16.5,
+        "text": "ABOUT HIM."
+      },
+      {
+        "start": 16.5,
+        "end": 17.5,
+        "text": "TODAY. YET."
+      }
+    ],
+    "voiceover_text": "I have not checked his Hinge. I have not made a fake Hinge. I have not paid for Hinge Plus to filter by his exact height. I have done all of that. But I have not thought about him. Today. Yet.",
+    "caption": "6'1, brown hair, 'looking for something serious' \u2014 anyway",
+    "hashtags": [
+      "#datingtok",
+      "#hinge",
+      "#datingadvice",
+      "#fyp"
+    ],
+    "tag_line": "Today. Yet.",
+    "comedic_devices_used": [
+      "anaphoric escalation (I have not / I have not / I have not)",
+      "triple-denial-then-confession structure",
+      "double-button button \u2014 'Today.' beat 'Yet.' delivered as separate cards",
+      "specific receipts (height filter on Hinge Plus)"
+    ],
+    "render_when": "Tuesday following EP.01 ship \u2014 bit-2-of-3-bit-rotation cadence",
+    "writer_micro_edit": "Move 'Today. Yet.' onto separate subtitle cards with a beat of black between, so the second button lands as its own visual punch."
+  }
+}
