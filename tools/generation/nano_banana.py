@@ -115,6 +115,7 @@ def generate(
     resolution: str | None = None,
     input_image: str | pathlib.Path | None = None,
     extra_prompt: str = "",
+    model: str | None = None,
     dry_run: bool = False,
 ) -> dict:
     """Generate a Sierra image via Nano Banana Pro. Returns {'saved': [paths]}.
@@ -148,10 +149,21 @@ def generate(
     if ref:
         ref = str(ref)
 
+    # Model selection:
+    #   gemini-3-pro-image-preview  — paid tier, premium quality (default
+    #                                  if billing is enabled)
+    #   gemini-2.5-flash-image-preview — free tier eligible, lower quality
+    # Override via the `model` arg or via SIERRA_GEMINI_MODEL env.
+    chosen_model = (
+        model
+        or os.environ.get("SIERRA_GEMINI_MODEL")
+        or "gemini-3-pro-image-preview"
+    )
+
     if dry_run:
         return {
             "dry_run": True,
-            "model": "gemini-3-pro-image-preview",
+            "model": chosen_model,
             "prompt": final_prompt,
             "resolution": res,
             "input_image": ref,
@@ -181,13 +193,16 @@ def generate(
         contents = final_prompt
         print(f"[{template_id}] nano-banana generating ({res}, aspect={aspect}) …", flush=True)
 
+    # gemini-2.5-flash-image-preview doesn't support image_config.image_size
+    # — it ignores resolution. gemini-3-pro-image-preview does. Pass
+    # image_config only when the model is the 3-pro variant.
+    cfg_kwargs: dict[str, Any] = {"response_modalities": ["TEXT", "IMAGE"]}
+    if "3-pro" in chosen_model:
+        cfg_kwargs["image_config"] = types.ImageConfig(image_size=res)
     response = client.models.generate_content(
-        model="gemini-3-pro-image-preview",
+        model=chosen_model,
         contents=contents,
-        config=types.GenerateContentConfig(
-            response_modalities=["TEXT", "IMAGE"],
-            image_config=types.ImageConfig(image_size=res),
-        ),
+        config=types.GenerateContentConfig(**cfg_kwargs),
     )
 
     saved: list[pathlib.Path] = []
@@ -251,12 +266,18 @@ def _cli() -> int:
     p.add_argument("--template", required=True, help="e.g. P32")
     p.add_argument("--resolution", choices=["1K", "2K", "4K"], default="2K")
     p.add_argument("--input-image", help="Optional reference image for img2img")
+    p.add_argument(
+        "--model",
+        help="Gemini model. Default 'gemini-3-pro-image-preview' (paid tier). "
+             "Use 'gemini-2.5-flash-image-preview' for free-tier testing.",
+    )
     p.add_argument("--dry-run", action="store_true")
     args = p.parse_args()
     res = generate(
         args.persona, args.template,
         resolution=args.resolution,
         input_image=args.input_image,
+        model=args.model,
         dry_run=args.dry_run,
     )
     if args.dry_run:
