@@ -263,6 +263,28 @@ def main() -> int:
             plan["rationale"] = f"forced via --template {args.template}"
     print(f"[from-trend] template = {plan['template_id']} · {plan.get('rationale','')}")
 
+    # Slop pre-flight — fails the run if the plan trips fail-phrases or
+    # scores >=1.0 on the Tier-1/Tier-2 vocab scanner. Runs before any
+    # API spend so we don't render slop. See voice-profile §11.5.
+    try:
+        from tools.voice.slop_scan import scan_text
+        slop_text = " ".join(filter(None, [
+            plan.get("voiceover_text"),
+            plan.get("caption"),
+            plan.get("tag_line"),
+        ]))
+        report = scan_text(slop_text)
+        print(f"[from-trend] slop scan: score={report['score']} ({report['rating']})")
+        if report["fail_phrases"]:
+            print(f"[from-trend] FAIL — forbidden phrases in plan: {report['fail_phrases']}", file=sys.stderr)
+            return 3
+        if report["score"] >= 1.0:
+            print(f"[from-trend] WARNING — slop score {report['score']} >= 1.0", file=sys.stderr)
+            if report["tier1_hits"]: print(f"  Tier 1 hits: {report['tier1_hits']}", file=sys.stderr)
+            if report["tier2_hits"]: print(f"  Tier 2 hits: {report['tier2_hits']}", file=sys.stderr)
+    except Exception as e:
+        print(f"[from-trend] slop pre-flight skipped: {e}", file=sys.stderr)
+
     # Output dir.
     if args.plan_from_file:
         # When the operator hand-writes a plan, anchor outputs to the plan

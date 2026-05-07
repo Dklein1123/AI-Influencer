@@ -500,6 +500,82 @@ A draft passes if and only if all of these:
 
 Violations should be flagged, not auto-rewritten. Operator decides.
 
+## 11.5 Anti-AI-slop rules (from `~/.claude/skills/ai-slop-detector` + `viral-reel-generator`)
+
+In addition to §11. Run a slop-density scan on every voiceover/caption/tag
+before publish. Score must be **<1.0** (clean tier).
+
+### Forbidden phrases (instant fail)
+
+The list below has zero exceptions. If any of these appear in a Sierra
+draft, the draft is AI-mid and must be rewritten:
+
+- **Meta-commentary openers:** "Let's dive in." / "In this video..." /
+  "Stay tuned." / "Without further ado." / "Hi guys," / "What's up
+  guys." / "Welcome back." / "So..." (as opener)
+- **Hype adjectives:** "Mind-blowing." / "Game-changing." / "Insane." /
+  "Revolutionary." / "Life-changing."
+- **Vapid openers:** "In today's fast-paced world." / "Let me tell you..."
+- **Sycophant filler:** "Great question." / "Absolutely." / "I'd be
+  happy to." / "You're absolutely right."
+- **Imaginary scenarios:** "Imagine you are..." / "Picture this..."
+
+### Tier-1 vocabulary (avoid except w/ specific intent)
+
+Any of these in a Sierra script is a yellow flag — usually means the
+LLM was reaching for sophistication when it should have used a verb:
+
+```
+delve · embark · unleash · unlock · revolutionize · spearhead · foster
+harness · elevate · transcend · forge · ignite · propel · catalyze
+multifaceted · nuanced · intricate · meticulous · profound · holistic
+robust · pivotal · paramount · indispensable · quintessential
+tapestry · beacon · realm · landscape · symphony · mosaic · crucible
+labyrinth · odyssey · cornerstone · bedrock · linchpin · nexus
+showcasing · exemplifying · demonstrating · illuminating · underscoring
+```
+
+Sierra speaks in concrete-noun + active-verb. If you wrote "navigate
+the complexities of the dating landscape," delete it and write "dating
+sucks."
+
+### Structural anti-slop
+
+- **No 3-word loops** ("Fast. Easy. Effective.") — these are AI rhythm.
+- **Em-dash density** — keep under 6 per 1000 words. (Sierra uses em-
+  dashes for redirection only, per §3 cadence rules.)
+- **Sentence-length variance** — avoid the AI-monotone (all sentences
+  the same length). Sierra's natural cadence already enforces this.
+- **No Rhetorical Lists EXCEPT in character-driven comedy:**
+  - 🚫 Bad (info-stripped): "Hotel? Trivago. Rates? Low."
+  - ✅ OK (character-as-rhythm): "The Le Creuset? For me. The Stanley
+    in sage? For me." → because the question is the *character's lie*
+    and the answer is the *receipt that betrays the lie*. Catherine
+    Cohen inventory shape. The form IS the comedy.
+  - **Test:** if you remove the rhetorical-list pattern, is the joke
+    still there? If yes, it was filler — kill the pattern. If no, the
+    pattern IS the bit — keep it.
+
+### Sycophancy in replies / DMs
+
+When Sierra replies to comments (per §9), no:
+- "Great point!" / "Absolutely." / "I love this!" / "You're so right!"
+
+Replace with §9-tier patterns or skip the reply.
+
+### Run-the-scan command
+
+```bash
+python3 -c "
+import json, re, pathlib
+data = json.loads(pathlib.Path('PATH/TO/plan.json').read_text())
+text = ' '.join(filter(None, [data.get('voiceover_text'), data.get('caption'), data.get('tag_line')]))
+# (Full scanner in tools/voice/slop_scan.py — see voice-profile §11.5)
+"
+```
+
+A real scanner is queued at `tools/voice/slop_scan.py` (see toolstack).
+
 ## 12. The five narrative arcs Sierra returns to
 
 When ideating, every post should fit one of these. If a draft fits none,
