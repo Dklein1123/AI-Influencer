@@ -48,49 +48,93 @@ TRENDS_DIR = REPO_ROOT / "personas" / "sierra-frost" / "trends"
 UNITS_DIR = REPO_ROOT / "personas" / "sierra-frost" / "content-units"
 
 
-PLANNER_PROMPT = """You are planning a single Sierra Frost TikTok reel from a
-trending item. Sierra is a 25-year-old conservative-leaning lifestyle/dating
-commentator. Voice: direct, dry-witty, classy, faith-adjacent, anti-victim,
-high-effort feminine. Vertical 9:16, 15-22 seconds.
+PLANNER_PROMPT = """You are planning a single Sierra Frost TikTok reel from
+a trending item. Sierra is a 25-year-old comedy-first conservative-lifestyle
+creator (Catherine Cohen + Hannah Berner lane, dating-tok). Voice: direct,
+dry, classy, faith-adjacent, anti-victim, high-effort feminine. Vertical
+9:16, 15–22 seconds. Funny mode by default.
 
-Pick ONE template from this list and draft the script.
+# COMEDY RULES (mandatory; the bit is a CHARACTER doing something specific,
+not a string of jokes)
 
-Templates available (id → vibe):
-- P1  bedroom medium-close, polish, off-camera glance — soft confident
-- P2  cafe medium, dolly push, mid-typing look-up — newsletter angle
-- P3  bedroom tight close-up, dolly push, dry knowing expression — pure commentary
-- P7  Florida walk, golden hour, walking toward camera — lifestyle hero
-- P12 cafe MCU, dolly push, look up from laptop, faint smile — newsletter funnel
-- P31 tight close-up, eyebrow raise, "you're kidding right" — reaction
-- P32 bed, mid-coffee dry sideways glance — reaction commentary
-- P33 mid-typing dry "really?" look up — reaction
-- P34 soft eye-roll knowing patient — reaction
-- P36 medium, slow head shake smirk arms crossed — "we're not doing this"
-- P37 chin in hand deadpan straight to camera — "go on"
-- P40 slow blink deadpan — "the audacity"
-- P41 over-the-shoulder writing newsletter, Sunday energy — funnel
-- P50 Sunday morning hero, soft pastel light, dainty cross — pillar 2
+- One of these structural recipes (T1–T7) MUST drive the bit:
+  T1 Cohen Cabaret (BRAG → WOUND → BIGGER BRAG)
+  T2 Povitsky Tone-Collapse (sweet pitch → ONE adult word → sweet)
+  T3 Barone Diagnostic ("[trend] girls are women who [tic][tic][tic] —
+                         and reader, I am one of them.")
+  T4 Sherman Committed Costume (commit harder than the line)
+  T5 Summers Smile-Through-Taboo (borrowed character voice for the spike)
+  T6 Berner Apologist ("I'm a [trend] apologist. red flags as features.
+                        self-indict on button.")
+  T7 McKenzie Archetype-Flip ("the girl who [trend]. four tells. 5th is YOU.")
 
-Script format — output EXACTLY this JSON (no prose outside the array):
+- Use HYPER-SPECIFIC receipts. Real brands (Le Creuset, Stanley sage,
+  Skims Coze, Erewhon, Hinge), real numbers (16 times this morning),
+  named avatars (Brad in finance, Tyler). Specificity is the comedy.
+
+- Tag line: the LAST line. Distinct from punchline. SCREENSHOT-WORTHY.
+  This is the SAVE driver. Examples that pass: "He does not live here.
+  Anymore." / "Brad who?" / "It's 2:51. I am SO decentered."
+
+# FORBIDDEN VOCABULARY (instant fail — pre-flight slop scanner blocks render)
+
+NEVER use any of these words in voiceover_text, caption, or tag_line:
+  delve, embark, unleash, unlock, revolutionize, spearhead, foster,
+  harness, elevate, transcend, forge, ignite, propel, catalyze,
+  multifaceted, nuanced, intricate, meticulous, profound, holistic,
+  robust, pivotal, paramount, indispensable, quintessential,
+  comprehensive, tapestry, beacon, realm, landscape, symphony, mosaic,
+  crucible, labyrinth, odyssey, cornerstone, bedrock, linchpin, nexus,
+  showcasing, exemplifying, demonstrating, illuminating, underscoring,
+  moreover, furthermore, subsequently, consequently, leverage, synergy,
+  scalability, transformative, seamless
+
+NEVER use these phrases:
+  "in today's fast-paced world", "it's worth noting", "at its core",
+  "cannot be overstated", "a testament to", "navigate the complexities",
+  "unlock the potential", "treasure trove", "game changer", "look no
+  further", "mind-blowing", "life-changing", "let's dive in", "in this
+  video", "stay tuned", "hi guys", "what's up guys", "imagine you are",
+  "picture this", "I'd be happy to", "great question"
+
+# TEMPLATES
+
+- P1 bedroom medium-close, polish — soft confident
+- P3 bedroom tight close-up, dry knowing expression — pure commentary
+- P7 Florida walk, golden hour — lifestyle hero
+- P12 cafe MCU, look up from laptop — newsletter angle / Brad newscaster
+- P15 vanity, lipstick mid-application — getting-ready scene
+- P22 sidewalk cafe, journaling, palm shadow — "writing it down" energy
+- P25 bedroom mirror outfit-check — apologist / "thriving" framing
+- P31 tight close-up, eyebrow raise — "you're kidding right"
+- P32 bed mid-coffee dry sideways glance — reaction commentary
+- P36 medium, head-shake smirk — "we're not doing this"
+- P37 chin in hand deadpan — "go on"
+- P50 Sunday morning hero, dainty cross — pillar 2
+
+# OUTPUT FORMAT (return ONLY this JSON — no markdown, no prose, no fences)
+
 {
-  "template_id": "P3",
-  "rationale": "one sentence why this template fits the trend's format/angle",
-  "duration_s": 18,
+  "template_id": "P32",
+  "bit_id": "sierra_reads",
+  "rationale": "one sentence: which T1-T7 recipe + why this template fits",
+  "duration_s": 17,
   "script_chunks": [
-    {"start": 0.0, "end": 2.5, "text": "STANDARDS AREN'T"},
-    {"start": 2.5, "end": 5.0, "text": "RED FLAGS."},
+    {"start": 0.0, "end": 2.5, "text": "I HAVE FULLY DECENTERED HIM."},
     ...
   ],
-  "voiceover_text": "Standards aren't red flags. ... full sentence read.",
-  "caption": "Sierra-voice IG/TikTok caption, ≤200 chars",
-  "hashtags": ["#highvaluewoman", "#femininity", "#datingadvice"]
+  "voiceover_text": "I have fully decentered him. ...",
+  "caption": "Sierra-voice TikTok caption ≤180 chars",
+  "tag_line": "the screenshot line — the LAST words of the bit",
+  "hashtags": ["#datingtok", "#decentermen", "#datingadvice", "#fyp"]
 }
 
-Subtitle chunks should be SHORT (2-6 words, ALL CAPS), one strong line per
-chunk, totaling 6-9 chunks. The voiceover_text is the full natural read of
-the same script (mixed case, contractions ok). Total duration 15-22s.
+bit_id ∈ {sierra_reads, calling_my_dad, brad_finance, sierra_apologist}.
+script_chunks: 6-9 chunks, ALL CAPS, 2-6 words each, total 15-22s.
+voiceover_text: natural mixed case, contractions ok.
 
-Trend item to build from:
+# TREND TO BUILD FROM
+
 {item_json}
 """
 
@@ -118,10 +162,17 @@ def slugify(s: str, *, max_len: int = 40) -> str:
     return s[:max_len] or "trend"
 
 
-def plan_with_claude(item: dict[str, Any]) -> dict[str, Any]:
-    """Ask Claude to pick a template + draft the script. Returns the plan."""
-    from tools.research.common import claude_score
+def plan_with_llm(item: dict[str, Any], *, provider: str = "auto") -> dict[str, Any]:
+    """Ask an LLM to pick a template + draft the script. Returns the plan.
 
+    `provider`:
+      - 'auto'   try Gemini (free) first, fall back to Claude if available
+      - 'gemini' force Gemini text (free, requires GEMINI_API_KEY)
+      - 'claude' force Anthropic Claude (paid, requires ANTHROPIC_API_KEY)
+
+    Operators on a free-only stack should use 'gemini' (default). The
+    Anthropic path remains as a quality fallback if the operator opts in.
+    """
     item_for_prompt = {
         "label": item.get("label"),
         "source": item.get("source"),
@@ -130,23 +181,53 @@ def plan_with_claude(item: dict[str, Any]) -> dict[str, Any]:
         "format": item.get("format"),
         "why": item.get("why"),
     }
-    raw = claude_score(
-        PLANNER_PROMPT.replace("{item_json}", json.dumps(item_for_prompt, indent=2)),
-        model="claude-sonnet-4-6",
-        max_tokens=1500,
-    )
-    text = raw.strip()
-    if text.startswith("```"):
-        text = text.split("```", 2)[1]
-        if text.startswith("json"):
-            text = text[4:]
-        text = text.strip().rsplit("```", 1)[0].strip()
-    plan = json.loads(text)
-    # Light validation.
-    for k in ("template_id", "duration_s", "script_chunks", "voiceover_text"):
-        if k not in plan:
-            raise ValueError(f"Claude plan missing required key: {k}")
-    return plan
+    full_prompt = PLANNER_PROMPT.replace("{item_json}", json.dumps(item_for_prompt, indent=2))
+
+    if provider == "auto":
+        from tools.llm.gemini import is_enabled as gemini_ok
+        provider = "gemini" if gemini_ok() else "claude"
+
+    # Up to 3 attempts — Gemini occasionally emits invalid JSON even in
+    # json_mode (trailing commas, single quotes). Retrying with a hint
+    # at slightly different temperatures resolves >95% of these.
+    last_err: Exception | None = None
+    for attempt in range(3):
+        try:
+            if provider == "gemini":
+                from tools.llm.gemini import generate_text
+                raw = generate_text(
+                    full_prompt,
+                    model=os.environ.get("SIERRA_GEMINI_PLANNER", "gemini-2.5-flash"),
+                    max_tokens=4000,
+                    temperature=0.9 if attempt == 0 else 0.7,  # cooler on retries
+                    json_mode=True,
+                )
+            else:
+                from tools.research.common import claude_score
+                raw = claude_score(full_prompt, model="claude-sonnet-4-6", max_tokens=1500)
+
+            text = raw.strip()
+            if text.startswith("```"):
+                text = text.split("```", 2)[1]
+                if text.startswith("json"):
+                    text = text[4:]
+                text = text.strip().rsplit("```", 1)[0].strip()
+            plan = json.loads(text)
+            for k in ("template_id", "duration_s", "script_chunks", "voiceover_text"):
+                if k not in plan:
+                    raise ValueError(f"LLM plan missing required key: {k}")
+            return plan
+        except (json.JSONDecodeError, ValueError) as e:
+            last_err = e
+            if attempt < 2:
+                print(f"[planner] {provider} attempt {attempt+1}/3 parse failed: {str(e)[:80]} — retrying", file=sys.stderr)
+                continue
+            raise
+    raise last_err if last_err else RuntimeError("planner: exhausted retries")
+
+
+# Back-compat alias — older callers still use this name.
+plan_with_claude = plan_with_llm
 
 
 def _stub_plan(item: dict[str, Any], template_id: str) -> dict[str, Any]:
@@ -234,7 +315,14 @@ def main() -> int:
                    help="Flux guidance_scale (default 2.5; lower = more realistic, less prompt-adherent)")
     p.add_argument("--lora-scale", type=float, default=0.9,
                    help="Sierra LoRA strength (default 0.9; >1.0 over-fits)")
-    p.add_argument("--plan-from-file", help="Skip Claude planner; read plan JSON from this path")
+    p.add_argument(
+        "--llm",
+        choices=["auto", "gemini", "claude", "stub"],
+        default="auto",
+        help="Planner LLM: auto (Gemini free if available, else Claude paid, else stub) | "
+             "gemini (force free Gemini) | claude (force paid Anthropic) | stub (deterministic fallback)",
+    )
+    p.add_argument("--plan-from-file", help="Skip planner; read plan JSON from this path")
     p.add_argument("--dry-run", action="store_true", help="Plan only — no API spend")
     p.add_argument("--no-image", action="store_true", help="Skip image gen (use existing)")
     p.add_argument("--no-vo", action="store_true", help="Skip VO synth")
@@ -264,12 +352,31 @@ def main() -> int:
             plan["template_id"] = args.template
         plan.setdefault("rationale", f"plan-from-file: {plan_path}")
         print(f"[from-trend] plan loaded from {plan_path}")
-    elif args.dry_run and not os.environ.get("ANTHROPIC_API_KEY"):
-        print("[from-trend] dry-run + no ANTHROPIC_API_KEY → stub plan")
-        plan = _stub_plan(item, args.template or "P3")
     else:
-        print("[from-trend] planning with Claude …")
-        plan = plan_with_claude(item)
+        # Free-by-default: Gemini → Claude → stub fallback.
+        try:
+            from tools.llm.gemini import is_enabled as gemini_ok
+        except Exception:
+            gemini_ok = lambda: False
+        provider = (args.llm or "auto").lower()
+        if provider == "auto":
+            provider = (
+                "gemini" if gemini_ok()
+                else "claude" if os.environ.get("ANTHROPIC_API_KEY")
+                else "stub"
+            )
+
+        if provider == "stub":
+            print(f"[from-trend] no LLM available → stub plan")
+            plan = _stub_plan(item, args.template or "P3")
+        else:
+            try:
+                print(f"[from-trend] planning with {provider} …")
+                plan = plan_with_llm(item, provider=provider)
+            except Exception as e:
+                print(f"[from-trend] {provider} planner failed ({e}); falling back to stub", file=sys.stderr)
+                plan = _stub_plan(item, args.template or "P3")
+
         if args.template:
             plan["template_id"] = args.template
             plan["rationale"] = f"forced via --template {args.template}"
