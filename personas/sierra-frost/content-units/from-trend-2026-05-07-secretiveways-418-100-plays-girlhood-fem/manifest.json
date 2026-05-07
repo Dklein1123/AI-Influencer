@@ -20,47 +20,47 @@
   },
   "plan": {
     "template_id": "P32",
-    "rationale": "P32 reaction (bed mid-coffee dry sideways glance) lands the push-back without lecturing. Sierra disagrees with the trend's binary \u2014 softness vs hustle \u2014 by adding the missing piece: structure. Hand-drafted, not Sonnet-planned.",
-    "duration_s": 17.5,
+    "rationale": "P32 (bed, mid-coffee dry sideways glance) lets Sierra do the newscaster fake-read into the punchline. Comedy hook H3 (Breaking news from trad-tok). The trend's earnestness is the setup \u2014 her deadpan reaction is the joke. Funny mode, no serious-register pivot needed for this one.",
+    "duration_s": 16.0,
     "script_chunks": [
       {
         "start": 0.0,
-        "end": 2.5,
-        "text": "\"VULNERABILITY"
+        "end": 3.0,
+        "text": "BREAKING NEWS"
       },
       {
-        "start": 2.5,
-        "end": 5.0,
-        "text": "IS POWER\""
+        "start": 3.0,
+        "end": 5.5,
+        "text": "FROM TRAD-TOK:"
       },
       {
-        "start": 5.0,
-        "end": 8.5,
-        "text": "SOFTNESS \u2260 COMPLIANCE."
+        "start": 5.5,
+        "end": 9.0,
+        "text": "MEN LIKE SOFT WOMEN."
       },
       {
-        "start": 8.5,
+        "start": 9.0,
         "end": 12.0,
-        "text": "FEMININITY HAS STRUCTURE."
+        "text": "GROUNDBREAKING."
       },
       {
         "start": 12.0,
-        "end": 15.5,
-        "text": "DISCIPLINE. FAITH. TASTE."
+        "end": 14.5,
+        "text": "MORE ON THIS DEVELOPING"
       },
       {
-        "start": 15.5,
-        "end": 17.5,
-        "text": "THAT'S THE SPINE."
+        "start": 14.5,
+        "end": 16.0,
+        "text": "STORY AT 11."
       }
     ],
-    "voiceover_text": "Vulnerability is power. Sure. But softness without standards isn't femininity, it's compliance. Real femininity has structure. Discipline. Faith. Taste. That's the spine.",
-    "caption": "Soft girl era is cute. Soft girl with no spine is exhausting. Standards are the structure.",
+    "voiceover_text": "Breaking news from trad-tok. Men like soft women. Truly groundbreaking research. Meanwhile, Brad still won't change a tire. More on this developing story at eleven.",
+    "caption": "Today in things we already knew: men prefer softness. In other news, water is wet. Brad in finance remains unavailable for comment.",
     "hashtags": [
       "#femininity",
-      "#highvaluewoman",
-      "#datingadvice",
-      "#softfeminine"
+      "#datingtok",
+      "#tradwife",
+      "#satire"
     ]
   }
 }

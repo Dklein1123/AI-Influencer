@@ -178,13 +178,18 @@ def _audio_graph(
     sources: list[str] = []
 
     if has_vo:
-        # We split the cleaned-up voiceover so it can both trigger the music
-        # ducking sidechain AND survive into the final mix.
-        nodes.append(
+        vo_clean = (
             "[vo:a]aresample=48000,aformat=channel_layouts=stereo,"
-            "highpass=f=80,lowpass=f=12000,acompressor=threshold=-18dB:ratio=3:attack=10:release=120,volume=2.5dB,"
-            "asplit=2[VO][VO_SC]"
+            "highpass=f=80,lowpass=f=12000,acompressor=threshold=-18dB:ratio=3:attack=10:release=120,volume=2.5dB"
         )
+        if has_music:
+            # We split the cleaned VO so it both triggers the music sidechain
+            # AND survives into the final mix.
+            nodes.append(f"{vo_clean},asplit=2[VO][VO_SC]")
+        else:
+            # No music = no sidechain, no split. asplit's second output would
+            # be dangling and ffmpeg rejects that.
+            nodes.append(f"{vo_clean}[VO]")
         sources.append("[VO]")
     if has_music:
         if has_vo:

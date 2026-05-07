@@ -205,6 +205,12 @@ def main() -> int:
     p.add_argument("--rank", type=int, default=1, help="1-indexed rank in scored items")
     p.add_argument("--template", help="Force a specific template id (overrides Claude pick)")
     p.add_argument("--seed", type=int, help="Higgsfield seed")
+    p.add_argument(
+        "--backend",
+        choices=["replicate", "higgsfield"],
+        default="replicate",
+        help="Image-gen backend. Default: replicate (Sierra LoRA, ~30x cheaper than Higgsfield).",
+    )
     p.add_argument("--plan-from-file", help="Skip Claude planner; read plan JSON from this path")
     p.add_argument("--dry-run", action="store_true", help="Plan only — no API spend")
     p.add_argument("--no-image", action="store_true", help="Skip image gen (use existing)")
@@ -269,9 +275,14 @@ def main() -> int:
     # Image.
     image_path: pathlib.Path | None = None
     if not args.no_image:
-        from tools.generation import higgsfield as hf
-        print(f"[from-trend] higgsfield generating {plan['template_id']} …")
-        result = hf.generate("sierra_frost", plan["template_id"], seed=args.seed)
+        if args.backend == "higgsfield":
+            from tools.generation import higgsfield as gen_mod
+            print(f"[from-trend] higgsfield generating {plan['template_id']} …")
+            result = gen_mod.generate("sierra_frost", plan["template_id"], seed=args.seed)
+        else:
+            from tools.lora import generate as gen_mod
+            print(f"[from-trend] replicate-lora generating {plan['template_id']} …")
+            result = gen_mod.generate("sierra_frost", plan["template_id"])
         saved = [pathlib.Path(p) for p in result.get("saved", [])]
         if not saved:
             print("[from-trend] image gen produced no assets; aborting", file=sys.stderr)

@@ -219,3 +219,17 @@ re-learn them:
    `403 "Not enough credits"` was returned even though the same generation
    ran successfully via the MCP connector. Top up API credits in the
    Higgsfield dashboard before using the CLI wrapper for live batches.
+## 2026-05-07T02:44:07 — P32 (LoRA)
+
+- backend: replicate-flux-lora
+- model: `dev`
+- aspect: `9:16`
+- guidance: `3.5`
+- lora_scale: `1.0`
+- saved:
+  - `personas/sierra-frost/content-queue/2026-05-07_P32_lora_v1.png`
+- prompt:
+  ```
+  SIERRA_FROST_V1, 24-year-old woman, blonde mid-length hair with soft beachy waves, light blue-green eyes, glowy lightly-tanned skin, full lips with glossy nude makeup, polished natural makeup with soft contour and warm neutral eyeshadow, dainty gold jewelry, hourglass figure, fit Pilates body, warm friendly expression unless otherwise specified, wearing matching neutral set: cream sports bra and high-waisted bike shorts, Hoka or On running sneakers, hair pulled into low ponytail, dewy fresh face, small gold hoops, in a bright Scandinavian-style bedroom, white linen bedding, oak nightstand, floor-to-ceiling window with sheer curtains, eucalyptus plant in clay pot, soft morning light streaming through window, neutral palette of cream beige and warm wood, shot type: medium close-up, camera motion: slow dolly push toward subject's face, action: sitting on bed mid-coffee sip, pause, dry sideways glance to camera, shot on Sony A7IV, 50mm prime lens, shallow depth of field f/2.0, soft natural lighting, golden hour or warm window light, neutral color palette, candid editorial composition, cinematic but warm, polished but not stiff, high detail, ultra realistic photographic quality
+  ```
+

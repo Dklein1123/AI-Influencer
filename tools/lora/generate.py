@@ -120,7 +120,9 @@ def generate(persona_name: str, template_id: str, *, aspect_ratio: str | None = 
     version = os.environ.get("SIERRA_LORA_VERSION")
     if not version:
         raise RuntimeError("SIERRA_LORA_VERSION not set; train the LoRA first via tools.lora.train.")
-    args["model"] = version
+    # 'model' is the base Flux variant ('dev' or 'schnell') — NOT the LoRA
+    # version. The LoRA version is the first arg to replicate.run().
+    args["model"] = "dev"
 
     import replicate
     import requests
