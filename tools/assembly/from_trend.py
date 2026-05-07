@@ -315,6 +315,15 @@ def main() -> int:
                    help="Flux guidance_scale (default 2.5; lower = more realistic, less prompt-adherent)")
     p.add_argument("--lora-scale", type=float, default=0.9,
                    help="Sierra LoRA strength (default 0.9; >1.0 over-fits)")
+    p.add_argument("--no-spoof", action="store_true",
+                   help="Skip EXIF spoofer (default ON — strips C2PA + AI sigs, stamps iPhone metadata)")
+    p.add_argument("--spoof-device", default="iphone-15-pro",
+                   choices=["iphone-15-pro", "iphone-14", "iphone-16", "samsung-s24"],
+                   help="Device fingerprint to inject (default iPhone 15 Pro)")
+    p.add_argument("--spoof-gps", default="palm-beach",
+                   choices=["palm-beach", "miami", "boca-raton", "naples",
+                            "los-angeles", "nashville", "austin"],
+                   help="GPS coordinate region to inject (Sierra is South Florida-coded by default)")
     p.add_argument(
         "--llm",
         choices=["auto", "gemini", "claude", "stub"],
@@ -473,6 +482,27 @@ def main() -> int:
         target.write_bytes(image_path.read_bytes())
         image_path = target
         print(f"[from-trend] image → {image_path.relative_to(REPO_ROOT)}")
+
+        # EXIF spoof — strips C2PA + AI signatures, stamps as iPhone
+        # photo. Massive distribution lift on IG / Threads (kills the
+        # "Made with AI" label). Disabled with --no-spoof.
+        if not args.no_spoof:
+            try:
+                from tools.realism.exif_spoofer import spoof_image
+                spoofed = unit_dir / "visual_spoofed.jpg"
+                spoof_image(
+                    image_path,
+                    out=spoofed,
+                    device=args.spoof_device,
+                    gps=args.spoof_gps,
+                )
+                # Use spoofed as primary going forward — pipeline.assemble()
+                # is fine with .jpg, and the upload-ready file is the
+                # spoofed one. Original is kept as visual.png for audit.
+                image_path = spoofed
+                print(f"[from-trend] exif-spoofed → {spoofed.relative_to(REPO_ROOT)} ({args.spoof_device}, {args.spoof_gps})")
+            except Exception as e:
+                print(f"[from-trend] spoof skipped: {e}", file=sys.stderr)
     else:
         existing = sorted(unit_dir.glob("visual.*"))
         if not existing:
